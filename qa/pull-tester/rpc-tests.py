@@ -76,7 +76,7 @@ for arg in sys.argv[1:]:
 
 #Set env vars
 if "BITCOIND" not in os.environ:
-    os.environ["BITCOIND"] = BUILDDIR + '/src/litecoind' + EXEEXT
+    os.environ["BITCOIND"] = BUILDDIR + '/src/bitcoind' + EXEEXT
 
 if EXEEXT == ".exe" and "-win" not in opts:
     # https://github.com/bitcoin/bitcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9
@@ -105,15 +105,18 @@ testScripts = [
     # vv Tests less than 5m vv
     'p2p-fullblocktest.py',
     'fundrawtransaction.py',
-    'p2p-compactblocks.py',
-    'segwit.py',
+    #'p2p-compactblocks.py',
+    # 'segwit.py',
     # vv Tests less than 2m vv
+    'auxpow.py',
+    'getauxblock.py',
     'wallet.py',
     'wallet-accounts.py',
-    'p2p-segwit.py',
+    # 'p2p-segwit.py',
     'wallet-dump.py',
     'listtransactions.py',
     # vv Tests less than 60s vv
+    'p2p-acceptblock.py',
     'sendheaders.py',
     'zapwallettxes.py',
     'importmulti.py',
@@ -121,7 +124,7 @@ testScripts = [
     'merkle_blocks.py',
     'receivedby.py',
     'abandonconflict.py',
-    'bip68-112-113-p2p.py',
+    # 'bip68-112-113-p2p.py',
     'rawtransactions.py',
     'reindex.py',
     # vv Tests less than 30s vv
@@ -144,18 +147,25 @@ testScripts = [
     'p2p-mempool.py',
     'prioritise_transaction.py',
     'invalidblockrequest.py',
-    'invalidtxrequest.py',
-    'p2p-versionbits-warning.py',
+    # 'invalidtxrequest.py',
+    # 'p2p-versionbits-warning.py',
     'preciousblock.py',
     'importprunedfunds.py',
+    'createauxblock.py',
     'signmessages.py',
-    'nulldummy.py',
+    # 'nulldummy.py',
     'import-rescan.py',
+    'dustlimits.py',
+    'paytxfee.py',
+    'feelimit.py',
+    # While fee bumping should work in Doge, these tests depend on free transactions, which we don't support.
+    # Disable until we can do a full rewrite of the tests (possibly upstream), or revise fee schedule, or something
     'bumpfee.py',
     'rpcnamedargs.py',
     'listsinceblock.py',
     'p2p-leaktests.py',
-    'test_script_address2.py'
+    'replace-by-fee.py',
+    'p2p-policy.py',
 ]
 if ENABLE_ZMQ:
     testScripts.append('zmq_test.py')
@@ -168,17 +178,17 @@ testScriptsExt = [
     'maxuploadtarget.py',
     'mempool_packages.py',
     # vv Tests less than 2m vv
-    'bip68-sequence.py',
+    # 'bip68-sequence.py',
     'getblocktemplate_longpoll.py',
     'p2p-timeouts.py',
     # vv Tests less than 60s vv
-    'bip9-softforks.py',
+    # 'bip9-softforks.py',
     'p2p-feefilter.py',
     'rpcbind_test.py',
     # vv Tests less than 30s vv
     'bip65-cltv.py',
-    'bip65-cltv-p2p.py',
-    'bipdersig-p2p.py',
+    # 'bip65-cltv-p2p.py',
+    # 'bipdersig-p2p.py',
     'bipdersig.py',
     'getblocktemplate_proposals.py',
     'txn_doublespend.py',
@@ -186,8 +196,6 @@ testScriptsExt = [
     'forknotify.py',
     'invalidateblock.py',
     'maxblocksinflight.py',
-    'p2p-acceptblock.py',
-    'replace-by-fee.py',
 ]
 
 
@@ -278,7 +286,7 @@ class RPCTestHandler:
             log_stderr = tempfile.SpooledTemporaryFile(max_size=2**16)
             self.jobs.append((t,
                               time.time(),
-                              subprocess.Popen((RPC_TESTS_DIR + t).split() + self.flags + port_seed,
+                              subprocess.Popen(['python3']+(RPC_TESTS_DIR + t).split() + self.flags + port_seed,
                                                universal_newlines=True,
                                                stdout=log_stdout,
                                                stderr=log_stderr),
