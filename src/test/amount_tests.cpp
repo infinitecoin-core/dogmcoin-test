@@ -19,13 +19,13 @@ BOOST_AUTO_TEST_CASE(GetFeeTest)
     BOOST_CHECK_EQUAL(feeRate.GetFee(1e5), 0);
 
     feeRate = CFeeRate(1000);
-    // Must always just return the arg
+    // Wallet fees are no longer rounded up
     BOOST_CHECK_EQUAL(feeRate.GetFee(0), 0);
     BOOST_CHECK_EQUAL(feeRate.GetFee(1), 1);
     BOOST_CHECK_EQUAL(feeRate.GetFee(121), 121);
     BOOST_CHECK_EQUAL(feeRate.GetFee(999), 999);
-    BOOST_CHECK_EQUAL(feeRate.GetFee(1e3), 1e3);
-    BOOST_CHECK_EQUAL(feeRate.GetFee(9e3), 9e3);
+    BOOST_CHECK_EQUAL(feeRate.GetFee(1e3), 1000);
+    BOOST_CHECK_EQUAL(feeRate.GetFee(9e3), 9000);
 
     feeRate = CFeeRate(-1000);
     // Must always just return -1 * arg
@@ -33,8 +33,8 @@ BOOST_AUTO_TEST_CASE(GetFeeTest)
     BOOST_CHECK_EQUAL(feeRate.GetFee(1), -1);
     BOOST_CHECK_EQUAL(feeRate.GetFee(121), -121);
     BOOST_CHECK_EQUAL(feeRate.GetFee(999), -999);
-    BOOST_CHECK_EQUAL(feeRate.GetFee(1e3), -1e3);
-    BOOST_CHECK_EQUAL(feeRate.GetFee(9e3), -9e3);
+    BOOST_CHECK_EQUAL(feeRate.GetFee(1e3), -1000);
+    BOOST_CHECK_EQUAL(feeRate.GetFee(9e3), -9000);
 
     feeRate = CFeeRate(123);
     // Truncates the result, if not integer
