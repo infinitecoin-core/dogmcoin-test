@@ -1,22 +1,22 @@
 ---
-name: "litecoin-linux-0.14"
+name: "dogmcoin-linux-1.14"
 enable_cache: true
 suites:
-- "trusty"
+- "bionic"
 architectures:
 - "amd64"
 packages:
 - "curl"
 - "g++-aarch64-linux-gnu"
-- "g++-4.8-aarch64-linux-gnu"
-- "gcc-4.8-aarch64-linux-gnu"
+- "g++-7-aarch64-linux-gnu"
+- "gcc-7-aarch64-linux-gnu"
 - "binutils-aarch64-linux-gnu"
 - "g++-arm-linux-gnueabihf"
-- "g++-4.8-arm-linux-gnueabihf"
-- "gcc-4.8-arm-linux-gnueabihf"
+- "g++-7-arm-linux-gnueabihf"
+- "gcc-7-arm-linux-gnueabihf"
 - "binutils-arm-linux-gnueabihf"
-- "g++-4.8-multilib"
-- "gcc-4.8-multilib"
+- "g++-7-multilib"
+- "gcc-7-multilib"
 - "binutils-gold"
 - "git-core"
 - "pkg-config"
@@ -24,12 +24,13 @@ packages:
 - "libtool"
 - "automake"
 - "faketime"
+- "bison"
 - "bsdmainutils"
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/litecoin-project/litecoin.git"
-  "dir": "litecoin"
+- "url": "https://github.com/dogmcoin/dogmcoin.git"
+  "dir": "dogmcoin"
 files: []
 script: |
 
@@ -113,7 +114,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd litecoin
+  cd dogmcoin
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
@@ -135,13 +136,13 @@ script: |
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`/share/config.site ./configure --prefix=/
   make dist
-  SOURCEDIST=`echo litecoin-*.tar.gz`
+  SOURCEDIST=`echo dogmcoin-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
   # Correct tar file order
   mkdir -p temp
   pushd temp
   tar xf ../$SOURCEDIST
-  find litecoin-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
+  find dogmcoin-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
   popd
 
   ORIGPATH="$PATH"
@@ -173,14 +174,8 @@ script: |
     find . -name "lib*.la" -delete
     find . -name "lib*.a" -delete
     rm -rf ${DISTNAME}/lib/pkgconfig
- 
-    # Litecoin: Delete libbitcoin from binary distribution for now, see #192
-    rm -rf ${DISTNAME}/lib/
-    rm -rf ${DISTNAME}/include/
-    # Litecoin: ends
- 
     find ${DISTNAME}/bin -type f -executable -exec ../contrib/devtools/split-debug.sh {} {} {}.dbg \;
-    #find ${DISTNAME}/lib -type f -exec ../contrib/devtools/split-debug.sh {} {} {}.dbg \; # Litecoin: see issue 192
+    find ${DISTNAME}/lib -type f -exec ../contrib/devtools/split-debug.sh {} {} {}.dbg \;
     find ${DISTNAME} -not -name "*.dbg" | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ${OUTDIR}/${DISTNAME}-${i}.tar.gz
     find ${DISTNAME} -name "*.dbg" | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ${OUTDIR}/${DISTNAME}-${i}-debug.tar.gz
     cd ../../
