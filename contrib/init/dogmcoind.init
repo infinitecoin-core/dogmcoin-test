@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  dogmcoind The dogmcoin core server.
+#
+#
+# chkconfig: 345 80 20
+# description: dogmcoind
+# processname: dogmcoind
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/dogmcoind, see below
+if [ -f /etc/sysconfig/dogmcoind ]; then
+        . /etc/sysconfig/dogmcoind
+fi
+
+RETVAL=0
+
+prog=dogmcoind
+# you can override the lockfile via DOGECOIND_LOCKFILE in /etc/sysconfig/dogmcoind
+lockfile=${DOGECOIND_LOCKFILE-/var/lock/subsys/dogmcoind}
+
+# dogmcoind defaults to /usr/bin/dogmcoind, override with DOGECOIND_BIN
+dogmcoind=${DOGECOIND_BIN-/usr/bin/dogmcoind}
+
+# dogmcoind opts default to -disablewallet, override with DOGECOIND_OPTS
+dogmcoind_opts=${DOGECOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $dogmcoind $dogmcoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
