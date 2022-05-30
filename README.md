@@ -85,8 +85,8 @@ about Dogmcoin, give or ask for help, to share your project.
 
 Here are some places to visit:
 
+* [Dogmcoin Bitcointalk](https://bitcointalk.org/index.php?topic=5400580.0)
 * [Dogmcoin Reddit](https://www.reddit.com/r/dogmcoin/)
-* [Dogmcoin Discord](https://discord.gg/dogmcoin)
 * [Dogmcoin Twitter](https://twitter.com/dogmcoin)
 
 ## Very Much Frequently Asked Questions ❓
