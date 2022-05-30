@@ -413,10 +413,10 @@ void CConnman::DumpBanlist()
 
     CBanDB bandb;
     banmap_t banmap;
-    SetBannedSetDirty(false);
     GetBanned(banmap);
-    if (!bandb.Write(banmap))
-        SetBannedSetDirty(true);
+    if (bandb.Write(banmap)) {
+        SetBannedSetDirty(false);
+    }
 
     LogPrint("net", "Flushed %d banned node ips/subnets to banlist.dat  %dms\n",
         banmap.size(), GetTimeMillis() - nStart);
@@ -536,6 +536,8 @@ bool CConnman::Unban(const CSubNet &subNet) {
 void CConnman::GetBanned(banmap_t &banMap)
 {
     LOCK(cs_setBanned);
+    // Sweep the banlist so expired bans are not returned
+    SweepBanned();
     banMap = setBanned; //create a thread safe copy
 }
 
@@ -656,6 +658,7 @@ void CNode::copyStats(CNodeStats &stats)
         X(nRecvBytes);
     }
     X(fWhitelisted);
+    X(minFeeFilter);
 
     // It is common for nodes with good ping times to suddenly become lagged,
     // due to a new block arriving or other large transfer.
@@ -1466,7 +1469,7 @@ void ThreadMapPort()
             }
         }
 
-        std::string strDesc = "Litecoin " + FormatFullVersion();
+        std::string strDesc = "Dogmcoin " + FormatFullVersion();
 
         try {
             while (true) {
@@ -2702,6 +2705,7 @@ CNode::CNode(NodeId idIn, ServiceFlags nLocalServicesIn, int nMyStartingHeightIn
     fPauseRecv = false;
     fPauseSend = false;
     nProcessQueueSize = 0;
+    nPendingHeaderRequests = 0;
 
     BOOST_FOREACH(const std::string &msg, getAllNetMessageTypes())
         mapRecvBytesPerMsgCmd[msg] = 0;

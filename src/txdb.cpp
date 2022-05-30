@@ -98,7 +98,11 @@ CCoinsViewCursor *CCoinsViewDB::Cursor() const
        that restriction.  */
     i->pcursor->Seek(DB_COINS);
     // Cache key of first record
-    i->pcursor->GetKey(i->keyTmp);
+    if (i->pcursor->Valid()) {
+        i->pcursor->GetKey(i->keyTmp);
+    } else {
+        i->keyTmp.first = 0; // Make sure Valid() and GetKey() return false
+    }
     return i;
 }
 
@@ -197,14 +201,10 @@ bool CBlockTreeDB::LoadBlockIndexGuts(boost::function<CBlockIndex*(const uint256
                 pindexNew->nStatus        = diskindex.nStatus;
                 pindexNew->nTx            = diskindex.nTx;
 
-                // Litecoin: Disable PoW Sanity check while loading block index from disk.
-                // We use the sha256 hash for the block index for performance reasons, which is recorded for later use.
-                // CheckProofOfWork() uses the scrypt hash which is discarded after a block is accepted.
-                // While it is technically feasible to verify the PoW, doing so takes several minutes as it
-                // requires recomputing every PoW hash during every Litecoin startup.
-                // We opt instead to simply trust the data that is on your local disk.
-                //if (!CheckProofOfWork(pindexNew->GetBlockHash(), pindexNew->nBits, Params().GetConsensus()))
-                //    return error("LoadBlockIndex(): CheckProofOfWork failed: %s", pindexNew->ToString());
+                /* Bitcoin checks the PoW here.  We don't do this because
+                   the CDiskBlockIndex does not contain the auxpow.
+                   This check isn't important, since the data on disk should
+                   already be valid and can be trusted.  */
 
                 pcursor->Next();
             } else {
