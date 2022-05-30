@@ -9,6 +9,7 @@
 #include "bitcoingui.h"
 #include "clientmodel.h"
 #include "guiutil.h"
+#include "importkeysdialog.h"
 #include "optionsmodel.h"
 #include "overviewpage.h"
 #include "platformstyle.h"
@@ -18,6 +19,7 @@
 #include "transactiontablemodel.h"
 #include "transactionview.h"
 #include "walletmodel.h"
+#include "utilitydialog.h"
 
 #include "ui_interface.h"
 
@@ -63,6 +65,8 @@ WalletView::WalletView(const PlatformStyle *_platformStyle, QWidget *parent):
     addWidget(transactionsPage);
     addWidget(receiveCoinsPage);
     addWidget(sendCoinsPage);
+
+    importKeysDialog = new ImportKeysDialog(platformStyle);
 
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
@@ -216,6 +220,11 @@ void WalletView::gotoVerifyMessageTab(QString addr)
         signVerifyMessageDialog->setAddress_VM(addr);
 }
 
+void WalletView::gotoImportKeysDialog()
+{
+    setCurrentWidget(importKeysDialog);
+}
+
 bool WalletView::handlePaymentRequest(const SendCoinsRecipient& recipient)
 {
     return sendCoinsPage->handlePaymentRequest(recipient);
@@ -301,6 +310,16 @@ void WalletView::usedReceivingAddresses()
     usedReceivingAddressesPage->activateWindow();
 }
 
+void WalletView::importPrivateKey()
+{
+    if(!walletModel)
+        return;
+
+    importKeysDialog->show();
+    importKeysDialog->raise();
+    importKeysDialog->activateWindow();
+}
+
 void WalletView::showProgress(const QString &title, int nProgress)
 {
     if (nProgress == 0)
@@ -327,4 +346,15 @@ void WalletView::showProgress(const QString &title, int nProgress)
 void WalletView::requestedSyncWarningInfo()
 {
     Q_EMIT outOfSyncWarningClicked();
+}
+
+void WalletView::printPaperWallets()
+{
+    if(!walletModel)
+        return;
+
+    PaperWalletDialog dlg(this);
+    dlg.setModel(walletModel);
+    dlg.setClientModel(clientModel);
+    dlg.exec();
 }

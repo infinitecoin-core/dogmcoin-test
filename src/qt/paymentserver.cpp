@@ -47,14 +47,14 @@
 #endif
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("litecoin:");
+const QString BITCOIN_IPC_PREFIX("dogmcoin:");
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 // BIP71 payment protocol media types
-const char* BIP71_MIMETYPE_PAYMENT = "application/litecoin-payment";
-const char* BIP71_MIMETYPE_PAYMENTACK = "application/litecoin-paymentack";
-const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/litecoin-paymentrequest";
+const char* BIP71_MIMETYPE_PAYMENT = "application/bitcoin-payment";
+const char* BIP71_MIMETYPE_PAYMENTACK = "application/bitcoin-paymentack";
+const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/bitcoin-paymentrequest";
 
 struct X509StoreDeleter {
       void operator()(X509_STORE* b) {
@@ -78,7 +78,7 @@ namespace // Anon namespace
 //
 static QString ipcServerName()
 {
-    QString name("LitecoinQt");
+    QString name("DogmcoinQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -237,11 +237,11 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
             PaymentRequestPlus request;
             if (readPaymentRequestFromFile(arg, request))
             {
-                if (request.getDetails().network() == "main")
+                if (request.getDetails().genesis() == "1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691")
                 {
                     SelectParams(CBaseChainParams::MAIN);
                 }
-                else if (request.getDetails().network() == "test")
+                else if (request.getDetails().genesis() == "bb0a78264637406b6360aad926284d544d7049f45189db5664f3c4d07350559e")
                 {
                     SelectParams(CBaseChainParams::TESTNET);
                 }
@@ -324,7 +324,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start litecoin: click-to-pay handler"));
+                tr("Cannot start dogmcoin: click-to-pay handler"));
         }
         else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
@@ -449,7 +449,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Litecoin address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid Dogmcoin address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;
@@ -580,8 +580,8 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
 
         // Extract and check amounts
         CTxOut txOut(sendingTo.second, sendingTo.first);
-        if (txOut.IsDust(dustRelayFee)) {
-            Q_EMIT message(tr("Payment request error"), tr("Requested payment amount of %1 is too small (considered dust).")
+        if (txOut.IsDust(CWallet::discardThreshold)) {
+            Q_EMIT message(tr("Payment request error"), tr("Requested payment amount of %1 is too small (below discard threshold).")
                 .arg(BitcoinUnits::formatWithUnit(optionsModel->getDisplayUnit(), sendingTo.second)),
                 CClientUIInterface::MSG_ERROR);
 
@@ -760,12 +760,13 @@ void PaymentServer::handlePaymentACK(const QString& paymentACKMsg)
 
 bool PaymentServer::verifyNetwork(const payments::PaymentDetails& requestDetails)
 {
-    bool fVerified = requestDetails.network() == Params().NetworkIDString();
+    Consensus::Params consensus = Params().GetConsensus(0);
+    bool fVerified = requestDetails.genesis() == consensus.hashGenesisBlock.GetHex();
     if (!fVerified) {
         qWarning() << QString("PaymentServer::%1: Payment request network \"%2\" doesn't match client network \"%3\".")
             .arg(__func__)
-            .arg(QString::fromStdString(requestDetails.network()))
-            .arg(QString::fromStdString(Params().NetworkIDString()));
+            .arg(QString::fromStdString(requestDetails.genesis()))
+            .arg(QString::fromStdString(consensus.hashGenesisBlock.GetHex()));
     }
     return fVerified;
 }

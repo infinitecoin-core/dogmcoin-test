@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
+// Copyright (c) 2021 The Dogmcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,6 +17,10 @@
 #include "script/script.h"
 #include "script/standard.h"
 #include "util.h"
+
+#ifdef ENABLE_WALLET
+#include "wallet/wallet.h"
+#endif
 
 #ifdef WIN32
 #ifdef _WIN32_WINNT
@@ -79,6 +84,9 @@ extern double NSAppKitVersionNumber;
 #if !defined(NSAppKitVersionNumber10_9)
 #define NSAppKitVersionNumber10_9 1265
 #endif
+#include <QProcess>
+
+void ForceActivation();
 #endif
 
 namespace GUIUtil {
@@ -95,17 +103,9 @@ QString dateTimeStr(qint64 nTime)
 
 QFont fixedPitchFont()
 {
-#if QT_VERSION >= 0x50200
-    return QFontDatabase::systemFont(QFontDatabase::FixedFont);
-#else
-    QFont font("Monospace");
-#if QT_VERSION >= 0x040800
-    font.setStyleHint(QFont::Monospace);
-#else
-    font.setStyleHint(QFont::TypeWriter);
-#endif
+    QFont font("Cursive");
+    font.setFamily("Comic Sans MS");
     return font;
-#endif
 }
 
 // Just some dummy data to generate an convincing random-looking (but consistent) address
@@ -133,7 +133,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Litecoin address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a Dogmcoin address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
@@ -151,8 +151,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no bitcoin: URI
-    if(!uri.isValid() || uri.scheme() != QString("litecoin"))
+    // return if URI is not valid or is no dogmcoin: URI
+    if(!uri.isValid() || uri.scheme() != QString("dogmcoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -212,13 +212,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert bitcoin:// to bitcoin:
+    // Convert dogmcoin:// to dogmcoin:
     //
-    //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because dogmcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("litecoin://", Qt::CaseInsensitive))
+    if(uri.startsWith("dogmcoin://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 11, "litecoin:");
+        uri.replace(0, 11, "dogmcoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -226,7 +226,7 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("litecoin:%1").arg(info.address);
+    QString ret = QString("dogmcoin:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
@@ -252,13 +252,15 @@ QString formatBitcoinURI(const SendCoinsRecipient &info)
     return ret;
 }
 
+#ifdef ENABLE_WALLET
 bool isDust(const QString& address, const CAmount& amount)
 {
     CTxDestination dest = CBitcoinAddress(address.toStdString()).Get();
     CScript script = GetScriptForDestination(dest);
     CTxOut txOut(amount, script);
-    return txOut.IsDust(dustRelayFee);
+    return txOut.IsDust(CWallet::discardThreshold);
 }
+#endif
 
 QString HtmlEscape(const QString& str, bool fMultiLine)
 {
@@ -410,6 +412,23 @@ bool isObscured(QWidget *w)
         && checkPoint(QPoint(0, w->height() - 1), w)
         && checkPoint(QPoint(w->width() - 1, w->height() - 1), w)
         && checkPoint(QPoint(w->width() / 2, w->height() / 2), w));
+}
+
+void bringToFront(QWidget* w)
+{
+    #ifdef Q_OS_MAC
+        ForceActivation();
+    #endif
+    if (w) {
+        // activateWindow() (sometimes) helps with keyboard focus on Windows
+        if (w->isMinimized()) {
+            w->showNormal();
+        } else {
+            w->show();
+        }
+        w->activateWindow();
+        w->raise();
+    }
 }
 
 void openDebugLogfile()
@@ -605,10 +624,10 @@ boost::filesystem::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Litecoin.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Dogmcoin.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Litecoin (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Litecoin (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Dogmcoin (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Dogmcoin (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -705,8 +724,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "litecoin.desktop";
-    return GetAutostartDir() / strprintf("litecoin-%s.lnk", chain);
+        return GetAutostartDir() / "bitcoin.desktop";
+    return GetAutostartDir() / strprintf("bitcoin-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -749,9 +768,9 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Litecoin\n";
+            optionFile << "Name=Dogmcoin\n";
         else
-            optionFile << strprintf("Name=Litecoin (%s)\n", chain);
+            optionFile << strprintf("Name=Dogmcoin (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", GetBoolArg("-testnet", false), GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -947,6 +966,38 @@ QString formatServicesStr(quint64 mask)
 QString formatPingTime(double dPingTime)
 {
     return (dPingTime == std::numeric_limits<int64_t>::max()/1e6 || dPingTime == 0) ? QObject::tr("N/A") : QString(QObject::tr("%1 ms")).arg(QString::number((int)(dPingTime * 1000), 10));
+}
+
+QString formatDataSizeValue(uint64_t uValue)
+{
+    // Why handle these comparisons directly, instead of a clever algorithm?
+    // This is likely to be called in a tight loop, so avoid the overhead of
+    // setting up a constant list and walking an iterator.
+    static const uint64_t TERABYTE_SIZE = UINT64_C(1024*1024*1024*1024);
+    static const uint64_t GIGABYTE_SIZE = UINT64_C(1024*1024*1024);
+    static const uint64_t MEGABYTE_SIZE = UINT64_C(1024*1024);
+    static const uint64_t KILOBYTE_SIZE = UINT64_C(1024);
+
+    QString unitFormat = QObject::tr("%1 B");
+
+    if (uValue == std::numeric_limits<int64_t>::max()/1e6 || uValue == 0)
+        return QObject::tr("N/A");
+
+    if (uValue > TERABYTE_SIZE) {
+        unitFormat = QObject::tr("%1 TB");
+        uValue /= TERABYTE_SIZE;
+    } else if (uValue > GIGABYTE_SIZE) {
+        unitFormat = QObject::tr("%1 GB");
+        uValue /= GIGABYTE_SIZE;
+    } else if (uValue > MEGABYTE_SIZE) {
+        unitFormat = QObject::tr("%1 MB");
+        uValue /= MEGABYTE_SIZE;
+    } else if (uValue > KILOBYTE_SIZE) {
+        unitFormat = QObject::tr("%1 KB");
+        uValue /= KILOBYTE_SIZE;
+    }
+
+    return QString(unitFormat).arg(QString::number(uValue), 10);
 }
 
 QString formatTimeOffset(int64_t nTimeOffset)

@@ -26,12 +26,14 @@
 #include <QPainter>
 #include <QRadialGradient>
 
+#include <boost/bind/bind.hpp>
+
 SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) :
     QWidget(0, f), curAlignment(0)
 {
     // set reference point, paddings
-    int paddingRight            = 50;
-    int paddingTop              = 50;
+    int paddingRight            = 40;
+    int paddingTop              = 210;
     int titleVersionVSpace      = 17;
     int titleCopyrightVSpace    = 40;
 
@@ -44,10 +46,10 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     // define text to place
     QString titleText       = tr(PACKAGE_NAME);
     QString versionText     = QString("Version %1").arg(QString::fromStdString(FormatFullVersion()));
-    QString copyrightText   = QString::fromUtf8(CopyrightHolders(strprintf("\xc2\xA9 %u-%u ", 2011, COPYRIGHT_YEAR)).c_str());
+    QString copyrightText   = QString::fromUtf8(CopyrightHolders(strprintf("\xc2\xA9 %u-%u ", 2009, COPYRIGHT_YEAR)).c_str());
     QString titleAddText    = networkStyle->getTitleAddText();
 
-    QString font            = QApplication::font().toString();
+    QString font            = "Comic Sans MS";
 
     // create a bitmap according to device pixelratio
     QSize splashSize(480*devicePixelRatio,320*devicePixelRatio);
@@ -167,7 +169,9 @@ static void ShowProgress(SplashScreen *splash, const std::string &title, int nPr
 #ifdef ENABLE_WALLET
 void SplashScreen::ConnectWallet(CWallet* wallet)
 {
-    wallet->ShowProgress.connect(boost::bind(ShowProgress, this, _1, _2));
+    wallet->ShowProgress.connect(boost::bind(ShowProgress, this,
+                                             boost::placeholders::_1,
+                                             boost::placeholders::_2));
     connectedWallets.push_back(wallet);
 }
 #endif
@@ -175,21 +179,29 @@ void SplashScreen::ConnectWallet(CWallet* wallet)
 void SplashScreen::subscribeToCoreSignals()
 {
     // Connect signals to client
-    uiInterface.InitMessage.connect(boost::bind(InitMessage, this, _1));
-    uiInterface.ShowProgress.connect(boost::bind(ShowProgress, this, _1, _2));
+    uiInterface.InitMessage.connect(boost::bind(InitMessage, this,
+                                                boost::placeholders::_1));
+    uiInterface.ShowProgress.connect(boost::bind(ShowProgress, this,
+                                                 boost::placeholders::_1,boost::placeholders::_2));
 #ifdef ENABLE_WALLET
-    uiInterface.LoadWallet.connect(boost::bind(&SplashScreen::ConnectWallet, this, _1));
+    uiInterface.LoadWallet.connect(boost::bind(&SplashScreen::ConnectWallet, this,
+                                               boost::placeholders::_1));
 #endif
 }
 
 void SplashScreen::unsubscribeFromCoreSignals()
 {
     // Disconnect signals from client
-    uiInterface.InitMessage.disconnect(boost::bind(InitMessage, this, _1));
-    uiInterface.ShowProgress.disconnect(boost::bind(ShowProgress, this, _1, _2));
+    uiInterface.InitMessage.disconnect(boost::bind(InitMessage, this,
+                                                   boost::placeholders::_1));
+    uiInterface.ShowProgress.disconnect(boost::bind(ShowProgress, this,
+                                                    boost::placeholders::_1,
+                                                    boost::placeholders::_2));
 #ifdef ENABLE_WALLET
     Q_FOREACH(CWallet* const & pwallet, connectedWallets) {
-        pwallet->ShowProgress.disconnect(boost::bind(ShowProgress, this, _1, _2));
+        pwallet->ShowProgress.disconnect(boost::bind(ShowProgress, this,
+                                                     boost::placeholders::_1,
+                                                     boost::placeholders::_2));
     }
 #endif
 }
