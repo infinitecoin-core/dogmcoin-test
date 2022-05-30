@@ -1,4 +1,5 @@
 # Copyright (c) 2016 The Bitcoin Core developers
+# Copyright (c) 2021 The Dogmcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,11 +18,11 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/litecoin-project/litecoin
+url=https://github.com/dogmcoin/dogmcoin
 proc=2
 mem=2000
 lxc=true
-osslTarUrl=http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz
+osslTarUrl=https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/osslsigncode/1.7.1-1/osslsigncode_1.7.1.orig.tar.gz
 osslPatchUrl=https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch
 scriptName=$(basename -- "$0")
 signProg="gpg --detach-sign"
@@ -31,7 +32,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the litecoin, gitian-builder, gitian.sigs.ltc, and litecoin-detached-sigs.
+Run this script from the directory containing the dogmcoin, gitian-builder, gitian.sigs, and dogmcoin-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -39,7 +40,7 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/litecoin-project/litecoin
+-u|--url	Specify the URL of the repository. Default is https://github.com/dogmcoin/dogmcoin
 -v|--verify 	Verify the gitian build
 -b|--build	Do a gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
@@ -179,8 +180,7 @@ done
 if [[ $lxc = true ]]
 then
     export USE_LXC=1
-    export LXC_BRIDGE=lxcbr0
-    sudo ifconfig lxcbr0 up 10.0.2.2
+    export LXC_BRIDGE=br0
 fi
 
 # Check for OSX SDK
@@ -232,8 +232,22 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    git clone https://github.com/litecoin-project/gitian.sigs.ltc.git
-    git clone https://github.com/litecoin-project/litecoin-detached-sigs.git
+    # GIT --date=format-local support
+    MIN_GIT_VERSION=2.7.0
+    LASTEST_GIT_VERSION=2.32.0
+    if ! (echo a version ${MIN_GIT_VERSION}; git --version) | sort -Vk3 | tail -1 | grep -q git; then
+      sudo apt-get install build-essential make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+      wget https://github.com/git/git/archive/v${LASTEST_GIT_VERSION}.zip -O v${LASTEST_GIT_VERSION}.zip
+      unzip v${LASTEST_GIT_VERSION}.zip
+      pushd ./git-${LASTEST_GIT_VERSION}
+      make -j "${proc}" prefix=/usr/local all
+      make -j "${proc}" prefix=/usr/local install
+      popd
+    fi
+
+    # GIT CLONE
+    git clone https://github.com/dogmcoin/gitian.sigs.git
+    git clone https://github.com/dogmcoin/dogmcoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -247,7 +261,7 @@ then
 fi
 
 # Set up build
-pushd ./litecoin
+pushd ./dogmcoin
 git fetch
 git checkout ${COMMIT}
 popd
@@ -256,7 +270,7 @@ popd
 if [[ $build = true ]]
 then
 	# Make output folder
-	mkdir -p ./litecoin-binaries/${VERSION}
+	mkdir -p ./dogmcoin-binaries/${VERSION}
 	
 	# Build Dependencies
 	echo ""
@@ -266,7 +280,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../litecoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -j "${proc}" -C ../dogmcoin/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
@@ -274,9 +288,9 @@ then
             echo ""
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit litecoin=${COMMIT} --url litecoin=${url} ../litecoin/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/litecoin-*.tar.gz build/out/src/litecoin-*.tar.gz ../litecoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit dogmcoin=${COMMIT} --url dogmcoin=${url} ../dogmcoin/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../dogmcoin/contrib/gitian-descriptors/gitian-linux.yml
+	    mv build/out/dogmcoin-*.tar.gz build/out/src/dogmcoin-*.tar.gz ../dogmcoin-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -284,10 +298,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit litecoin=${COMMIT} --url litecoin=${url} ../litecoin/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/litecoin-*-win-unsigned.tar.gz inputs/litecoin-win-unsigned.tar.gz
-	    mv build/out/litecoin-*.zip build/out/litecoin-*.exe ../litecoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit dogmcoin=${COMMIT} --url dogmcoin=${url} ../dogmcoin/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../dogmcoin/contrib/gitian-descriptors/gitian-win.yml
+	    mv build/out/dogmcoin-*-win-unsigned.tar.gz inputs/dogmcoin-win-unsigned.tar.gz
+	    mv build/out/dogmcoin-*.zip build/out/dogmcoin-*.exe ../dogmcoin-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -295,10 +309,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit litecoin=${COMMIT} --url litecoin=${url} ../litecoin/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/litecoin-*-osx-unsigned.tar.gz inputs/litecoin-osx-unsigned.tar.gz
-	    mv build/out/litecoin-*.tar.gz build/out/litecoin-*.dmg ../litecoin-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit dogmcoin=${COMMIT} --url dogmcoin=${url} ../dogmcoin/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../dogmcoin/contrib/gitian-descriptors/gitian-osx.yml
+	    mv build/out/dogmcoin-*-osx-unsigned.tar.gz inputs/dogmcoin-osx-unsigned.tar.gz
+	    mv build/out/dogmcoin-*.tar.gz build/out/dogmcoin-*.dmg ../dogmcoin-binaries/${VERSION}
 	fi
 	popd
 
@@ -325,27 +339,27 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Linux"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../litecoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../dogmcoin/contrib/gitian-descriptors/gitian-linux.yml
 	# Windows
 	echo ""
 	echo "Verifying v${VERSION} Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../litecoin/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../dogmcoin/contrib/gitian-descriptors/gitian-win.yml
 	# Mac OSX	
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""	
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../litecoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../dogmcoin/contrib/gitian-descriptors/gitian-osx.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../litecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../dogmcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
 	# Signed Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../litecoin/contrib/gitian-descriptors/gitian-osx-signer.yml	
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../dogmcoin/contrib/gitian-descriptors/gitian-osx-signer.yml	
 	popd
 fi
 
@@ -360,10 +374,10 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../litecoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/litecoin-*win64-setup.exe ../litecoin-binaries/${VERSION}
-	    mv build/out/litecoin-*win32-setup.exe ../litecoin-binaries/${VERSION}
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../dogmcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../dogmcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+	    mv build/out/dogmcoin-*win64-setup.exe ../dogmcoin-binaries/${VERSION}
+	    mv build/out/dogmcoin-*win32-setup.exe ../dogmcoin-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -371,9 +385,9 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../litecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/litecoin-osx-signed.dmg ../litecoin-binaries/${VERSION}/litecoin-${VERSION}-osx.dmg
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../dogmcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../dogmcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    mv build/out/dogmcoin-osx-signed.dmg ../dogmcoin-binaries/${VERSION}/dogmcoin-${VERSION}-osx.dmg
 	fi
 	popd
 
