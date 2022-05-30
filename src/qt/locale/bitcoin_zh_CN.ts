@@ -1575,7 +1575,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Send Coins</source>
-        <translation type="unfinished">发送Dogmcoin</translation>
+        <translation>发送Dogmcoin</translation>
     </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
@@ -1583,11 +1583,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>The amount to pay must be larger than 0</source>
-        <translation type="unfinished">支付金额必须大于0。 {0?}</translation>
+        <translation>支付金额必须大于0。 {0?}</translation>
     </message>
     <message>
         <source>The amount exceeds your balance.</source>
-        <translation type="unfinished">金额超出您的账上余额。</translation>
+        <translation>金额超出您的账上余额。</translation>
     </message>
     <message>
         <source>The total exceeds your balance when the transaction fee is included</source>
@@ -1599,15 +1599,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Transaction creation failed!</source>
-        <translation type="unfinished">交易创建失败！</translation>
+        <translation>交易创建失败！</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
-        <translation type="unfinished">您确定要发出吗？</translation>
+        <translation>您确定要发出吗？</translation>
     </message>
     <message>
         <source>added as transaction fee</source>
-        <translation type="unfinished">已添加交易费</translation>
+        <translation>已添加交易费</translation>
     </message>
     <message>
         <source>Total Amount %1 (= %2)</source>
@@ -1615,11 +1615,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>or</source>
-        <translation type="unfinished">或</translation>
+        <translation>或</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation type="unfinished">确认发送货币</translation>
+        <translation>确认发送货币</translation>
     </message>
     <message>
         <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
@@ -1734,7 +1734,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Ping</source>
-        <translation> </translation>
+        <translation>Ping时间</translation>
     </message>
     <message>
         <source>Bytes Sent</source>
