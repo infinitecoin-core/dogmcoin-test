@@ -4,19 +4,19 @@ TOPDIR=${TOPDIR:-$(git rev-parse --show-toplevel)}
 SRCDIR=${SRCDIR:-$TOPDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-BITCOIND=${BITCOIND:-$SRCDIR/litecoind}
-BITCOINCLI=${BITCOINCLI:-$SRCDIR/litecoin-cli}
-BITCOINTX=${BITCOINTX:-$SRCDIR/litecoin-tx}
-BITCOINQT=${BITCOINQT:-$SRCDIR/qt/litecoin-qt}
+BITCOIND=${BITCOIND:-$SRCDIR/dogmcoind}
+BITCOINCLI=${BITCOINCLI:-$SRCDIR/dogmcoin-cli}
+BITCOINTX=${BITCOINTX:-$SRCDIR/dogmcoin-tx}
+BITCOINQT=${BITCOINQT:-$SRCDIR/qt/dogmcoin-qt}
 
-[ ! -x $BITCOIND ] && echo "$LITECOIND not found or not executable." && exit 1
+[ ! -x $BITCOIND ] && echo "$BITCOIND not found or not executable." && exit 1
 
 # The autodetected version git tag can screw up manpage output a little bit
-BTCVER=($($LITECOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
+BTCVER=($($BITCOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
 
 # Create a footer file with copyright content.
-# This gets autodetected fine for bitcoind if --version-string is not set,
-# but has different outcomes for bitcoin-qt and bitcoin-cli.
+# This gets autodetected fine for dogmcoind if --version-string is not set,
+# but has different outcomes for dogmcoin-qt and dogmcoin-cli.
 echo "[COPYRIGHT]" > footer.h2m
 $BITCOIND --version | sed -n '1!p' >> footer.h2m
 
