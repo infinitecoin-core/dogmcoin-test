@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#define BOOST_TEST_MODULE Litecoin Test Suite
+#define BOOST_TEST_MODULE Bitcoin Test Suite
 
 #include "test_bitcoin.h"
 
@@ -36,6 +36,9 @@ FastRandomContext insecure_rand_ctx(true);
 extern bool fPrintToConsole;
 extern void noui_connect();
 
+/** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
+static const int COINBASE_MATURITY = 60*4; // 4 hours of blocks
+
 BasicTestingSetup::BasicTestingSetup(const std::string& chainName)
 {
         ECC_Start();
@@ -62,7 +65,7 @@ TestingSetup::TestingSetup(const std::string& chainName) : BasicTestingSetup(cha
 
         RegisterAllCoreRPCCommands(tableRPC);
         ClearDatadirCache();
-        pathTemp = GetTempPath() / strprintf("test_litecoin_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
+        pathTemp = GetTempPath() / strprintf("test_bitcoin_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
         boost::filesystem::create_directories(pathTemp);
         ForceSetArg("-datadir", pathTemp.string());
         mempool.setSanityCheck(1.0);
@@ -95,9 +98,9 @@ TestingSetup::~TestingSetup()
         boost::filesystem::remove_all(pathTemp);
 }
 
-TestChain100Setup::TestChain100Setup() : TestingSetup(CBaseChainParams::REGTEST)
+TestChain240Setup::TestChain240Setup() : TestingSetup(CBaseChainParams::REGTEST)
 {
-    // Generate a 100-block chain:
+    // Generate a 240-block chain:
     coinbaseKey.MakeNewKey(true);
     CScript scriptPubKey = CScript() <<  ToByteVector(coinbaseKey.GetPubKey()) << OP_CHECKSIG;
     for (int i = 0; i < COINBASE_MATURITY; i++)
@@ -113,10 +116,10 @@ TestChain100Setup::TestChain100Setup() : TestingSetup(CBaseChainParams::REGTEST)
 // scriptPubKey, and try to add it to the current chain.
 //
 CBlock
-TestChain100Setup::CreateAndProcessBlock(const std::vector<CMutableTransaction>& txns, const CScript& scriptPubKey)
+TestChain240Setup::CreateAndProcessBlock(const std::vector<CMutableTransaction>& txns, const CScript& scriptPubKey)
 {
     const CChainParams& chainparams = Params();
-    std::unique_ptr<CBlockTemplate> pblocktemplate = BlockAssembler(chainparams).CreateNewBlock(scriptPubKey);
+    std::unique_ptr<CBlockTemplate> pblocktemplate = BlockAssembler(chainparams).CreateNewBlock(scriptPubKey, true);
     CBlock& block = pblocktemplate->block;
 
     // Replace mempool-selected txns with just coinbase plus passed-in txns:
@@ -127,7 +130,7 @@ TestChain100Setup::CreateAndProcessBlock(const std::vector<CMutableTransaction>&
     unsigned int extraNonce = 0;
     IncrementExtraNonce(&block, chainActive.Tip(), extraNonce);
 
-    while (!CheckProofOfWork(block.GetPoWHash(), block.nBits, chainparams.GetConsensus())) ++block.nNonce;
+    while (!CheckProofOfWork(block.GetPoWHash(), block.nBits, chainparams.GetConsensus(0))) ++block.nNonce;
 
     std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(block);
     ProcessNewBlock(chainparams, shared_pblock, true, NULL);
@@ -136,7 +139,7 @@ TestChain100Setup::CreateAndProcessBlock(const std::vector<CMutableTransaction>&
     return result;
 }
 
-TestChain100Setup::~TestChain100Setup()
+TestChain240Setup::~TestChain240Setup()
 {
 }
 

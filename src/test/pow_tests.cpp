@@ -17,62 +17,63 @@ BOOST_FIXTURE_TEST_SUITE(pow_tests, BasicTestingSetup)
 BOOST_AUTO_TEST_CASE(get_next_work)
 {
     SelectParams(CBaseChainParams::MAIN);
-    const Consensus::Params& params = Params().GetConsensus();
+    const Consensus::Params& params = Params().GetConsensus(0);
 
-    int64_t nLastRetargetTime = 1358118740; // Block #278207
+    int64_t nLastRetargetTime = 1388149872; // Block #30240
     CBlockIndex pindexLast;
-    pindexLast.nHeight = 280223;
-    pindexLast.nTime = 1358378777;  // Block #280223
-    pindexLast.nBits = 0x1c0ac141;
-    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, params), 0x1c093f8d);
+    pindexLast.nHeight = 30479;
+    pindexLast.nTime = 1388163922; // Block #30479
+    pindexLast.nBits = 0x1c00974f;
+    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, params), 0x1c0093a1);
 }
 
 /* Test the constraint on the upper bound for next work */
 BOOST_AUTO_TEST_CASE(get_next_work_pow_limit)
 {
     SelectParams(CBaseChainParams::MAIN);
-    const Consensus::Params& params = Params().GetConsensus();
+    const Consensus::Params& params = Params().GetConsensus(0);
 
-    int64_t nLastRetargetTime = 1317972665; // Block #0
+    int64_t nLastRetargetTime = 1231006505; // Block #0
     CBlockIndex pindexLast;
     pindexLast.nHeight = 2015;
-    pindexLast.nTime = 1318480354;  // Block #2015
-    pindexLast.nBits = 0x1e0ffff0;
-    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, params), 0x1e0fffff);
+    pindexLast.nTime = 1233061996;  // Block #2015
+    pindexLast.nBits = 0x1d00ffff;
+    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, params), 0x1d03fffc);
 }
 
 /* Test the constraint on the lower bound for actual time taken */
 BOOST_AUTO_TEST_CASE(get_next_work_lower_limit_actual)
 {
     SelectParams(CBaseChainParams::MAIN);
-    const Consensus::Params& params = Params().GetConsensus();
+    const Consensus::Params& params = Params().GetConsensus(0);
 
-    int64_t nLastRetargetTime = 1401682934; // NOTE: Not an actual block time
+    int64_t nLastRetargetTime = 1279008237; // Block #66528
     CBlockIndex pindexLast;
-    pindexLast.nHeight = 578591;
-    pindexLast.nTime = 1401757934;  // Block #578591
-    pindexLast.nBits = 0x1b075cf1;
-    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, params), 0x1b01d73c);
+    pindexLast.nHeight = 66767;
+    pindexLast.nTime = 1279008237 + (239 * 60 / 4 - 1); // Bitcoin Block #66528 + less than a quarter of the target timespan
+    pindexLast.nBits = 0x1c05a3f4;
+    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, params), 0x1c0168fd);
 }
 
 /* Test the constraint on the upper bound for actual time taken */
-BOOST_AUTO_TEST_CASE(get_next_work_upper_limit_actual)
+// Replaced by Dogmcoin-specific PoW test
+/* BOOST_AUTO_TEST_CASE(get_next_work_upper_limit_actual)
 {
     SelectParams(CBaseChainParams::MAIN);
-    const Consensus::Params& params = Params().GetConsensus();
+    const Consensus::Params& params = Params().GetConsensus(0);
 
-    int64_t nLastRetargetTime = 1463690315; // NOTE: Not an actual block time
+    int64_t nLastRetargetTime = 1263163443; // NOTE: Not an actual block time
     CBlockIndex pindexLast;
-    pindexLast.nHeight = 1001951;
-    pindexLast.nTime = 1464900315;  // Block #1001951
-    pindexLast.nBits = 0x1b015318;
-    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, params), 0x1b054c60);
-}
+    pindexLast.nHeight = 46367;
+    pindexLast.nTime = 1269211443;  // Block #46367
+    pindexLast.nBits = 0x1c387f6f;
+    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, params), 0x1d00e1fd);
+} */
 
 BOOST_AUTO_TEST_CASE(GetBlockProofEquivalentTime_test)
 {
     SelectParams(CBaseChainParams::MAIN);
-    const Consensus::Params& params = Params().GetConsensus();
+    const Consensus::Params& params = Params().GetConsensus(0);
 
     std::vector<CBlockIndex> blocks(10000);
     for (int i = 0; i < 10000; i++) {
