@@ -551,6 +551,53 @@
         <source>A fatal error occurred. Dogmcoin can no longer continue safely and will quit.</source>
         <translation>發生了致命的錯誤。Dogmcoin 軟體沒辦法再繼續安全執行，只好結束。</translation>
     </message>
+	<message>
+        <source>&amp;Print paper wallets</source>
+        <translation>打印紙錢包</translation>
+    </message>
+    <message>
+        <source>Print paper wallets</source>
+        <translation>打印紙錢包</translation>
+    </message>
+    <message>
+        <source>&amp;Such sending addresses...</source>
+        <translation>正在發送地址</translation>
+    </message>
+    <message>
+        <source>&amp;Much receiving addresses...</source>
+        <translation>正在接收地址</translation>
+    </message>
+    <message>
+        <source>&amp;Import Private Key...</source>
+        <translation>導入私鑰...</translation>
+    </message>
+    <message>
+        <source>Import a Dogmcoin private key</source>
+        <translation>導入 Dogmcoin 私鑰</translation>
+    </message>
+    <message>
+        <source>Syncing Headers (%1%)...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD key generation is &lt;b&gt;enabled&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD key generation is &lt;b&gt;disabled&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runaway exception</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ClientModel</name>
+    <message>
+        <source>Network Alert</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
@@ -834,6 +881,69 @@
     <message>
         <source>Reset all settings changed in the GUI</source>
         <translation>重置所有在使用界面更改的設定</translation>
+    </message>
+</context>
+<context>
+    <name>ImportKeysDialog</name>
+    <message>
+        <source>Import Private Key</source>
+        <translation>導入私鑰</translation>
+    </message>
+    <message>
+        <source>&amp;Import Private Key</source>
+        <translation>導入私鑰</translation>
+    </message>
+    <message>
+        <source>Private Key:</source>
+        <translation>私鑰:</translation>
+    </message>
+    <message>
+        <source>Private key to import into your wallet</source>
+        <translation>私鑰導入到您的錢包</translation>
+    </message>
+    <message>
+        <source>Label for this private key in your wallet</source>
+        <translation>您的錢包中此私鑰的標籤</translation>
+    </message>
+    <message>
+        <source>Label (optional):</source>
+        <translation>標籤（可選）:</translation>
+    </message>
+    <message>
+        <source>Rescan</source>
+        <translation>重新掃描</translation>
+    </message>
+    <message>
+        <source>Reset all key management options to default.</source>
+        <translation>將所有密鑰管理選項重置為默認值。</translation>
+    </message>
+    <message>
+        <source>&amp;Reset</source>
+        <translation>重置</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation>導入</translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Invalid private key; please check and try again!</source>
+        <translation>無效的私鑰;請檢查並重試!</translation>
+    </message>
+    <message>
+        <source>Invalid address generated from private key; please check and try again!</source>
+        <translation>私鑰生成的地址無效;請檢查並重試!</translation>
+    </message>
+    <message>
+        <source>Failed to add private key.</source>
+        <translation>添加私鑰失敗.</translation>
+    </message>
+    <message>
+        <source>Rescanning...</source>
+        <translation>正在重新掃描...</translation>
     </message>
 </context>
 <context>
@@ -1262,6 +1372,229 @@
         <source>Current total balance in watch-only addresses</source>
         <translation>所有只能看位址的目前全部餘額</translation>
     </message>
+	    <message>
+        <source>Helpful tip of the day:</source>
+        <translation>當天有用的提示：</translation>
+    </message>
+    <message>
+        <source>Tip</source>
+        <translation>提示</translation>
+    </message>
+    <message>
+        <source>Never share your wallet.dat file/your private key with anyone</source>
+        <translation>切勿與任何人共享您的wallet.dat文件和您的私鑰</translation>
+    </message>
+    <message>
+        <source>For more advanced settings use the console in &apos;Help&apos; -&gt; &apos;Debug Window&apos;</source>
+        <translation>如需更高級的設置請使用控制台 &apos;幫助&apos; -&gt; &apos;調試窗口&apos;</translation>
+    </message>
+    <message>
+        <source>Encrypt your wallet with a strong passphrase for maximum security</source>
+        <translation>使用強密碼加密您的wallet.dat文件以獲得最大的安全性</translation>
+    </message>
+    <message>
+        <source>Make sure to keep your wallet updated.</source>
+        <translation>確保同步更新您的錢包.</translation>
+    </message>
+    <message>
+        <source>Backup your private key to recover your coins, using &apos;File&apos; &gt; &apos;Backup Wallet&apos;</source>
+        <translation>備份您的私鑰以恢復您的硬幣, 使用 &apos;文件&apos; &gt; &apos;備用錢包&apos;</translation>
+    </message>
+    <message>
+        <source>Always do your own research before using an external cryptocurrency service</source>
+        <translation>在使用外部中心化加密貨幣服務之前請務必自己進行研究</translation>
+    </message>
+    <message>
+        <source>Never share your private key to an untrustworthy person.</source>
+        <translation>切勿將您的私鑰分享給不值得信任的人.</translation>
+    </message>
+    <message>
+        <source>Who own the private keys own the coins.</source>
+        <translation>誰擁有私鑰,誰就擁有硬幣.</translation>
+    </message>
+    <message>
+        <source>To see ongoing development and contribute, checkout Dogmcoin repository on GitHub!</source>
+        <translation>要查看正在進行的開發和貢獻,請查看GitHub上的Dogmcoin存儲庫!</translation>
+    </message>
+    <message>
+        <source>Services that claim to double your dogmcoins are always ponzi schemes</source>
+        <translation>聲稱使您的dogmcoins翻倍的服務基本是龐氏騙局</translation>
+    </message>
+</context>
+<context>
+    <name>PaperWalletDialog</name>
+    <message>
+        <source>Print Your Paper Wallets</source>
+        <translation>打印您的紙質錢包</translation>
+    </message>
+    <message>
+        <source>Very New Address</source>
+        <translation>非常新的地址</translation>
+    </message>
+    <message>
+        <source>So Print</source>
+        <translation>所以打印</translation>
+    </message>
+    <message>
+        <source>Many Wallets?</source>
+        <translation>很多錢包?</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public Key:</source>
+        <translation>公鑰:</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <source>Warning: Network Activity Detected</source>
+        <translation>警告: 檢測到網絡活動</translation>
+    </message>
+    <message>
+        <source>It is recommended to disconnect from the internet before printing paper wallets. Even though paper wallets are generated on your local computer, it is still possible to unknowingly have malware that transmits your screen to a remote location. It is also recommended to print to a local printer vs a network printer since that network traffic can be monitored. Some advanced printers also store copies of each printed document. Proceed with caution relative to the amount of value you plan to store on each address.</source>
+        <translation>建議在打印紙質錢包之前斷開網絡連接。 即使紙錢包是在您的本地計算機上生成的，仍然有可能在不知不覺中將您的屏幕傳輸到遠程位置的惡意軟件。 還建議打印到本地打印機而不是網絡打印機，因為可以監控網絡流量。 一些高級打印機還存儲每個打印文檔的副本。 相對於您計劃在每個地址上存儲的價值量，請謹慎行事。</translation>
+    </message>
+    <message>
+        <source>Error encoding Address into QR Code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error encoding private key into QR Code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Printing Error</source>
+        <translation>打印錯誤</translation>
+    </message>
+    <message>
+        <source>failed to open file, is it writable?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load Paper Wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of DOGM you wish to send to each wallet:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper wallet %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%1&lt;/b&gt; to Paper Wallet &lt;span style=&apos;font-family: monospace;&apos;&gt;%2&lt;/span&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send Coins</source>
+        <translation>發送Dogmcoin</translation>
+    </message>
+    <message>
+        <source>The recipient address is not valid, please recheck.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The amount to pay must be larger than 0</source>
+        <translation>支付金額必須大於0。 {0?}</translation>
+    </message>
+    <message>
+        <source>The amount exceeds your balance.</source>
+        <translation>金額超出您的賬上餘額。</translation>
+    </message>
+    <message>
+        <source>The total exceeds your balance when the transaction fee is included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate address found, can only send to each address once per send operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transaction creation failed!</source>
+        <translation>交易創建失敗！</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to send?</source>
+        <translation>您確定要發出嗎？</translation>
+    </message>
+    <message>
+        <source>added as transaction fee</source>
+        <translation>已添加交易費</translation>
+    </message>
+    <message>
+        <source>Total Amount %1 (= %2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>or</source>
+        <translation>或</translation>
+    </message>
+    <message>
+        <source>Confirm send coins</source>
+        <translation>確認發送貨幣</translation>
+    </message>
+    <message>
+        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PaymentServer</name>
@@ -1370,7 +1703,42 @@
     </message>
     <message>
         <source>Ping</source>
-        <translation>Ping  時間</translation>
+        <translation>Ping時間</translation>
+    </message>
+	<message>
+        <source>Bytes Sent</source>
+        <translation>發送的字節數</translation>
+    </message>
+    <message>
+        <source>Bytes Received</source>
+        <translation>收到的字節數</translation>
+    </message>
+</context>
+<context>
+    <name>PeerTools</name>
+    <message>
+        <source>Error: Peer-to-peer functionality missing or disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attempted to one try node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: Node already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node not found in connected nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected the node: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Returned OK.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
