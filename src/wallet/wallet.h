@@ -7,11 +7,14 @@
 #define BITCOIN_WALLET_WALLET_H
 
 #include "amount.h"
+#include "auxpow.h"
+#include "dogmcoin-fees.h"
 #include "streams.h"
 #include "tinyformat.h"
 #include "ui_interface.h"
 #include "utilstrencodings.h"
 #include "validationinterface.h"
+#include "policy/policy.h"
 #include "script/ismine.h"
 #include "script/sign.h"
 #include "wallet/crypter.h"
@@ -37,24 +40,72 @@ extern CWallet* pwalletMain;
  * Settings
  */
 extern CFeeRate payTxFee;
+//mlumin 5/2021: add minWalletTxFee to separate out wallet and relay.
+extern CFeeRate minWalletTxFeeRate;
 extern unsigned int nTxConfirmTarget;
 extern bool bSpendZeroConfChange;
 extern bool fSendFreeTransactions;
 extern bool fWalletRbf;
 
-static const unsigned int DEFAULT_KEYPOOL_SIZE = 100;
+//! -change addresses default
+static const unsigned int DEFAULT_KEYPOOL_SIZE = 200;
 //! -paytxfee default
-static const CAmount DEFAULT_TRANSACTION_FEE = 0;
+static const CAmount DEFAULT_TRANSACTION_FEE = RECOMMENDED_MIN_TX_FEE;
 //! -fallbackfee default
-static const CAmount DEFAULT_FALLBACK_FEE = 2000000;
+//mlumin: 5/2021 scaled minimum, this likely will have to change for fee reduction
+//rnicoll: 8/2021 reduce to 1,000,000 Koinu
+static const CAmount DEFAULT_FALLBACK_FEE = RECOMMENDED_MIN_TX_FEE;
 //! -mintxfee default
-static const CAmount DEFAULT_TRANSACTION_MINFEE = 100000;
+static const CAmount DEFAULT_TRANSACTION_MINFEE = RECOMMENDED_MIN_TX_FEE;
+//! -discardthreshold default
+/* 1.14.5: set the wallet's discard threshold to 1 DOGM because that's what 97%
+ *         of the network currently implements as the hard dust limit. This
+ *         value can be changed when a significant portion of the relay network
+ *         and miners have adopted a different hard dust limit.
+ */
+static const CAmount DEFAULT_DISCARD_THRESHOLD = COIN;
+
 //! minimum recommended increment for BIP 125 replacement txs
-static const CAmount WALLET_INCREMENTAL_RELAY_FEE = 5000;
-//! target minimum change amount
-static const CAmount MIN_CHANGE = CENT;
-//! final minimum change amount after paying for fees
-static const CAmount MIN_FINAL_CHANGE = MIN_CHANGE/2;
+/*
+ * Dogmcoin: Scaled to 1/10th of the recommended transaction fee to make RBF
+ * cheaper than CPFP. This reduces onchain pollution by encouraging transactions
+ * to be replaced in the mempool, rather than be respent by another transaction
+ * which then both would have to be mined, taking up block space and increasing
+ * the amount of data that needs to be synchronized when validating the chain.
+ * This way, replacements for fee bumps are transient rather than persisted.
+ */
+static const CAmount WALLET_INCREMENTAL_RELAY_FEE = RECOMMENDED_MIN_TX_FEE / 10;
+/*
+ * Dogmcoin: Creating change outputs at exactly the dustlimit is counter-
+ * productive because it leaves no space to bump the fee up, so we make the
+ * minimum change higher than the discard threshold.
+ *
+ * When RBF is not a default policy, we need to scale for both that and CPFP,
+ * to have a facility for those that did not manually enable RBF, yet need to
+ * bump a fee for their transaction to get mined.
+ *
+ * Using bumpfee currently will add WALLET_INCREMENTAL_RELAY_FEE as a fixed
+ * increment, and CPFP would need the spending fee for at least 147 bytes
+ * (1 input, 1 output), and additional space for actually increasing the fee
+ * for both transactions.
+ *
+ * Because the change calculation is currently not taking into account feerate
+ * or transaction size, we assume that most transactions are < 1kb, leading
+ * to the following when planning for a replacements with 2x original fee:
+ *
+ * RBF: min change = discardThreshold + minTxFee(1000) or
+ * CPFP: min change = discardThreshold + 2 * minTxFee(147) + minTxFee(1000)
+ *
+ * Where the CPFP requirement is higher than the RBF one to lead to the same
+ * result.
+ *
+ * This can be rounded up to the nearest multiple of minTxFee(1000) as:
+ *
+ * min change = discardThreshold + 2 * minTxFee(1000)
+ */
+//! target minimum change fee multiplier
+static const CAmount MIN_CHANGE_FEE_MULTIPLIER = 2;
+
 //! Default for -spendzeroconfchange
 static const bool DEFAULT_SPEND_ZEROCONF_CHANGE = true;
 //! Default for -sendfreetransactions
@@ -66,7 +117,7 @@ static const unsigned int DEFAULT_TX_CONFIRM_TARGET = 6;
 //! -walletrbf default
 static const bool DEFAULT_WALLET_RBF = false;
 //! Largest (in bytes) free transaction we're willing to create
-static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 1000;
+static const unsigned int MAX_FREE_TRANSACTION_CREATE_SIZE = 0;
 static const bool DEFAULT_WALLETBROADCAST = true;
 static const bool DEFAULT_DISABLE_WALLET = false;
 //! if set, all keys will be derived by using BIP32
@@ -166,84 +217,6 @@ struct COutputEntry
     CTxDestination destination;
     CAmount amount;
     int vout;
-};
-
-/** A transaction with a merkle branch linking it to the block chain. */
-class CMerkleTx
-{
-private:
-  /** Constant used in hashBlock to indicate tx has been abandoned */
-    static const uint256 ABANDON_HASH;
-
-public:
-    CTransactionRef tx;
-    uint256 hashBlock;
-
-    /* An nIndex == -1 means that hashBlock (in nonzero) refers to the earliest
-     * block in the chain we know this or any in-wallet dependency conflicts
-     * with. Older clients interpret nIndex == -1 as unconfirmed for backward
-     * compatibility.
-     */
-    int nIndex;
-
-    CMerkleTx()
-    {
-        SetTx(MakeTransactionRef());
-        Init();
-    }
-
-    CMerkleTx(CTransactionRef arg)
-    {
-        SetTx(std::move(arg));
-        Init();
-    }
-
-    /** Helper conversion operator to allow passing CMerkleTx where CTransaction is expected.
-     *  TODO: adapt callers and remove this operator. */
-    operator const CTransaction&() const { return *tx; }
-
-    void Init()
-    {
-        hashBlock = uint256();
-        nIndex = -1;
-    }
-
-    void SetTx(CTransactionRef arg)
-    {
-        tx = std::move(arg);
-    }
-
-    ADD_SERIALIZE_METHODS;
-
-    template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action) {
-        std::vector<uint256> vMerkleBranch; // For compatibility with older versions.
-        READWRITE(tx);
-        READWRITE(hashBlock);
-        READWRITE(vMerkleBranch);
-        READWRITE(nIndex);
-    }
-
-    void SetMerkleBranch(const CBlockIndex* pIndex, int posInBlock);
-
-    /**
-     * Return depth of transaction in blockchain:
-     * <0  : conflicts with a transaction this deep in the blockchain
-     *  0  : in memory pool, waiting to be included in a block
-     * >=1 : this many blocks deep in the main chain
-     */
-    int GetDepthInMainChain(const CBlockIndex* &pindexRet) const;
-    int GetDepthInMainChain() const { const CBlockIndex *pindexRet; return GetDepthInMainChain(pindexRet); }
-    bool IsInMainChain() const { const CBlockIndex *pindexRet; return GetDepthInMainChain(pindexRet) > 0; }
-    int GetBlocksToMaturity() const;
-    /** Pass this transaction to the mempool. Fails if absolute fee exceeds absurd fee. */
-    bool AcceptToMemoryPool(const CAmount& nAbsurdFee, CValidationState& state);
-    bool hashUnset() const { return (hashBlock.IsNull() || hashBlock == ABANDON_HASH); }
-    bool isAbandoned() const { return (hashBlock == ABANDON_HASH); }
-    void setAbandoned() { hashBlock = ABANDON_HASH; }
-
-    const uint256& GetHash() const { return tx->GetHash(); }
-    bool IsCoinBase() const { return tx->IsCoinBase(); }
 };
 
 /** 
@@ -712,7 +685,7 @@ public:
     /**
      * populate vCoins with vector of available COutputs.
      */
-    void AvailableCoins(std::vector<COutput>& vCoins, bool fOnlyConfirmed=true, const CCoinControl *coinControl = NULL, bool fIncludeZeroValue=false) const;
+    void AvailableCoins(std::vector<COutput>& vCoins, bool fOnlyConfirmed=true, const CCoinControl *coinControl = NULL, const CAmount& nMinimumAmount = 1, const CAmount& nMaximumAmount = MAX_MONEY, const CAmount& nMinimumSumAmount = MAX_MONEY, const uint64_t& nMaximumCount = 0, const int& nMinDepth = 0, const int& nMaxDepth = 9999999) const;
 
     /**
      * Shuffle and select coins until nTargetValue is reached while avoiding
@@ -822,19 +795,39 @@ public:
 
     static CFeeRate minTxFee;
     static CFeeRate fallbackFee;
+    static CAmount discardThreshold;
+
+    /**
+     * Minimum change as a function of discardThreshold
+     */
+    static CAmount GetMinChange();
+
     /**
      * Estimate the minimum fee considering user set parameters
      * and the required fee
      */
-    static CAmount GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool);
+    static CAmount GetMinimumFee(const CMutableTransaction& tx, unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool);
     /**
      * Estimate the minimum fee considering required fee and targetFee or if 0
      * then fee estimation for nConfirmTarget
      */
-    static CAmount GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool, CAmount targetFee);
+    static CAmount GetMinimumFee(const CMutableTransaction& tx, unsigned int nTxBytes, unsigned int nConfirmTarget, const CTxMemPool& pool, CAmount targetFee);
+    /**
+     * Dogmcoin: Get a fee targetting a specific transaction speed.
+     */
+    CAmount GetDogmcoinPriorityFee(const CMutableTransaction& tx, unsigned int nTxBytes, FeeRatePreset nSpeed);
+    /**
+     * Dogmcoin: Get a fee targetting a specific transaction speed.
+     */
+    static CAmount GetDogmcoinPriorityFee(const CMutableTransaction& tx, unsigned int nTxBytes, FeeRatePreset nSpeed, CAmount targetFee);
     /**
      * Return the minimum required fee taking into account the
      * floating relay fee and user set minimum transaction fee
+     */
+    static CAmount GetRequiredFee(const CMutableTransaction& tx, unsigned int nTxBytes);
+    /**
+     * Return the minimum required fee taking into account the
+     * floating relay fee and user set minimum transaction fee, but not the Dogmcoin dust fee.
      */
     static CAmount GetRequiredFee(unsigned int nTxBytes);
 
