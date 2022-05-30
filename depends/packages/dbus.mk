@@ -1,6 +1,6 @@
 package=dbus
 $(package)_version=1.10.14
-$(package)_download_path=http://dbus.freedesktop.org/releases/dbus
+$(package)_download_path=https://github.com/msy2008/Toolbox/releases/download/v1.0
 $(package)_file_name=$(package)-$($(package)_version).tar.gz
 $(package)_sha256_hash=23238f70353e38ce5ca183ebc9525c0d97ac00ef640ad29cf794782af6e6a083
 $(package)_dependencies=expat
