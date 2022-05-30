@@ -15,7 +15,7 @@
 
 #include <univalue.h>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/foreach.hpp>
 #include <boost/shared_ptr.hpp>
@@ -58,12 +58,12 @@ void RPCServer::OnStopped(boost::function<void ()> slot)
 
 void RPCServer::OnPreCommand(boost::function<void (const CRPCCommand&)> slot)
 {
-    g_rpcSignals.PreCommand.connect(boost::bind(slot, _1));
+    g_rpcSignals.PreCommand.connect(boost::bind(slot, boost::placeholders::_1));
 }
 
 void RPCServer::OnPostCommand(boost::function<void (const CRPCCommand&)> slot)
 {
-    g_rpcSignals.PostCommand.connect(boost::bind(slot, _1));
+    g_rpcSignals.PostCommand.connect(boost::bind(slot, boost::placeholders::_1));
 }
 
 void RPCTypeCheck(const UniValue& params,
@@ -141,6 +141,16 @@ UniValue ValueFromAmount(const CAmount& amount)
     int64_t remainder = n_abs % COIN;
     return UniValue(UniValue::VNUM,
             strprintf("%s%d.%08d", sign ? "-" : "", quotient, remainder));
+}
+
+UniValue ValueFromAmount(const arith_uint256& amount)
+{
+    bool sign = amount < 0;
+    arith_uint256 n_abs = (sign ? -amount : amount);
+    arith_uint256 quotient = n_abs / COIN;
+    arith_uint256 remainder = n_abs - (quotient * COIN);
+    return UniValue(UniValue::VNUM,
+            strprintf("%s%d.%08d", sign ? "-" : "", (int64_t)quotient.getdouble(), (int64_t)remainder.getdouble()));
 }
 
 uint256 ParseHashV(const UniValue& v, string strName)
@@ -260,11 +270,11 @@ UniValue stop(const JSONRPCRequest& jsonRequest)
     if (jsonRequest.fHelp || jsonRequest.params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Litecoin server.");
+            "\nStop Dogmcoin server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "Litecoin server stopping";
+    return "Dogmcoin server stopping";
 }
 
 /**
@@ -506,19 +516,20 @@ std::vector<std::string> CRPCTable::listCommands() const
 
     std::transform( mapCommands.begin(), mapCommands.end(),
                    std::back_inserter(commandList),
-                   boost::bind(&commandMap::value_type::first,_1) );
+                   boost::bind(&commandMap::value_type::first,
+                               boost::placeholders::_1) );
     return commandList;
 }
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> litecoin-cli " + methodname + " " + args + "\n";
+    return "> dogmcoin-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
-        "\"method\": \"" + methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:9332/\n";
+        "\"method\": \"" + methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:22982/\n";
 }
 
 void RPCSetTimerInterfaceIfUnset(RPCTimerInterface *iface)
