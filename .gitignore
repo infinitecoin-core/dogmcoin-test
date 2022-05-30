@@ -1,13 +1,13 @@
 *.tar.gz
 
 *.exe
-src/litecoin
-src/litecoind
-src/litecoin-cli
-src/litecoin-tx
-src/test/test_litecoin
-src/test/test_litecoin_fuzzy
-src/qt/test/test_litecoin-qt
+src/dogmcoin
+src/dogmcoind
+src/dogmcoin-cli
+src/dogmcoin-tx
+src/test/test_dogmcoin
+src/test/test_dogmcoin_fuzzy
+src/qt/test/test_dogmcoin-qt
 
 # autoreconf
 Makefile.in
@@ -74,12 +74,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-litecoin-qt
-Litecoin-Qt.app
+dogmcoin-qt
+Bitcoin-Qt.app
 
 # Unit-tests
 Makefile.test
-litecoin-qt_test
+dogmcoin-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -93,7 +93,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_litecoin.coverage/
+test_bitcoin.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -110,3 +110,18 @@ qa/cache/*
 
 libbitcoinconsensus.pc
 contrib/devtools/split-debug.sh
+
+.idea/
+.vscode/*
+
+# Snapcraft
+parts/
+prime/
+stage/
+*.snap
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
