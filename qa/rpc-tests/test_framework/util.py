@@ -8,6 +8,7 @@
 # Helpful routines for regression testing
 #
 
+import math
 import os
 import sys
 
@@ -182,7 +183,7 @@ def initialize_datadir(dirname, n):
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
     rpc_u, rpc_p = rpc_auth_pair(n)
-    with open(os.path.join(datadir, "litecoin.conf"), 'w', encoding='utf8') as f:
+    with open(os.path.join(datadir, "dogmcoin.conf"), 'w', encoding='utf8') as f:
         f.write("regtest=1\n")
         f.write("rpcuser=" + rpc_u + "\n")
         f.write("rpcpassword=" + rpc_p + "\n")
@@ -213,7 +214,7 @@ def wait_for_bitcoind_start(process, url, i):
     '''
     while True:
         if process.poll() is not None:
-            raise Exception('litecoind exited with status %i during initialization' % process.returncode)
+            raise Exception('bitcoind exited with status %i during initialization' % process.returncode)
         try:
             rpc = get_rpc_proxy(url, i)
             blocks = rpc.getblockcount()
@@ -228,7 +229,7 @@ def wait_for_bitcoind_start(process, url, i):
 
 def initialize_chain(test_dir, num_nodes, cachedir):
     """
-    Create a cache of a 200-block-long chain (with wallet) for MAX_NODES
+    Create a cache of a 120-block-long chain (with wallet) for MAX_NODES
     Afterward, create num_nodes copies from the cache
     """
 
@@ -249,12 +250,12 @@ def initialize_chain(test_dir, num_nodes, cachedir):
         # Create cache directories, run bitcoinds:
         for i in range(MAX_NODES):
             datadir=initialize_datadir(cachedir, i)
-            args = [ os.getenv("BITCOIND", "litecoind"), "-server", "-keypool=1", "-datadir="+datadir, "-discover=0" ]
+            args = [ os.getenv("DOGECOIND", "dogmcoind"), "-server", "-keypool=1", "-datadir="+datadir, "-discover=0" ]
             if i > 0:
                 args.append("-connect=127.0.0.1:"+str(p2p_port(0)))
             bitcoind_processes[i] = subprocess.Popen(args)
             if os.getenv("PYTHON_DEBUG", ""):
-                print("initialize_chain: litecoind started, waiting for RPC to come up")
+                print("initialize_chain: dogmcoind started, waiting for RPC to come up")
             wait_for_bitcoind_start(bitcoind_processes[i], rpc_url(i), i)
             if os.getenv("PYTHON_DEBUG", ""):
                 print("initialize_chain: RPC successfully started")
@@ -267,21 +268,21 @@ def initialize_chain(test_dir, num_nodes, cachedir):
                 sys.stderr.write("Error connecting to "+url+"\n")
                 sys.exit(1)
 
-        # Create a 200-block-long chain; each of the 4 first nodes
-        # gets 25 mature blocks and 25 immature.
+        # Create a 120-block-long chain; each of the 4 first nodes
+        # gets 15 mature blocks and 15 immature.
         # Note: To preserve compatibility with older versions of
         # initialize_chain, only 4 nodes will generate coins.
         #
-        # blocks are created with timestamps 10 minutes apart
+        # blocks are created with timestamps 1 minute apart
         # starting from 2010 minutes in the past
         enable_mocktime()
-        block_time = get_mocktime() - (201 * 10 * 60)
+        block_time = get_mocktime() - (121 * 60)
         for i in range(2):
             for peer in range(4):
-                for j in range(25):
+                for j in range(15):
                     set_node_times(rpcs, block_time)
                     rpcs[peer].generate(1)
-                    block_time += 10*60
+                    block_time += 60
                 # Must sync before next peer starts generating blocks
                 sync_blocks(rpcs)
 
@@ -335,12 +336,12 @@ def start_node(i, dirname, extra_args=None, rpchost=None, timewait=None, binary=
     """
     datadir = os.path.join(dirname, "node"+str(i))
     if binary is None:
-        binary = os.getenv("LITECOIND", "litecoind")
+        binary = os.getenv("DOGECOIND", "dogmcoind")
     args = [ binary, "-datadir="+datadir, "-server", "-keypool=1", "-discover=0", "-rest", "-mocktime="+str(get_mocktime()) ]
     if extra_args is not None: args.extend(extra_args)
     bitcoind_processes[i] = subprocess.Popen(args)
     if os.getenv("PYTHON_DEBUG", ""):
-        print("start_node: litecoind started, waiting for RPC to come up")
+        print("start_node: dogmcoind started, waiting for RPC to come up")
     url = rpc_url(i, rpchost)
     wait_for_bitcoind_start(bitcoind_processes[i], url, i)
     if os.getenv("PYTHON_DEBUG", ""):
@@ -510,10 +511,10 @@ def assert_fee_amount(fee, tx_size, fee_per_kB):
     """Assert the fee was in range"""
     target_fee = tx_size * fee_per_kB / 1000
     if fee < target_fee:
-        raise AssertionError("Fee of %s LTC too low! (Should be %s LTC)"%(str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s DOGM too low! (Should be %s DOGM)"%(str(fee), str(target_fee)))
     # allow the wallet's estimation to be at most 2 bytes off
     if fee > (tx_size + 2) * fee_per_kB / 1000:
-        raise AssertionError("Fee of %s LTC too high! (Should be %s LTC)"%(str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s DOGM too high! (Should be %s DOGM)"%(str(fee), str(target_fee)))
 
 def assert_equal(thing1, thing2, *args):
     if thing1 != thing2 or any(thing1 != arg for arg in args):
@@ -622,7 +623,7 @@ def satoshi_round(amount):
 # Helper to create at least "count" utxos
 # Pass in a fee that is sufficient for relay and mining new transactions.
 def create_confirmed_utxos(fee, node, count):
-    node.generate(int(0.5*count)+101)
+    node.generate(int(0.5*count)+61)
     utxos = node.listunspent()
     iterations = count - len(utxos)
     addr1 = node.getnewaddress()

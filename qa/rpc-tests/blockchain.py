@@ -14,10 +14,13 @@ from test_framework.test_framework import BitcoinTestFramework
 from test_framework.authproxy import JSONRPCException
 from test_framework.util import (
     assert_equal,
+    assert_greater_than,
+    assert_greater_than_or_equal,
     assert_raises,
     assert_is_hex_string,
     assert_is_hash_string,
     start_nodes,
+    start_node,
     connect_nodes_bi,
 )
 
@@ -37,7 +40,9 @@ class BlockchainTest(BitcoinTestFramework):
         self.num_nodes = 2
 
     def setup_network(self, split=False):
-        self.nodes = start_nodes(self.num_nodes, self.options.tmpdir)
+        self.nodes = []
+        self.nodes.append(start_node(0, self.options.tmpdir, ["-prune=1"]))
+        self.nodes.append(start_node(1, self.options.tmpdir, ["-prune=2200"]))
         connect_nodes_bi(self.nodes, 0, 1)
         self.is_network_split = False
         self.sync_all()
@@ -45,17 +50,63 @@ class BlockchainTest(BitcoinTestFramework):
     def run_test(self):
         self._test_gettxoutsetinfo()
         self._test_getblockheader()
+        self._test_getblockchaininfo()
         self.nodes[0].verifychain(4, 0)
+
+    # PL backported this entire test from upstream 0.16 to 1.14.3
+    def _test_getblockchaininfo(self):
+
+        keys = [
+            'bestblockhash',
+            'bip9_softforks',
+            'blocks',
+            'chain',
+            'chainwork',
+            'difficulty',
+            'headers',
+            'initialblockdownload',
+            'mediantime',
+            'pruned',
+            'size_on_disk',
+            'softforks',
+            'verificationprogress',
+            'warnings',
+        ]
+        res = self.nodes[0].getblockchaininfo()
+
+        # result should have these additional pruning keys if manual pruning is enabled
+        assert_equal(sorted(res.keys()), sorted(['pruneheight', 'automatic_pruning'] + keys))
+
+        # size_on_disk should be > 0
+        assert_greater_than(res['size_on_disk'], 0)
+
+        # pruneheight should be greater or equal to 0
+        assert_greater_than_or_equal(res['pruneheight'], 0)
+
+        # check other pruning fields given that prune=1
+        assert res['pruned']
+        assert not res['automatic_pruning']
+
+        res = self.nodes[1].getblockchaininfo()
+        # result should have these additional pruning keys if prune=2200
+        assert_equal(sorted(res.keys()), sorted(['pruneheight', 'automatic_pruning', 'prune_target_size'] + keys))
+
+        # check related fields
+        assert res['pruned']
+        assert_equal(res['pruneheight'], 0)
+        assert res['automatic_pruning']
+        assert_equal(res['prune_target_size'], 2306867200)
+        assert_greater_than(res['size_on_disk'], 0)
 
     def _test_gettxoutsetinfo(self):
         node = self.nodes[0]
         res = node.gettxoutsetinfo()
 
-        assert_equal(res['total_amount'], Decimal('8725.00000000'))
-        assert_equal(res['transactions'], 200)
-        assert_equal(res['height'], 200)
-        assert_equal(res['txouts'], 200)
-        assert_equal(res['bytes_serialized'], 13924),
+        assert_equal(res['total_amount'], Decimal('60000000.00000000'))
+        assert_equal(res['transactions'], 120)
+        assert_equal(res['height'], 120)
+        assert_equal(res['txouts'], 120)
+        assert_equal(res['bytes_serialized'], 8520),
         assert_equal(len(res['bestblock']), 64)
         assert_equal(len(res['hash_serialized']), 64)
 
@@ -66,11 +117,11 @@ class BlockchainTest(BitcoinTestFramework):
             JSONRPCException, lambda: node.getblockheader('nonsense'))
 
         besthash = node.getbestblockhash()
-        secondbesthash = node.getblockhash(199)
+        secondbesthash = node.getblockhash(119)
         header = node.getblockheader(besthash)
 
         assert_equal(header['hash'], besthash)
-        assert_equal(header['height'], 200)
+        assert_equal(header['height'], 120)
         assert_equal(header['confirmations'], 1)
         assert_equal(header['previousblockhash'], secondbesthash)
         assert_is_hex_string(header['chainwork'])
