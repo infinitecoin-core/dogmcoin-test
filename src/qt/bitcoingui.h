@@ -99,8 +99,10 @@ private:
     QAction *sendCoinsMenuAction;
     QAction *usedSendingAddressesAction;
     QAction *usedReceivingAddressesAction;
+    QAction *importPrivateKeyAction;
     QAction *signMessageAction;
     QAction *verifyMessageAction;
+    QAction *paperWalletAction;
     QAction *aboutAction;
     QAction *receiveCoinsAction;
     QAction *receiveCoinsMenuAction;
