@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Dogmcoin Core
+Comment=Connect to the Dogmcoin P2P Network
+Comment[de]=Verbinde mit dem Dogmcoin peer-to-peer Netzwerk
+Comment[fr]=Dogmcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Dogmcoin, eşten eşe kriptografik sanal para birimi
+Exec=dogmcoin-qt %u
+Terminal=false
+Type=Application
+Icon=dogmcoin128
+MimeType=x-scheme-handler/dogmcoin;
+Categories=Office;Finance;
