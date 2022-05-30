@@ -1,102 +1,227 @@
-Bitcoin Core version 0.14.2 is now available from:
+Dogmcoin Core version 1.14.5 is now available from:
 
-  <https://bitcoin.org/bin/bitcoin-core-0.14.2/>
+  <https://github.com/dogmcoin/dogmcoin/releases/tag/v1.14.5/>
 
-This is a new minor version release, including various bugfixes and
-performance improvements, as well as updated translations.
+This is a new minor version release, including important security updates and
+changes to network policies. All Dogmcoin Core users, miners, services, relay
+operators and wallet users are strongly recommended to upgrade.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/bitcoin/bitcoin/issues>
+  <https://github.com/dogmcoin/dogmcoin/issues>
 
-To receive security and update notifications, please subscribe to:
+To receive security and update notifications, please watch reddit or Twitter:
 
-  <https://bitcoincore.org/en/list/announcements/join/>
+  * https://www.reddit.com/r/dogmcoindev/
+  * @Dogmcoin on Twitter for high priority announcements
+  * @dogmcoin\_devs on Twitter for updates on development work
 
 Compatibility
 ==============
 
-Bitcoin Core is extensively tested on multiple operating systems using
-the Linux kernel, macOS 10.8+, and Windows Vista and later.
+Dogmcoin Core is extensively tested on Ubuntu Server LTS, Intel-based macOS
+and Windows 10.
 
-Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
-No attempt is made to prevent installing or running the software on Windows XP, you
-can still do so at your own risk but be aware that there are known instabilities and issues.
-Please do not report issues about Windows XP to the issue tracker.
-
-Bitcoin Core should also work on most other Unix-like systems but is not
+Dogmcoin Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
 ===============
 
-miniupnp CVE-2017-8798
-----------------------------
+Important Security Updates
+--------------------------
 
-Bundled miniupnpc was updated to 2.0.20170509. This fixes an integer signedness error
-(present in MiniUPnPc v1.4.20101221 through v2.0) that allows remote attackers
-(within the LAN) to cause a denial of service or possibly have unspecified
-other impact.
+This release contains fixes for 2 high severity vulnerabilities that affect
+most Dogmcoin Core users.
 
-This only affects users that have explicitly enabled UPnP through the GUI
-setting or through the `-upnp` option, as since the last UPnP vulnerability
-(in Bitcoin Core 0.10.3) it has been disabled by default.
+### Remote Code Execution in Dogmcoin QT (CVE-2021-3401)
 
-If you use this option, it is recommended to upgrade to this version as soon as
-possible.
+This release addresses CVE-2021-3401 that opened potential remote code execution
+on QT (graphical user interface) wallets through malicious use of
+`dogmcoin:` URIs.
 
-Known Bugs
-==========
+**Dogmcoin QT users are urged to please update their installations to this
+version immediately**, to prevent malicious actors from exploiting this
+vulnerability.
 
-Since 0.14.0 the approximate transaction fee shown in Bitcoin-Qt when using coin
-control and smart fee estimation does not reflect any change in target from the
-smart fee slider. It will only present an approximate fee calculated using the
-default target. The fee calculated using the correct target is still applied to
-the transaction and shown in the final send confirmation dialog.
+### Sensitive Information Exposure on Unix platforms (CVE-2019-15947)
 
-0.14.2 Change log
-=================
+A fix for CVE-2019-15947 was back-ported from Bitcoin Core to prevent potential
+leakage of sensitive information when Dogmcoin Core crashes on Unix platforms.
+The vulnerability is patched for systems that run a Linux kernel equal to or
+higher than 3.4.
 
-Detailed release notes follow. This overview includes changes that affect
-behavior, not code moves, refactors and string updates. For convenience in locating
-the code changes and accompanying discussion, both the pull request and
-git merge commit are mentioned.
+**Dogmcoin Core wallet users on Linux platforms are urged to please update to
+this version.**
 
-### RPC and other APIs
-- #10410 `321419b` Fix importwallet edge case rescan bug (ryanofsky)
+Fee Reductions
+--------------
 
-### P2P protocol and network code
-- #10424 `37a8fc5` Populate services in GetLocalAddress (morcos)
-- #10441 `9e3ad50` Only enforce expected services for half of outgoing connections (theuni)
+This release finalizes a new minimum fee recommendation for all participants on
+the Dogmcoin network, following the reduction of relay and mining defaults in
+1.14.4. The recommendation has been documented and can be found
+[here](fee-recommendation.md). With this release, the minimum fees when creating
+transactions are recommended to be as follows:
 
-### Build system
-- #10414 `ffb0c4b` miniupnpc 2.0.20170509 (fanquake)
-- #10228 `ae479bc` Regenerate bitcoin-config.h as necessary (theuni)
+* the recommended minimum transaction fee is 0.01 DOGM/kb, and
+* the recommended dust limit is 1 DOGM, and
+* the recommended RBF increment is 0.001 DOGM.
 
-### Miscellaneous
-- #10245 `44a17f2` Minor fix in build documentation for FreeBSD 11 (shigeya)
-- #10215 `0aee4a1` Check interruptNet during dnsseed lookups (TheBlueMatt)
+### Wallet/UI Changes
 
-### GUI
-- #10231 `1e936d7` Reduce a significant cs_main lock freeze (jonasschnelli)
+* The user interface for selecting fees when transacting DOGM has been updated
+  to give an idea of how much is being spent, rather than a block target. As
+  Dogmcoin blocks are not full, typically all transactions are mined in the next
+  block, and therefore the target estimation does not makes sense for Dogmcoin.
+* Transaction sizes are no longer rounded up to the nearest kilobyte before
+  calculating fees, which significantly simplifies fee calculation logic and
+  makes it more similar to Bitcoin and Litecoin.
+* The default minimum transaction fee is now 0.01 DOGM per kilobyte. Note that
+  you may see transactions take longer to be confirmed while using these lower
+  fees, until all miners have updated. The new fee slider can help with getting
+  fast-confirming transactions by sliding it all the way to the maximum, or for
+  both CLI and GUI wallet users, this can be made the default by setting
+  `-paytxfee=5.21`.
+* Introduce `-discardthreshold`, a wallet-specific, configurable dust limit that
+  enables gradual implementation of the dust limit on the network side. Each
+  transaction created with the wallet will adhere to this threshold
+  rather than the dust limits used for relay, preventing stuck transactions. The
+  wallet will discard any change to fee and reject output amounts that are lower
+  than this limit. Until this release sees significant network adoption, the
+  default dust limit is recommended to stay at 1 DOGM, as versions 1.14.2 until
+  1.14.4 have a bug that rejects any transaction with an output under 1 DOGM.
+* Derive minimum change from configurable wallet parameters `-discardthreshold`
+  and `-mintxfee`: `minimum change = discard threshold + 2 * minimum fee`.
 
-### Wallet
-- #10294 `1847642` Unset change position when there is no change (instagibbs)
+### Relay changes
+
+* Split the dust limit into a hard and soft threshold, to reintroduce the
+  economic disincentive for dust, rather than rejection introduced since 1.14.2
+  * `-harddustlimit` is by default set at 0.001 DOGM and sets the value under
+    which transactions will be rejected by nodes.
+  * The dust limit parameter introduced with 1.14.4 (`-dustlimit`) is now the
+    soft dust limit, enforcing the economic disincentive. Each output under this
+    threshold will be accepted as long as the entire limit is added to fee.
+* Change the default incremental fee used for RBF and mempool limiting to
+  0.0001 DOGM.
+
+BDB Updated to 5.3
+------------------
+
+The Berkley DB version used by Dogmcoin Core has been updated to 5.3 (from 5.1)
+as 5.3 is now standard on many Linux distributions. 5.1 and 5.3 wallet files
+have been tested to be interchangeable.
+
+Version display
+---------------
+
+The version displayed on QT's overview page has been changed to display the
+full version rather than just the major version part, because this was confusing
+wallet users.
+
+Key Derivation
+--------------
+
+The BIP32 hierarchical deterministic key derivation path contained the wrong
+chain ID. Previously the chain ID 0 was used, it's now correctly set to 3 as
+per [SLIP44](https://github.com/satoshilabs/slips/blob/master/slip-0044.md).
+
+The wallet.dat files stay fully interoperable between versions. Wallets created
+with 1.14.5 will benefit from greater interoperability with hardware wallets in
+the future.
+
+Namecoin-compatibile AuxPoW mining
+----------------------------------
+
+The `createauxblock` and `submitauxblock` commands have been reintroduced,
+mimicking the same commands from Namecoin 0.17, allowing miners to separate
+wallets from block producing nodes by specifying the address for their coinbase
+transactions.
+
+Two additional features on top of the Namecoin 0.17 API have been added:
+
+* The block caching mechanism has been enhanced to enable mining pools to use
+  multiple wallet addresses if desired.
+* By default the AuxPoW API methods provide the difficulty target in a field
+  named `target`, however this can now be configured to be fully compatible with
+  the Namecoin API (`_target`) by setting the `-rpcnamecoinapi` argument.
+
+RPC API Changes
+---------------
+
+* Added `softdustlimit` and `harddustlimit` fields to `getnetworkinfo` to enable
+  operators and third party scripts to query this information without having to
+  search configuration files or hardcode defaults.
+* Added `createauxblock` and `submitauxblock` methods
+* Added `-rpcnamecoinapi` that allows miners to use Namecoin-compatible AuxPoW
+  APIs, for both `getauxblock` and `createauxblock` methods.
+
+Build System and CI Changes
+---------------------------
+
+The build system for dependencies, continuous integration and binary releases
+has been upgraded from Ubuntu Trusty to Ubuntu Bionic, because the former was
+fully end-of-life. Ubuntu Bionic extends the useful life of the 1.14 build
+system to April 2023, by which time we expect to have switched to 1.21 as the
+main version. With this change, the default gcc used for testing and releases
+has been updated from version 4.8 to 7.
+
+The CI environment has been extended to build and test aarch64 binaries, and to
+perform additional checks that allow us to catch more potential issues early and
+automatically.
+
+Additionally, an experimental CI build environment has been introduced to enable
+ongoing testing and maintenance of incubating features that are not yet ready
+for release. Currently this contains the AVX2 features that aim to increase the
+performance of cryptographic routines within Dogmcoin Core.
+
+Minor Changes
+=============
+
+* Fix compilation on FreeBSD, which was failing to compile the Scrypt code.
+* Update the FreeBSD build docs, see `doc/build-freebsd.md`.
+* Update default dependencies to OpenSSL 1.0.2u.
+* Refresh translation files to simplify volunteer contributions to translations.
+* Add xkbcommon 0.8.4 as a separate dependency to fix keyboard compatibility
+  issues and resolve issues with inadvertently used build system libraries.
+* Harden and expand the recommended systemd unit files in `contrib/init`.
+* Make the Freetype dependency compile independent from build system libraries.
+* Update the Univalue library to use the latest version maintained by the
+  Bitcoin Core developers.
+* Fix the pruning test suite.
+* Correct the block download timeout for the regtest chain.
+* Shut down when trying to use a corrupted block from disk.
+* Add experimental AVX2 support, to improve the performance of SHA operations.
+* Add a [getting started guide](getting-started.md)
 
 Credits
 =======
 
-Thanks to everyone who directly contributed to this release:
-
-- Alex Morcos
-- Cory Fields
-- fanquake
-- Gregory Sanders
-- Jonas Schnelli
-- Matt Corallo
-- Russell Yanofsky
-- Shigeya Suzuki
-- Wladimir J. van der Laan
-
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).
-
+* AbcSxyZ
+* Bertrand Jacquin
+* Carl Dong
+* cg
+* CharesFang
+* chromatic
+* Chun Kuan Lee
+* Cory Fields
+* Dakoda Greaves
+* Daksh Sharma
+* Dan Raviv
+* dogespacewizard
+* Ed Tubbs
+* Elvis Begović
+* fanquake
+* Hennadii Stepanov
+* KabDeveloper
+* leezhen
+* Luke Dashjr
+* Micael Malta
+* Michi Lumin
+* Patrick Lodder
+* Ross Nicoll
+* Ryan Crosby
+* Suhas Daftuar
+* Vasil Dimov
+* W. J. van der Laan
+* Xiao Yi
