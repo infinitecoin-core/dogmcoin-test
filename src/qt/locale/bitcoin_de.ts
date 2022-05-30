@@ -1,4 +1,41 @@
-<TS language="de" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="de">
+<context>
+    <name>AddPeerDialog</name>
+    <message>
+        <source>Add Peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer details below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Be careful! Do not blindly trust anyone that tells you to add their node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer&apos;s address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer&apos;s port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter an address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a valid peer address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -43,31 +80,31 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Wählen Sie die Adresse aus, an die Sie Litecoins überweisen möchten</translation>
+        <translation>Wählen Sie die Adresse aus, an die Sie Dogmcoins überweisen möchten</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Wählen Sie die Adresse aus, über die Sie Litecoins empfangen wollen</translation>
+        <translation>Wählen Sie die Adresse aus, über die Sie Dogmcoins empfangen wollen</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
         <translation>&amp;Auswählen</translation>
     </message>
     <message>
-        <source>Sending addresses</source>
+        <source>Such sending addresses</source>
         <translation>Zahlungsadressen</translation>
     </message>
     <message>
-        <source>Receiving addresses</source>
+        <source>Much receiving addresses</source>
         <translation>Empfangsadressen</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dies sind ihre Litecoin-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Empfangsadresse, bevor Sie Litecoins überweisen.</translation>
+        <source>These are your Dogmcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dies sind ihre Dogmcoin-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Empfangsadresse, bevor Sie Dogmcoins überweisen.</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dies sind Ihre Litecoin-Adressen zum Empfangen von Zahlungen. Es wird empfohlen, für jede Transaktion eine neue Empfangsadresse zu verwenden.</translation>
+        <source>These are your Dogmcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dies sind Ihre Dogmcoin-Adressen zum Empfangen von Zahlungen. Es wird empfohlen, für jede Transaktion eine neue Empfangsadresse zu verwenden.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,8 +205,8 @@
         <translation>Brieftaschen-Verschlüsselung bestätigen</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LITECOINS&lt;/b&gt;!</source>
-        <translation>Warnung: Wenn Sie Ihre Brieftasche verschlüsseln und Ihre Passphrase verlieren, werden Sie &lt;b&gt;alle Ihre Litecoins verlieren&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DOGECOINS&lt;/b&gt;!</source>
+        <translation>Warnung: Wenn Sie Ihre Brieftasche verschlüsseln und Ihre Passphrase verlieren, werden Sie &lt;b&gt;alle Ihre Dogmcoins verlieren&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -180,8 +217,8 @@
         <translation>Brieftasche verschlüsselt</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your litecoins from being stolen by malware infecting your computer.</source>
-        <translation>%1 wird jetzt beendet, um den Verschlüsselungsprozess abzuschließen. Bitte beachten Sie, dass die Brieftaschen-Verschlüsselung nicht vollständig vor Diebstahl Ihrer Litecoins durch Schadprogramme schützt, die Ihren Computer befällt.</translation>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your dogmcoins from being stolen by malware infecting your computer.</source>
+        <translation>%1 wird jetzt beendet, um den Verschlüsselungsprozess abzuschließen. Bitte beachten Sie, dass die Brieftaschen-Verschlüsselung nicht vollständig vor Diebstahl Ihrer Dogmcoins durch Schadprogramme schützt, die Ihren Computer befällt.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -242,7 +279,7 @@
         <translation>Synchronisiere mit Netzwerk...</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
+        <source>&amp;Wow</source>
         <translation>&amp;Übersicht</translation>
     </message>
     <message>
@@ -306,14 +343,6 @@
         <translation>Passphrase &amp;ändern...</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Zahlungsadressen...</translation>
-    </message>
-    <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Empfangsadressen...</translation>
-    </message>
-    <message>
         <source>Open &amp;URI...</source>
         <translation>&amp;URI öffnen...</translation>
     </message>
@@ -338,8 +367,8 @@
         <translation>Reindiziere Blöcke auf Datenträger...</translation>
     </message>
     <message>
-        <source>Send coins to a Litecoin address</source>
-        <translation>Litecoins an eine Litecoin-Adresse überweisen</translation>
+        <source>Send coins to a Dogmcoin address</source>
+        <translation>Dogmcoins an eine Dogmcoin-Adresse überweisen</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -362,19 +391,19 @@
         <translation>Nachricht &amp;verifizieren...</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Dogmcoin</source>
+        <translation>Dogmcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Wallet</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
+        <source>&amp;Such Send</source>
         <translation>&amp;Überweisen</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
+        <source>&amp;Much Receive</source>
         <translation>&amp;Empfangen</translation>
     </message>
     <message>
@@ -390,12 +419,12 @@
         <translation>Verschlüsselt die zu Ihrer Wallet gehörenden privaten Schlüssel</translation>
     </message>
     <message>
-        <source>Sign messages with your Litecoin addresses to prove you own them</source>
-        <translation>Nachrichten signieren, um den Besitz Ihrer Litecoin-Adressen zu beweisen</translation>
+        <source>Sign messages with your Dogmcoin addresses to prove you own them</source>
+        <translation>Nachrichten signieren, um den Besitz Ihrer Dogmcoin-Adressen zu beweisen</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Litecoin addresses</source>
-        <translation>Nachrichten verifizieren, um sicherzustellen, dass diese mit den angegebenen Litecoin-Adressen signiert wurden</translation>
+        <source>Verify messages to ensure they were signed with specified Dogmcoin addresses</source>
+        <translation>Nachrichten verifizieren, um sicherzustellen, dass diese mit den angegebenen Dogmcoin-Adressen signiert wurden</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -414,8 +443,8 @@
         <translation>Registerkartenleiste</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Zahlungen anfordern (erzeugt QR-Codes und "litecoin:"-URIs)</translation>
+        <source>Request payments (generates QR codes and dogmcoin: URIs)</source>
+        <translation>Zahlungen anfordern (erzeugt QR-Codes und &quot;dogmcoin:&quot;-URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -426,16 +455,19 @@
         <translation>Liste verwendeter Empfangsadressen und Bezeichnungen anzeigen</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>Eine "litecoin:"-URI oder Zahlungsanforderung öffnen</translation>
+        <source>Open a dogmcoin: URI or payment request</source>
+        <translation>Eine &quot;dogmcoin:&quot;-URI oder Zahlungsanforderung öffnen</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandozeilenoptionen</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Litecoin network</source>
-        <translation><numerusform>%n aktive Verbindung zum Litecoin-Netzwerk</numerusform><numerusform>%n aktive Verbindungen zum Litecoin-Netzwerk</numerusform></translation>
+        <source>%n active connection(s) to Dogmcoin network</source>
+        <translation>
+            <numerusform>%n aktive Verbindung zum Dogmcoin-Netzwerk</numerusform>
+            <numerusform>%n aktive Verbindungen zum Dogmcoin-Netzwerk</numerusform>
+        </translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -447,7 +479,10 @@
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation><numerusform>%n Block des Transaktionsverlaufs verarbeitet.</numerusform><numerusform>%n Blöcke des Transaktionsverlaufs verarbeitet.</numerusform></translation>
+        <translation>
+            <numerusform>%n Block des Transaktionsverlaufs verarbeitet.</numerusform>
+            <numerusform>%n Blöcke des Transaktionsverlaufs verarbeitet.</numerusform>
+        </translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -478,8 +513,8 @@
         <translation>Auf aktuellem Stand</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Litecoin command-line options</source>
-        <translation>Zeige den "%1"-Hilfetext, um eine Liste mit möglichen Kommandozeilenoptionen zu erhalten</translation>
+        <source>Show the %1 help message to get a list with possible Dogmcoin command-line options</source>
+        <translation>Zeige den &quot;%1&quot;-Hilfetext, um eine Liste mit möglichen Kommandozeilenoptionen zu erhalten</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -548,15 +583,50 @@
         <translation>Wallet ist &lt;b&gt;verschlüsselt&lt;/b&gt; und aktuell &lt;b&gt;gesperrt&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Litecoin can no longer continue safely and will quit.</source>
-        <translation>Ein schwerer Fehler ist aufgetreten. Litecoin kann nicht stabil weiter ausgeführt werden und wird beendet.</translation>
+        <source>A fatal error occurred. Dogmcoin can no longer continue safely and will quit.</source>
+        <translation>Ein schwerer Fehler ist aufgetreten. Dogmcoin kann nicht stabil weiter ausgeführt werden und wird beendet.</translation>
+    </message>
+    <message>
+        <source>&amp;Print paper wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print paper wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Such sending addresses...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Much receiving addresses...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Private Key...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import a Dogmcoin private key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runaway exception</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ClientModel</name>
+    <message>
+        <source>Network Alert</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
     <message>
         <source>Coin Selection</source>
-        <translation>Münzauswahl ("Coin Control")</translation>
+        <translation>Münzauswahl (&quot;Coin Control&quot;)</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -576,7 +646,7 @@
     </message>
     <message>
         <source>Dust:</source>
-        <translation>"Dust":</translation>
+        <translation>&quot;Dust&quot;:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -664,7 +734,7 @@
     </message>
     <message>
         <source>Copy dust</source>
-        <translation>"Staub" kopieren</translation>
+        <translation>&quot;Staub&quot; kopieren</translation>
     </message>
     <message>
         <source>Copy change</source>
@@ -684,11 +754,11 @@
     </message>
     <message>
         <source>This label turns red if any recipient receives an amount smaller than the current dust threshold.</source>
-        <translation>Diese Bezeichnung wird rot, wenn irgendein Empfänger einen Betrag kleiner als die derzeitige "Staubgrenze" erhält.</translation>
+        <translation>Diese Bezeichnung wird rot, wenn irgendein Empfänger einen Betrag kleiner als die derzeitige &quot;Staubgrenze&quot; erhält.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
-        <translation>Kann pro Eingabe um +/- %1 Satoshi(s) abweichen.</translation>
+        <source>Can vary +/- %1 koinu(s) per input.</source>
+        <translation>Kann pro Eingabe um +/- %1 Koinu(s) abweichen.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -742,12 +812,12 @@
         <translation>Zahlungsadresse bearbeiten</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Litecoin address.</source>
-        <translation>Die eingegebene Adresse "%1" ist keine gültige Litecoin-Adresse.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Dogmcoin address.</source>
+        <translation>Die eingegebene Adresse &quot;%1&quot; ist keine gültige Dogmcoin-Adresse.</translation>
     </message>
     <message>
-        <source>The entered address "%1" is already in the address book.</source>
-        <translation>Die eingegebene Adresse "%1" befindet sich bereits im Adressbuch.</translation>
+        <source>The entered address &quot;%1&quot; is already in the address book.</source>
+        <translation>Die eingegebene Adresse &quot;%1&quot; befindet sich bereits im Adressbuch.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -816,8 +886,8 @@
         <translation>Datenverzeichnis beim Starten auswählen (Standard: %u)</translation>
     </message>
     <message>
-        <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>Sprache einstellen, zum Beispiel "de_DE" (Standard: Systemgebietsschema)</translation>
+        <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
+        <translation>Sprache einstellen, zum Beispiel &quot;de_DE&quot; (Standard: Systemgebietsschema)</translation>
     </message>
     <message>
         <source>Start minimized</source>
@@ -837,6 +907,69 @@
     </message>
 </context>
 <context>
+    <name>ImportKeysDialog</name>
+    <message>
+        <source>Import Private Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Private Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private key to import into your wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label for this private key in your wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label (optional):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rescan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset all key management options to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished">A&amp;bbrechen</translation>
+    </message>
+    <message>
+        <source>Invalid private key; please check and try again!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid address generated from private key; please check and try again!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to add private key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rescanning...</source>
+        <translation type="unfinished">Durchsuche erneut...</translation>
+    </message>
+</context>
+<context>
     <name>Intro</name>
     <message>
         <source>Welcome</source>
@@ -851,7 +984,7 @@
         <translation>Da Sie das Programm gerade zum ersten Mal starten, können Sie nun auswählen wo %1 seine Daten ablegen wird.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Litecoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>%1 will download and store a copy of the Dogmcoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>%1 wird eine Kopie der Blockkette herunterladen und speichern. Mindestens %2GB Daten werden in diesem Verzeichnis abgelegt und die Datenmenge wächst über die Zeit an. Auch die Wallet wird in diesem Verzeichnis abgelegt.</translation>
     </message>
     <message>
@@ -863,8 +996,8 @@
         <translation>Ein benutzerdefiniertes Datenverzeichnis verwenden:</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation>Fehler: Angegebenes Datenverzeichnis "%1" kann nicht angelegt werden.</translation>
+        <source>Error: Specified data directory &quot;%1&quot; cannot be created.</source>
+        <translation>Fehler: Angegebenes Datenverzeichnis &quot;%1&quot; kann nicht angelegt werden.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -872,11 +1005,21 @@
     </message>
     <message numerus="yes">
         <source>%n GB of free space available</source>
-        <translation><numerusform>%n GB freier Speicherplatz verfügbar</numerusform><numerusform>%n GB freier Speicherplatz verfügbar</numerusform></translation>
+        <translation>
+            <numerusform>%n GB freier Speicherplatz verfügbar</numerusform>
+            <numerusform>%n GB freier Speicherplatz verfügbar</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>(of %n GB needed)</source>
-        <translation><numerusform>(von benötigtem %n GB)</numerusform><numerusform>(von benötigten %n GB)</numerusform></translation>
+        <translation>
+            <numerusform>(von benötigtem %n GB)</numerusform>
+            <numerusform>(von benötigten %n GB)</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Choose data directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -886,12 +1029,12 @@
         <translation>Formular</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the litecoin network, as detailed below.</source>
-        <translation>Neueste Transaktionen werden eventuell noch nicht angezeigt, daher könnte Ihr Kontostand veraltet sein. Er wird korrigiert, sobald Ihr Wallet die Synchronisation mit dem Litecoin-Netzwerk erfolgreich abgeschlossen. Details dazu finden sich weiter unten.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the dogmcoin network, as detailed below.</source>
+        <translation>Neueste Transaktionen werden eventuell noch nicht angezeigt, daher könnte Ihr Kontostand veraltet sein. Er wird korrigiert, sobald Ihr Wallet die Synchronisation mit dem Dogmcoin-Netzwerk erfolgreich abgeschlossen hat. Details dazu finden sich weiter unten.</translation>
     </message>
     <message>
-        <source>Attempting to spend litecoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Versuche, Litecoins aus noch nicht angezeigten Transaktionen auszugeben, werden vom Netzwerk nicht akzeptiert.</translation>
+        <source>Attempting to spend dogmcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Versuche, Dogmcoins aus noch nicht angezeigten Transaktionen auszugeben, werden vom Netzwerk nicht akzeptiert.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -997,11 +1140,11 @@
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
-        <translation>Minimiert die Anwendung anstatt sie zu beenden wenn das Fenster geschlossen wird. Wenn dies aktiviert ist, müssen Sie die Anwendung über "Beenden" im Menü schließen.</translation>
+        <translation>Minimiert die Anwendung anstatt sie zu beenden wenn das Fenster geschlossen wird. Wenn dies aktiviert ist, müssen Sie die Anwendung über &quot;Beenden&quot; im Menü schließen.</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
-        <translation>Externe URLs (z.B. ein Block-Explorer), die im Kontextmenü des Transaktionsverlaufs eingefügt werden. In der URL wird %s durch den Transaktionshash ersetzt. Bei Angabe mehrerer URLs müssen diese durch "|" voneinander getrennt werden.</translation>
+        <translation>Externe URLs (z.B. ein Block-Explorer), die im Kontextmenü des Transaktionsverlaufs eingefügt werden. In der URL wird %s durch den Transaktionshash ersetzt. Bei Angabe mehrerer URLs müssen diese durch &quot;|&quot; voneinander getrennt werden.</translation>
     </message>
     <message>
         <source>Third party transaction URLs</source>
@@ -1037,7 +1180,7 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>"&amp;Coin Control"-Funktionen aktivieren</translation>
+        <translation>&quot;&amp;Coin Control&quot;-Funktionen aktivieren</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction cannot be used until that transaction has at least one confirmation. This also affects how your balance is computed.</source>
@@ -1048,16 +1191,16 @@
         <translation>&amp;Unbestätigtes Wechselgeld darf ausgegeben werden</translation>
     </message>
     <message>
-        <source>Automatically open the Litecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatisch den Litecoin-Clientport auf dem Router öffnen. Dies funktioniert nur, wenn Ihr Router UPnP unterstützt und dies aktiviert ist.</translation>
+        <source>Automatically open the Dogmcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatisch den Dogmcoin-Clientport auf dem Router öffnen. Dies funktioniert nur, wenn Ihr Router UPnP unterstützt und dies aktiviert ist.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Portweiterleitung via &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Litecoin network through a SOCKS5 proxy.</source>
-        <translation>Über einen SOCKS5-Proxy mit dem Litecoin-Netzwerk verbinden.</translation>
+        <source>Connect to the Dogmcoin network through a SOCKS5 proxy.</source>
+        <translation>Über einen SOCKS5-Proxy mit dem Dogmcoin-Netzwerk verbinden.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1096,8 +1239,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Litecoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Über einen separaten SOCKS5 Proxy für Tor Services mit dem Litecoint Netzwerk verbinden.</translation>
+        <source>Connect to the Dogmcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Über einen separaten SOCKS5 Proxy für Tor Services mit dem Dogmcoint Netzwerk verbinden.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1145,11 +1288,11 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Wählen Sie die standardmäßige Untereinheit, die in der Benutzeroberfläche und beim Überweisen von Litecoins angezeigt werden soll.</translation>
+        <translation>Wählen Sie die standardmäßige Untereinheit, die in der Benutzeroberfläche und beim Überweisen von Dogmcoins angezeigt werden soll.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Legt fest, ob die "Coin Control"-Funktionen angezeigt werden.</translation>
+        <translation>Legt fest, ob die &quot;Coin Control&quot;-Funktionen angezeigt werden.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -1195,8 +1338,8 @@
         <translation>Formular</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Litecoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Die angezeigten Informationen sind möglicherweise nicht mehr aktuell. Ihre Wallet wird automatisch synchronisiert, nachdem eine Verbindung zum Litecoin-Netzwerk hergestellt wurde. Dieser Prozess ist jedoch derzeit noch nicht abgeschlossen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Dogmcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Die angezeigten Informationen sind möglicherweise nicht mehr aktuell. Ihre Wallet wird automatisch synchronisiert, nachdem eine Verbindung zum Dogmcoin-Netzwerk hergestellt wurde. Dieser Prozess ist jedoch derzeit noch nicht abgeschlossen.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1262,6 +1405,229 @@
         <source>Current total balance in watch-only addresses</source>
         <translation>Aktueller Gesamtbetrag in beobachteten Adressen aus obigen Kategorien</translation>
     </message>
+    <message>
+        <source>Helpful tip of the day:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never share your wallet.dat file/your private key with anyone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For more advanced settings use the console in &apos;Help&apos; -&gt; &apos;Debug Window&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Encrypt your wallet with a strong passphrase for maximum security</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make sure to keep your wallet updated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup your private key to recover your coins, using &apos;File&apos; &gt; &apos;Backup Wallet&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always do your own research before using an external cryptocurrency service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never share your private key to an untrustworthy person.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who own the private keys own the coins.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To see ongoing development and contribute, checkout Dogmcoin repository on GitHub!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Services that claim to double your dogmcoins are always ponzi schemes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PaperWalletDialog</name>
+    <message>
+        <source>Print Your Paper Wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Very New Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>So Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Many Wallets?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public Key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: Network Activity Detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is recommended to disconnect from the internet before printing paper wallets. Even though paper wallets are generated on your local computer, it is still possible to unknowingly have malware that transmits your screen to a remote location. It is also recommended to print to a local printer vs a network printer since that network traffic can be monitored. Some advanced printers also store copies of each printed document. Proceed with caution relative to the amount of value you plan to store on each address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error encoding Address into QR Code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error encoding private key into QR Code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Printing Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>failed to open file, is it writable?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load Paper Wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of DOGM you wish to send to each wallet:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper wallet %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%1&lt;/b&gt; to Paper Wallet &lt;span style=&apos;font-family: monospace;&apos;&gt;%2&lt;/span&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send Coins</source>
+        <translation type="unfinished">Dogmcoins überweisen</translation>
+    </message>
+    <message>
+        <source>The recipient address is not valid, please recheck.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The amount to pay must be larger than 0</source>
+        <translation type="unfinished">Der zu zahlende Betrag muss größer als 0 sein. {0?}</translation>
+    </message>
+    <message>
+        <source>The amount exceeds your balance.</source>
+        <translation type="unfinished">Der angegebene Betrag übersteigt Ihren Kontostand.</translation>
+    </message>
+    <message>
+        <source>The total exceeds your balance when the transaction fee is included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate address found, can only send to each address once per send operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transaction creation failed!</source>
+        <translation type="unfinished">Transaktionserstellung fehlgeschlagen!</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to send?</source>
+        <translation type="unfinished">Wollen Sie die Überweisung ausführen?</translation>
+    </message>
+    <message>
+        <source>added as transaction fee</source>
+        <translation type="unfinished">als Transaktionsgebühr hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Total Amount %1 (= %2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>or</source>
+        <translation type="unfinished">oder</translation>
+    </message>
+    <message>
+        <source>Confirm send coins</source>
+        <translation type="unfinished">Überweisung bestätigen</translation>
+    </message>
+    <message>
+        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PaymentServer</name>
@@ -1270,8 +1636,8 @@
         <translation>fehlerhafte Zahlungsanforderung</translation>
     </message>
     <message>
-        <source>Cannot start litecoin: click-to-pay handler</source>
-        <translation>Kann Litecoin nicht starten: Klicken-zum-Bezahlen-Handler</translation>
+        <source>Cannot start dogmcoin: click-to-pay handler</source>
+        <translation>Kann Dogmcoin nicht starten: Klicken-zum-Bezahlen-Handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1286,8 +1652,8 @@
         <translation>Ungültige Zahlungsadresse %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Litecoin address or malformed URI parameters.</source>
-        <translation>URI kann nicht analysiert werden! Dies kann durch eine ungültige Litecoin-Adresse oder fehlerhafte URI-Parameter verursacht werden.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Dogmcoin address or malformed URI parameters.</source>
+        <translation>URI kann nicht analysiert werden! Dies kann durch eine ungültige Dogmcoin-Adresse oder fehlerhafte URI-Parameter verursacht werden.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1302,7 +1668,7 @@
         <translation>Zahlungsanforderung abgelehnt</translation>
     </message>
     <message>
-        <source>Payment request network doesn't match client network.</source>
+        <source>Payment request network doesn&apos;t match client network.</source>
         <translation>Netzwerk der Zahlungsanforderung stimmt nicht mit dem Client-Netzwerk überein.</translation>
     </message>
     <message>
@@ -1320,10 +1686,6 @@
     <message>
         <source>Invalid payment request.</source>
         <translation>Ungültige Zahlungsanforderung.</translation>
-    </message>
-    <message>
-        <source>Requested payment amount of %1 is too small (considered dust).</source>
-        <translation>Angeforderter Zahlungsbetrag in Höhe von %1 ist zu niedrig und wurde als "Staub" eingestuft.</translation>
     </message>
     <message>
         <source>Refund from %1</source>
@@ -1353,6 +1715,10 @@
         <source>Payment acknowledged</source>
         <translation>Zahlung bestätigt</translation>
     </message>
+    <message>
+        <source>Requested payment amount of %1 is too small (below discard threshold).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PeerTableModel</name>
@@ -1372,6 +1738,41 @@
         <source>Ping</source>
         <translation>Ping</translation>
     </message>
+    <message>
+        <source>Bytes Sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bytes Received</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PeerTools</name>
+    <message>
+        <source>Error: Peer-to-peer functionality missing or disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attempted to one try node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: Node already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node not found in connected nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected the node: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Returned OK.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -1380,8 +1781,8 @@
         <translation>Betrag</translation>
     </message>
     <message>
-        <source>Enter a Litecoin address (e.g. %1)</source>
-        <translation>Litecoin-Adresse eingeben (z.B. %1)</translation>
+        <source>Enter a Dogmcoin address (e.g. %1)</source>
+        <translation>Dogmcoin-Adresse eingeben (z.B. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1413,42 +1814,84 @@
     </message>
     <message numerus="yes">
         <source>%n second(s)</source>
-        <translation><numerusform>%n Sekunde</numerusform><numerusform>%n Sekunde(n)</numerusform></translation>
+        <translation>
+            <numerusform>%n Sekunde</numerusform>
+            <numerusform>%n Sekunde(n)</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
-        <translation><numerusform>%n Minute</numerusform><numerusform>%n Minute(n)</numerusform></translation>
+        <translation>
+            <numerusform>%n Minute</numerusform>
+            <numerusform>%n Minute(n)</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation><numerusform>%n Stunde</numerusform><numerusform>%n Stunden</numerusform></translation>
+        <translation>
+            <numerusform>%n Stunde</numerusform>
+            <numerusform>%n Stunden</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation><numerusform>%n Tag</numerusform><numerusform>%n Tage</numerusform></translation>
+        <translation>
+            <numerusform>%n Tag</numerusform>
+            <numerusform>%n Tage</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n Woche</numerusform><numerusform>%n Wochen</numerusform></translation>
+        <translation>
+            <numerusform>%n Woche</numerusform>
+            <numerusform>%n Wochen</numerusform>
+        </translation>
     </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 und %2</translation>
     </message>
     <message>
-        <source>%1 didn't yet exit safely...</source>
+        <source>%1 didn&apos;t yet exit safely...</source>
         <translation>%1 wurde noch nicht sicher beendet...</translation>
+    </message>
+    <message>
+        <source>%1 B</source>
+        <translation type="unfinished">%1 B</translation>
+    </message>
+    <message>
+        <source>%1 TB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 GB</source>
+        <translation type="unfinished">%1 GB</translation>
+    </message>
+    <message>
+        <source>%1 MB</source>
+        <translation type="unfinished">%1 MB</translation>
+    </message>
+    <message>
+        <source>%1 KB</source>
+        <translation type="unfinished">%1 KB</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
     <name>QObject::QObject</name>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>Fehler: Angegebenes Datenverzeichnis "%1" existiert nicht.</translation>
+        <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
+        <translation>Fehler: Angegebenes Datenverzeichnis &quot;%1&quot; existiert nicht.</translation>
     </message>
     <message>
         <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
-        <translation>Fehler: Konfigurationsdatei kann nicht analysiert werden: %1. Bitte nur "Schlüssel=Wert"-Syntax verwenden.</translation>
+        <translation>Fehler: Konfigurationsdatei kann nicht analysiert werden: %1. Bitte nur &quot;Schlüssel=Wert&quot;-Syntax verwenden.</translation>
     </message>
     <message>
         <source>Error: %1</source>
@@ -1776,6 +2219,38 @@
         <source>Unknown</source>
         <translation>Unbekannt</translation>
     </message>
+    <message>
+        <source>Connected peers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One try peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fehler</translation>
+    </message>
+    <message>
+        <source>Remove Peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove the peer: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No peer was selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ReceiveCoinsDialog</name>
@@ -1800,8 +2275,8 @@
         <translation>Vorhandene Empfangsadresse &amp;wiederverwenden (nicht empfohlen)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Litecoin network.</source>
-        <translation>Eine optionale Nachricht, die an die Zahlungsanforderung angehängt wird. Sie wird angezeigt, wenn die Anforderung geöffnet wird. Hinweis: Diese Nachricht wird nicht mit der Zahlung über das Litecoin-Netzwerk gesendet.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Dogmcoin network.</source>
+        <translation>Eine optionale Nachricht, die an die Zahlungsanforderung angehängt wird. Sie wird angezeigt, wenn die Anforderung geöffnet wird. Hinweis: Diese Nachricht wird nicht mit der Zahlung über das Dogmcoin-Netzwerk gesendet.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1954,11 +2429,11 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Litecoins überweisen</translation>
+        <translation>Dogmcoins überweisen</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
-        <translation>"Coin Control"-Funktionen</translation>
+        <translation>&quot;Coin Control&quot;-Funktionen</translation>
     </message>
     <message>
         <source>Inputs...</source>
@@ -2021,10 +2496,6 @@
         <translation>pro Kilobyte</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then "per kilobyte" only pays 250 satoshis in fee, while "total at least" pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Wenn die benutzerdefinierte Gebühr 1000 Satoshis beträgt und die Transaktion nur 250 Byte groß ist, wird bei Auswahl von "pro Kilobyte" eine Gebühr in Höhe von 250 Satoshis, bei Auswahl von "Mindestbetrag" eine Gebühr in Höhe von 1000 Satoshis bezahlt. Bei Transaktionen die Größer als ein Kilobyte sind, werden bei beiden Optionen die Gebühren pro Kilobyte bezahlt.</translation>
-    </message>
-    <message>
         <source>Hide</source>
         <translation>Ausblenden</translation>
     </message>
@@ -2033,8 +2504,8 @@
         <translation>Mindestbetrag</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for litecoin transactions than the network can process.</source>
-        <translation>Nur die minimale Gebühr zu bezahlen ist so lange in Ordnung, wie weniger Transaktionsvolumen als Platz in den Blöcken vorhanden ist. Aber Vorsicht, diese Option kann dazu führen, dass Transaktionen nicht bestätigt werden, wenn mehr Bedarf an Litecoin-Transaktionen besteht als das Netzwerk verarbeiten kann.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for dogmcoin transactions than the network can process.</source>
+        <translation>Nur die minimale Gebühr zu bezahlen ist so lange in Ordnung, wie weniger Transaktionsvolumen als Platz in den Blöcken vorhanden ist. Aber Vorsicht, diese Option kann dazu führen, dass Transaktionen nicht bestätigt werden, wenn mehr Bedarf an Dogmcoin-Transaktionen besteht als das Netzwerk verarbeiten kann.</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -2047,18 +2518,6 @@
     <message>
         <source>Custom:</source>
         <translation>Benutzerdefiniert:</translation>
-    </message>
-    <message>
-        <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
-        <translation>(Intelligente Gebührenlogik ist noch nicht verfügbar. Normalerweise dauert dies einige Blöcke lang...)</translation>
-    </message>
-    <message>
-        <source>normal</source>
-        <translation>normal</translation>
-    </message>
-    <message>
-        <source>fast</source>
-        <translation>schnell</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
@@ -2074,11 +2533,7 @@
     </message>
     <message>
         <source>Dust:</source>
-        <translation>"Dust":</translation>
-    </message>
-    <message>
-        <source>Confirmation time target:</source>
-        <translation>Gewünschte Bestätigungszeit:</translation>
+        <translation>&quot;Dust&quot;:</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -2118,7 +2573,7 @@
     </message>
     <message>
         <source>Copy dust</source>
-        <translation>"Staub" kopieren</translation>
+        <translation>&quot;Staub&quot; kopieren</translation>
     </message>
     <message>
         <source>Copy change</source>
@@ -2184,21 +2639,13 @@
         <source>Payment request expired.</source>
         <translation>Zahlungsanforderung abgelaufen.</translation>
     </message>
-    <message numerus="yes">
-        <source>%n block(s)</source>
-        <translation><numerusform>%n Block</numerusform><numerusform>%n Blöcke</numerusform></translation>
-    </message>
     <message>
         <source>Pay only the required fee of %1</source>
         <translation>Nur die notwendige Gebühr in Höhe von %1 zahlen</translation>
     </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Voraussichtlicher Beginn der Bestätigung innerhalb von %n Block.</numerusform><numerusform>Voraussichtlicher Beginn der Bestätigung innerhalb von %n Blöcken.</numerusform></translation>
-    </message>
     <message>
-        <source>Warning: Invalid Litecoin address</source>
-        <translation>Warnung: Ungültige Litecoin-Adresse</translation>
+        <source>Warning: Invalid Dogmcoin address</source>
+        <translation>Warnung: Ungültige Dogmcoin-Adresse</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2215,6 +2662,30 @@
     <message>
         <source>(no label)</source>
         <translation>(keine Bezeichnung)</translation>
+    </message>
+    <message>
+        <source>Using the fallbackfee can result in sending a transaction that will take several hours or days (or never) to confirm. Consider choosing your fee manually or wait until your have validated the complete chain.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: Fee estimation is currently not possible.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 satoshis in fee, while &quot;total at least&quot; pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Priority:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>low</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>high</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2240,7 +2711,7 @@
         <translation>Dies ist eine normale Überweisung.</translation>
     </message>
     <message>
-        <source>The Litecoin address to send the payment to</source>
+        <source>The Dogmcoin address to send the payment to</source>
         <translation>Die Zahlungsadresse der Überweisung</translation>
     </message>
     <message>
@@ -2260,8 +2731,8 @@
         <translation>Diesen Eintrag entfernen</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less litecoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Die Gebühr wird vom zu überweisenden Betrag abgezogen. Der Empfänger wird also weniger Litecoins erhalten, als Sie im Betrags-Feld eingegeben haben. Falls mehrere Empfänger ausgewählt wurden, wird die Gebühr gleichmäßig verteilt.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less dogmcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Die Gebühr wird vom zu überweisenden Betrag abgezogen. Der Empfänger wird also weniger Dogmcoins erhalten, als Sie im Betrags-Feld eingegeben haben. Falls mehrere Empfänger ausgewählt wurden, wird die Gebühr gleichmäßig verteilt.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2284,8 +2755,8 @@
         <translation>Adressbezeichnung eingeben, die dann zusammen mit der Adresse der Liste bereits verwendeter Adressen hinzugefügt wird.</translation>
     </message>
     <message>
-        <source>A message that was attached to the litecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Litecoin network.</source>
-        <translation>Eine an die "litecoin:"-URI angefügte Nachricht, die zusammen mit der Transaktion gespeichert wird. Hinweis: Diese Nachricht wird nicht über das Litecoin-Netzwerk gesendet.</translation>
+        <source>A message that was attached to the dogmcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogmcoin network.</source>
+        <translation>Eine an die &quot;dogmcoin:&quot;-URI angefügte Nachricht, die zusammen mit der Transaktion gespeichert wird. Hinweis: Diese Nachricht wird nicht über das Dogmcoin-Netzwerk gesendet.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2329,12 +2800,12 @@
         <translation>Nachricht &amp;signieren</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive litecoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Sie können Nachrichten/Vereinbarungen mit Hilfe Ihrer Adressen signieren, um zu beweisen, dass Sie Litecoins empfangen können, die an diese Adressen überwiesen werden. Seien Sie vorsichtig und signieren Sie nichts Vages oder Willkürliches, um Ihre Indentität vor Phishingangriffen zu schützen. Signieren Sie nur vollständig-detaillierte Aussagen, mit denen Sie auch einverstanden sind.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive dogmcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Sie können Nachrichten/Vereinbarungen mit Hilfe Ihrer Adressen signieren, um zu beweisen, dass Sie Dogmcoins empfangen können, die an diese Adressen überwiesen werden. Seien Sie vorsichtig und signieren Sie nichts Vages oder Willkürliches, um Ihre Indentität vor Phishingangriffen zu schützen. Signieren Sie nur vollständig-detaillierte Aussagen, mit denen Sie auch einverstanden sind.</translation>
     </message>
     <message>
-        <source>The Litecoin address to sign the message with</source>
-        <translation>Die Litecoin-Adresse mit der die Nachricht signiert wird</translation>
+        <source>The Dogmcoin address to sign the message with</source>
+        <translation>Die Dogmcoin-Adresse mit der die Nachricht signiert wird</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2365,8 +2836,8 @@
         <translation>Aktuelle Signatur in die Zwischenablage kopieren</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Litecoin address</source>
-        <translation>Die Nachricht signieren, um den Besitz dieser Litecoin-Adresse zu beweisen</translation>
+        <source>Sign the message to prove you own this Dogmcoin address</source>
+        <translation>Die Nachricht signieren, um den Besitz dieser Dogmcoin-Adresse zu beweisen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2374,7 +2845,7 @@
     </message>
     <message>
         <source>Reset all sign message fields</source>
-        <translation>Alle "Nachricht signieren"-Felder zurücksetzen</translation>
+        <translation>Alle &quot;Nachricht signieren&quot;-Felder zurücksetzen</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -2385,16 +2856,16 @@
         <translation>Nachricht &amp;verifizieren</translation>
     </message>
     <message>
-        <source>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
+        <source>Enter the receiver&apos;s address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
         <translation>Geben Sie die Zahlungsadresse des Empfängers, Nachricht (achten Sie darauf Zeilenumbrüche, Leerzeichen, Tabulatoren usw. exakt zu kopieren) und Signatur unten ein, um die Nachricht zu verifizieren. Vorsicht, interpretieren Sie nicht mehr in die Signatur hinein, als in der signierten Nachricht selber enthalten ist, um nicht von einem Man-in-the-middle-Angriff hinters Licht geführt zu werden. Beachten Sie dass dies nur beweißt, dass die signierende Partei über diese Adresse Überweisungen empfangen kann.</translation>
     </message>
     <message>
-        <source>The Litecoin address the message was signed with</source>
-        <translation>Die Litecoin-Adresse mit der die Nachricht signiert wurde</translation>
+        <source>The Dogmcoin address the message was signed with</source>
+        <translation>Die Dogmcoin-Adresse mit der die Nachricht signiert wurde</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Litecoin address</source>
-        <translation>Die Nachricht verifizieren, um sicherzustellen, dass diese mit der angegebenen Litecoin-Adresse signiert wurde</translation>
+        <source>Verify the message to ensure it was signed with the specified Dogmcoin address</source>
+        <translation>Die Nachricht verifizieren, um sicherzustellen, dass diese mit der angegebenen Dogmcoin-Adresse signiert wurde</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2402,11 +2873,11 @@
     </message>
     <message>
         <source>Reset all verify message fields</source>
-        <translation>Alle "Nachricht verifizieren"-Felder zurücksetzen</translation>
+        <translation>Alle &quot;Nachricht verifizieren&quot;-Felder zurücksetzen</translation>
     </message>
     <message>
-        <source>Click "Sign Message" to generate signature</source>
-        <translation>Auf "Nachricht signieren" klicken, um die Signatur zu erzeugen</translation>
+        <source>Click &quot;Sign Message&quot; to generate signature</source>
+        <translation>Auf &quot;Nachricht signieren&quot; klicken, um die Signatur zu erzeugen</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2446,7 +2917,7 @@
     </message>
     <message>
         <source>The signature did not match the message digest.</source>
-        <translation>Die Signatur entspricht nicht dem "Message Digest".</translation>
+        <translation>Die Signatur entspricht nicht dem &quot;Message Digest&quot;.</translation>
     </message>
     <message>
         <source>Message verification failed.</source>
@@ -2465,6 +2936,45 @@
     </message>
 </context>
 <context>
+    <name>TestPeerDialog</name>
+    <message>
+        <source>Test Peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer details below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Be careful! Do not blindly trust anyone that tells you to add their node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer&apos;s address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer&apos;s port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter an address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a valid peer address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try Peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TrafficGraphWidget</name>
     <message>
         <source>KB/s</source>
@@ -2475,7 +2985,10 @@
     <name>TransactionDesc</name>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Offen für %n weiteren Block</numerusform><numerusform>Offen für %n weitere Blöcke</numerusform></translation>
+        <translation>
+            <numerusform>Offen für %n weiteren Block</numerusform>
+            <numerusform>Offen für %n weitere Blöcke</numerusform>
+        </translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2523,7 +3036,10 @@
     </message>
     <message numerus="yes">
         <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, über %n Knoten übertragen</numerusform><numerusform>, über %n Knoten übertragen</numerusform></translation>
+        <translation>
+            <numerusform>, über %n Knoten übertragen</numerusform>
+            <numerusform>, über %n Knoten übertragen</numerusform>
+        </translation>
     </message>
     <message>
         <source>Date</source>
@@ -2567,7 +3083,10 @@
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>reift noch %n weiteren Block</numerusform><numerusform>reift noch %n weitere Blöcke</numerusform></translation>
+        <translation>
+            <numerusform>reift noch %n weiteren Block</numerusform>
+            <numerusform>reift noch %n weitere Blöcke</numerusform>
+        </translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2618,8 +3137,8 @@
         <translation>Händler</translation>
     </message>
     <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Erzeugte Litecoins müssen %1 Blöcke lang reifen, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in "nicht angenommen" geändert und Sie werden keine Litecoins gutgeschrieben bekommen. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block fast zeitgleich erzeugt.</translation>
+        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>Erzeugte Dogmcoins müssen %1 Blöcke lang reifen, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in &quot;nicht angenommen&quot; geändert und Sie werden keine Dogmcoins gutgeschrieben bekommen. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block fast zeitgleich erzeugt.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -2673,7 +3192,10 @@
     </message>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Offen für %n weiteren Block</numerusform><numerusform>Offen für %n weitere Blöcke</numerusform></translation>
+        <translation>
+            <numerusform>Offen für %n weiteren Block</numerusform>
+            <numerusform>Offen für %n weitere Blöcke</numerusform>
+        </translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2945,7 +3467,7 @@
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Litecoins überweisen</translation>
+        <translation>Dogmcoins überweisen</translation>
     </message>
 </context>
 <context>
@@ -3054,8 +3576,8 @@
         <translation>Kann HTTP Server nicht starten. Siehe debug log für Details.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Dogmcoin Core</source>
+        <translation>Dogmcoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -3071,7 +3593,7 @@
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
-        <translation>An die angegebene Adresse binden und immer abhören. Für IPv6 "[Host]:Port"-Notation verwenden</translation>
+        <translation>An die angegebene Adresse binden und immer abhören. Für IPv6 &quot;[Host]:Port&quot;-Notation verwenden</translation>
     </message>
     <message>
         <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
@@ -3106,7 +3628,7 @@
         <translation>Maximale Gesamtgebühr (in %s) in einer Börsentransaktion; wird dies zu niedrig gesetzten können große Transaktionen abgebrochen werden (Standard: %s)</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
+        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong, %s will not work properly.</source>
         <translation>Bitte korrigieren Sie die Datums- und Uhrzeiteinstellungen Ihres Computers, da %s ansonsten nicht ordnungsgemäß funktionieren wird.</translation>
     </message>
     <message>
@@ -3126,7 +3648,7 @@
         <translation>Maximale Anzahl an Skript-Verifizierungs-Threads festlegen (%u bis %d, 0 = automatisch, &lt;0 = so viele Kerne frei lassen, Standard: %d)</translation>
     </message>
     <message>
-        <source>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</source>
+        <source>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</source>
         <translation>Die Block-Datenbank enthält einen Block, der in der Zukunft auftaucht. Dies kann daran liegen, dass die Systemzeit Ihres Computers falsch eingestellt ist. Stellen Sie die Block-Datenbank nur wieder her, wenn Sie sich sicher sind, dass Ihre Systemzeit korrekt eingestellt ist.</translation>
     </message>
     <message>
@@ -3186,8 +3708,8 @@
         <translation>Blockerzeugungsoptionen:</translation>
     </message>
     <message>
-        <source>Cannot resolve -%s address: '%s'</source>
-        <translation>Kann Adresse in -%s nicht auflösen: '%s'</translation>
+        <source>Cannot resolve -%s address: &apos;%s&apos;</source>
+        <translation>Kann Adresse in -%s nicht auflösen: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Chain selection options:</source>
@@ -3290,16 +3812,16 @@
         <translation>Initialisierungsplausibilitätsprüfung fehlgeschlagen. %s wird beendet.</translation>
     </message>
     <message>
-        <source>Invalid -onion address: '%s'</source>
-        <translation>Ungültige "-onion"-Adresse: '%s'</translation>
+        <source>Invalid -onion address: &apos;%s&apos;</source>
+        <translation>Ungültige &quot;-onion&quot;-Adresse: &apos;%s&apos;</translation>
     </message>
     <message>
-        <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
-        <translation>Ungültiger Betrag für -%s=&lt;amount&gt;: '%s'</translation>
+        <source>Invalid amount for -%s=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Ungültiger Betrag für -%s=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <source>Invalid amount for -fallbackfee=&lt;amount&gt;: '%s'</source>
-        <translation>Ungültiger Betrag für -fallbackfee=&lt;amount&gt;: '%s'</translation>
+        <source>Invalid amount for -fallbackfee=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Ungültiger Betrag für -fallbackfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</source>
@@ -3423,11 +3945,11 @@
     </message>
     <message>
         <source>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</source>
-        <translation>An die angegebene Adresse binden und Gegenstellen, die sich dorthin verbinden, immer zulassen. Für IPv6 "[Host]:Port"-Notation verwenden</translation>
+        <translation>An die angegebene Adresse binden und Gegenstellen, die sich dorthin verbinden, immer zulassen. Für IPv6 &quot;[Host]:Port&quot;-Notation verwenden</translation>
     </message>
     <message>
         <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
-        <translation>An die angegebene Adresse binden und nach eingehenden JSON-RPC-Verbindungen abhören. Für IPv6 "[Host]:Port"-Notation verwenden. Kann mehrmals angegeben werden. (Standard: an alle Schnittstellen binden)</translation>
+        <translation>An die angegebene Adresse binden und nach eingehenden JSON-RPC-Verbindungen abhören. Für IPv6 &quot;[Host]:Port&quot;-Notation verwenden. Kann mehrmals angegeben werden. (Standard: an alle Schnittstellen binden)</translation>
     </message>
     <message>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
@@ -3454,12 +3976,12 @@
         <translation>Wenn -paytxfee nicht festgelegt wurde Gebühren einschließen, so dass mit der Bestätigung von Transaktionen im Schnitt innerhalb von n Blöcken begonnen wird (Standard: %u)</translation>
     </message>
     <message>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
-        <translation>Ungültiger Betrag für -maxtxfee=&lt;amount&gt;: '%s' (muss mindestens die minimale Weiterleitungsgebühr in Höhe von %s sein, um zu verhindern dass Transaktionen nicht bearbeitet werden)</translation>
+        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
+        <translation>Ungültiger Betrag für -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (muss mindestens die minimale Weiterleitungsgebühr in Höhe von %s sein, um zu verhindern dass Transaktionen nicht bearbeitet werden)</translation>
     </message>
     <message>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
-        <translation>Maximale Datengröße in "Data Carrier"-Transaktionen die weitergeleitet und erarbeitet werden (Standard: %u)</translation>
+        <translation>Maximale Datengröße in &quot;Data Carrier&quot;-Transaktionen die weitergeleitet und erarbeitet werden (Standard: %u)</translation>
     </message>
     <message>
         <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
@@ -3467,7 +3989,7 @@
     </message>
     <message>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
-        <translation>Maximale Größe in Byte von "high-priority/low-fee"-Transaktionen festlegen (Standard: %d)</translation>
+        <translation>Maximale Größe in Byte von &quot;high-priority/low-fee&quot;-Transaktionen festlegen (Standard: %d)</translation>
     </message>
     <message>
         <source>The transaction amount is too small to send after the fee has been deducted</source>
@@ -3514,20 +4036,20 @@
         <translation>Hinweis</translation>
     </message>
     <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
-        <translation>Ungültiger Betrag für -paytxfee=&lt;amount&gt;: '%s' (muss mindestens %s sein)</translation>
+        <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</source>
+        <translation>Ungültiger Betrag für -paytxfee=&lt;amount&gt;: &apos;%s&apos; (muss mindestens %s sein)</translation>
     </message>
     <message>
-        <source>Invalid netmask specified in -whitelist: '%s'</source>
-        <translation>Ungültige Netzmaske angegeben in -whitelist: '%s'</translation>
+        <source>Invalid netmask specified in -whitelist: &apos;%s&apos;</source>
+        <translation>Ungültige Netzmaske angegeben in -whitelist: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Maximal &lt;n&gt; nicht-verbindbare Transaktionen im Speicher halten (Standard: %u)</translation>
     </message>
     <message>
-        <source>Need to specify a port with -whitebind: '%s'</source>
-        <translation>Angabe eines Ports benötigt für -whitebind: '%s'</translation>
+        <source>Need to specify a port with -whitebind: &apos;%s&apos;</source>
+        <translation>Angabe eines Ports benötigt für -whitebind: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Node relay options:</source>
@@ -3630,10 +4152,6 @@
         <translation>Passwort für JSON-RPC-Verbindungen</translation>
     </message>
     <message>
-        <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
-        <translation>Befehl ausführen wenn der beste Block wechselt (%s im Befehl wird durch den Hash des Blocks ersetzt)</translation>
-    </message>
-    <message>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>Erlaube DNS-Abfragen für -addnode, -seednode und -connect</translation>
     </message>
@@ -3655,7 +4173,7 @@
     </message>
     <message>
         <source>Equivalent bytes per sigop in transactions for relay and mining (default: %u)</source>
-        <translation>Maximale Datengröße in "Data Carrier"-Transaktionen die weitergeleitet und erarbeitet werden (Standard: %u)</translation>
+        <translation>Maximale Datengröße in &quot;Data Carrier&quot;-Transaktionen die weitergeleitet und erarbeitet werden (Standard: %u)</translation>
     </message>
     <message>
         <source>Fees (in %s/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
@@ -3671,7 +4189,7 @@
     </message>
     <message>
         <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
-        <translation>Einen vollständigen Transaktionsindex führen, der vom RPC-Befehl "getrawtransaction" genutzt wird (Standard: %u)</translation>
+        <translation>Einen vollständigen Transaktionsindex führen, der vom RPC-Befehl &quot;getrawtransaction&quot; genutzt wird (Standard: %u)</translation>
     </message>
     <message>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
@@ -3706,7 +4224,7 @@
         <translation>Versucht ausgehenden Datenverkehr unter dem gegebenen Wert zu halten (in MiB pro 24h), 0 = kein Limit (default: %d)</translation>
     </message>
     <message>
-        <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
+        <source>Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
         <translation>Nicht unterstütztes Argument -socks gefunden. Das Festlegen der SOCKS-Version ist nicht mehr möglich, nur noch SOCKS5-Proxies werden unterstützt.</translation>
     </message>
     <message>
@@ -3718,7 +4236,7 @@
         <translation>Separaten SOCKS5-Proxy verwenden, um Gegenstellen über versteckte Tor-Dienste zu erreichen (Standard: %s)</translation>
     </message>
     <message>
-        <source>Warning: Unknown block versions being mined! It's possible unknown rules are in effect</source>
+        <source>Warning: Unknown block versions being mined! It&apos;s possible unknown rules are in effect</source>
         <translation>Warnung: Unbekannte Blockversion wird durch Mining erzeugt! Es ist möglich, dass unbekannte Regeln in Kraft sind.</translation>
     </message>
     <message>
@@ -3746,8 +4264,8 @@
         <translation>IP-Adressen in Debugausgabe einschließen (Standard: %u)</translation>
     </message>
     <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>Ungültige Adresse in -proxy: '%s'</translation>
+        <source>Invalid -proxy address: &apos;%s&apos;</source>
+        <translation>Ungültige Adresse in -proxy: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Keypool ran out, please call keypoolrefill first</source>
@@ -3783,11 +4301,11 @@
     </message>
     <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
-        <translation>"Data Carrier"-Transaktionen weiterleiten und erarbeiten (Standard: %u)</translation>
+        <translation>&quot;Data Carrier&quot;-Transaktionen weiterleiten und erarbeiten (Standard: %u)</translation>
     </message>
     <message>
         <source>Relay non-P2SH multisig (default: %u)</source>
-        <translation>Nicht-"P2SH-Multisig" weiterleiten (Standard: %u)</translation>
+        <translation>Nicht-&quot;P2SH-Multisig&quot; weiterleiten (Standard: %u)</translation>
     </message>
     <message>
         <source>Send transactions with full-RBF opt-in enabled (default: %u)</source>
@@ -3854,8 +4372,8 @@
         <translation>Die Transaktion muss mindestens einen Empfänger enthalten.</translation>
     </message>
     <message>
-        <source>Unknown network specified in -onlynet: '%s'</source>
-        <translation>Unbekannter Netztyp in -onlynet angegeben: '%s'</translation>
+        <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
+        <translation>Unbekannter Netztyp in -onlynet angegeben: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3892,6 +4410,86 @@
     <message>
         <source>Error</source>
         <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>Bitcoin Core and Dogmcoin Core</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Amount under which a transaction output is considered dust, in %s (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error loading %s: You can&apos;t enable HD on a already existing non-HD wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Execute command when the best block changes (%s in cmd is replaced by block hash, %i is replaced by block number)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit %s and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard. Paper wallet art provided by Anacoluthia.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: Wallet file corrupt, data salvaged! Original %s saved as %s in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Amaze</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error loading %s: You can&apos;t disable HD on a already existing HD wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Many generous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Receive and display P2P network alerts (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Such expensive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-discardthreshold is set very high! This is the output amount that the wallet will discard (to fee) if it is smaller than this setting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Amount under which a transaction output is considered non-standard and will not be accepted or relayed, in %s (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid amount for -discardthreshold=&lt;amount&gt;: &apos;%s&apos; (must be at least the dust limit of %s to prevent stuck transactions)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The minimum transaction output size (in %s) used to validate wallet transactions and discard change (to fee) (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Namecoin-compatible AuxPow API structure, (default: %u)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

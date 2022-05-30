@@ -1,4 +1,41 @@
-<TS language="ja" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ja">
+<context>
+    <name>AddPeerDialog</name>
+    <message>
+        <source>Add Peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer details below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Be careful! Do not blindly trust anyone that tells you to add their node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer&apos;s address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer&apos;s port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter an address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a valid peer address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -54,20 +91,20 @@
         <translation>選択 (&amp;C)</translation>
     </message>
     <message>
-        <source>Sending addresses</source>
+        <source>Such sending addresses</source>
         <translation>送金用</translation>
     </message>
     <message>
-        <source>Receiving addresses</source>
+        <source>Much receiving addresses</source>
         <translation>受け取りアドレス</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>これらは支払いを送信するためのあなたの Litecoin アドレスです。コインを送信する前に、常に額と受信アドレスを確認してください。</translation>
+        <source>These are your Dogmcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>これらは支払いを送信するためのあなたの Dogmcoin アドレスです。コインを送信する前に、常に額と受信アドレスを確認してください。</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>これらは支払いを受け取るためのビットコインアドレスです。トランザクションごとに新しい受け取り用アドレスを作成することが推奨されます。</translation>
+        <source>These are your Dogmcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>これらは支払いを受け取るためのドージコインアドレスです。トランザクションごとに新しい受け取り用アドレスを作成することが推奨されます。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,8 +205,8 @@
         <translation>ウォレットの暗号化を確認する</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LITECOINS&lt;/b&gt;!</source>
-        <translation>警告: もしもあなたのウォレットを暗号化してパスフレーズを失ってしまったなら、&lt;b&gt;あなたの Litecoin はすべて失われます&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DOGECOINS&lt;/b&gt;!</source>
+        <translation>警告: もしもあなたのウォレットを暗号化してパスフレーズを失ってしまったなら、&lt;b&gt;あなたの Dogmcoin はすべて失われます&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -180,7 +217,7 @@
         <translation>ウォレットは暗号化されました</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your litecoins from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your dogmcoins from being stolen by malware infecting your computer.</source>
         <translation>暗号化処理を完了させるため %1 をいますぐ終了します。ウォレットの暗号化では、コンピュータに感染したマルウェアなどによるビットコインの盗難から完全に守ることはできないことにご注意ください。</translation>
     </message>
     <message>
@@ -242,7 +279,7 @@
         <translation>ネットワークに同期中……</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
+        <source>&amp;Wow</source>
         <translation>概要(&amp;O)</translation>
     </message>
     <message>
@@ -306,14 +343,6 @@
         <translation>パスフレーズの変更... (&amp;C)</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>送金先アドレス一覧 (&amp;S)...</translation>
-    </message>
-    <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>受け取り用アドレス一覧 (&amp;R)...</translation>
-    </message>
-    <message>
         <source>Open &amp;URI...</source>
         <translation>URI を開く (&amp;U)...</translation>
     </message>
@@ -338,8 +367,8 @@
         <translation>ディスク上のブロックのインデックスを再作成中...</translation>
     </message>
     <message>
-        <source>Send coins to a Litecoin address</source>
-        <translation>Litecoin アドレスにコインを送る</translation>
+        <source>Send coins to a Dogmcoin address</source>
+        <translation>Dogmcoin アドレスにコインを送る</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -362,19 +391,19 @@
         <translation>メッセージの検証... (&amp;V)</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Dogmcoin</source>
+        <translation>Dogmcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>ウォレット</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
+        <source>&amp;Such Send</source>
         <translation>送金 (&amp;S)</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
+        <source>&amp;Much Receive</source>
         <translation>入金 (&amp;R)</translation>
     </message>
     <message>
@@ -390,12 +419,12 @@
         <translation>あなたのウォレットの秘密鍵を暗号化します</translation>
     </message>
     <message>
-        <source>Sign messages with your Litecoin addresses to prove you own them</source>
-        <translation>あなたが所有していることを証明するために、あなたの Litecoin アドレスでメッセージに署名してください</translation>
+        <source>Sign messages with your Dogmcoin addresses to prove you own them</source>
+        <translation>あなたが所有していることを証明するために、あなたの Dogmcoin アドレスでメッセージに署名してください</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Litecoin addresses</source>
-        <translation>指定された Litecoin アドレスで署名されたことを確認するためにメッセージを検証します</translation>
+        <source>Verify messages to ensure they were signed with specified Dogmcoin addresses</source>
+        <translation>指定された Dogmcoin アドレスで署名されたことを確認するためにメッセージを検証します</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -414,8 +443,8 @@
         <translation>タブツールバー</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>支払いを要求する (QRコードとlitecoin:ではじまるURIを生成する)</translation>
+        <source>Request payments (generates QR codes and dogmcoin: URIs)</source>
+        <translation>支払いを要求する (QRコードとdogmcoin:ではじまるURIを生成する)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -426,16 +455,18 @@
         <translation>支払いを受け取るアドレスとラベルのリストを表示する</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>litecoin: URIまたは支払いリクエストを開く</translation>
+        <source>Open a dogmcoin: URI or payment request</source>
+        <translation>dogmcoin: URIまたは支払いリクエストを開く</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>コマンドラインオプション (&amp;C)</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Litecoin network</source>
-        <translation><numerusform>%n の Litecoin ネットワークへのアクティブな接続</numerusform></translation>
+        <source>%n active connection(s) to Dogmcoin network</source>
+        <translation>
+            <numerusform>%n の Dogmcoin ネットワークへのアクティブな接続</numerusform>
+        </translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -447,7 +478,9 @@
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation><numerusform>トランザクション履歴の %n ブロックを処理しました。</numerusform></translation>
+        <translation>
+            <numerusform>トランザクション履歴の %n ブロックを処理しました。</numerusform>
+        </translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -478,8 +511,8 @@
         <translation>バージョンは最新です</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Litecoin command-line options</source>
-        <translation>有効な Litecoin のコマンドライン オプションを見るために %1 のヘルプメッセージを表示します。</translation>
+        <source>Show the %1 help message to get a list with possible Dogmcoin command-line options</source>
+        <translation>有効な Dogmcoin のコマンドライン オプションを見るために %1 のヘルプメッセージを表示します。</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -548,8 +581,43 @@
         <translation>ウォレットは&lt;b&gt;暗号化されて、ロックされています&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Litecoin can no longer continue safely and will quit.</source>
-        <translation>致命的なエラーが発生しました。Litecoin は安全に継続することができず終了するでしょう。</translation>
+        <source>A fatal error occurred. Dogmcoin can no longer continue safely and will quit.</source>
+        <translation>致命的なエラーが発生しました。Dogmcoin は安全に継続することができず終了するでしょう。</translation>
+    </message>
+    <message>
+        <source>&amp;Print paper wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print paper wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Such sending addresses...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Much receiving addresses...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Private Key...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import a Dogmcoin private key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runaway exception</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ClientModel</name>
+    <message>
+        <source>Network Alert</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -687,8 +755,8 @@
         <translation>少なくともひとつの受取額が現在のダスト閾値を下回る場合にはこのラベルは赤くなります。</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
-        <translation>ひとつの入力につき %1 satoshi 前後ずれることがあります。</translation>
+        <source>Can vary +/- %1 koinu(s) per input.</source>
+        <translation>ひとつの入力につき %1 koinu 前後ずれることがあります。</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -742,12 +810,12 @@
         <translation>送信アドレスを編集</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Litecoin address.</source>
-        <translation>入力されたアドレス "%1" は無効な Litecoin アドレスです。</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Dogmcoin address.</source>
+        <translation>入力されたアドレス &quot;%1&quot; は無効な Dogmcoin アドレスです。</translation>
     </message>
     <message>
-        <source>The entered address "%1" is already in the address book.</source>
-        <translation>入力されたアドレス "%1" は既にアドレス帳にあります。</translation>
+        <source>The entered address &quot;%1&quot; is already in the address book.</source>
+        <translation>入力されたアドレス &quot;%1&quot; は既にアドレス帳にあります。</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -789,7 +857,7 @@
     </message>
     <message>
         <source>(%1-bit)</source>
-        <translation>(%1ビット)</translation>
+        <translation>(%1ドージ)</translation>
     </message>
     <message>
         <source>About %1</source>
@@ -816,8 +884,8 @@
         <translation>起動時にデータ ディレクトリを選ぶ (初期値: %u)</translation>
     </message>
     <message>
-        <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>言語設定 例: "de_DE" (初期値: システムの言語)</translation>
+        <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
+        <translation>言語設定 例: &quot;de_DE&quot; (初期値: システムの言語)</translation>
     </message>
     <message>
         <source>Start minimized</source>
@@ -837,6 +905,69 @@
     </message>
 </context>
 <context>
+    <name>ImportKeysDialog</name>
+    <message>
+        <source>Import Private Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Private Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private Key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private key to import into your wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label for this private key in your wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label (optional):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rescan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset all key management options to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished">キャンセル (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Invalid private key; please check and try again!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid address generated from private key; please check and try again!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to add private key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rescanning...</source>
+        <translation type="unfinished">再スキャン中...</translation>
+    </message>
+</context>
+<context>
     <name>Intro</name>
     <message>
         <source>Welcome</source>
@@ -851,7 +982,7 @@
         <translation>これはプログラム最初の起動です。%1 がデータを保存する場所を選択して下さい。</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Litecoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>%1 will download and store a copy of the Dogmcoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>%1 は、ビットコインのブロックチェーンのコピーを、ダウンロードして保存します。少なくとも %2 ギガバイトのデータが、このディレクトリに保存されます。そしてそれは時間と共に増加します。またウォレットもこのディレクトリに保存されます。</translation>
     </message>
     <message>
@@ -863,8 +994,8 @@
         <translation>任意のデータ ディレクトリを使用:</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation>エラー: 指定のデータディレクトリ "%1" を作成できません。</translation>
+        <source>Error: Specified data directory &quot;%1&quot; cannot be created.</source>
+        <translation>エラー: 指定のデータディレクトリ &quot;%1&quot; を作成できません。</translation>
     </message>
     <message>
         <source>Error</source>
@@ -872,11 +1003,19 @@
     </message>
     <message numerus="yes">
         <source>%n GB of free space available</source>
-        <translation><numerusform>%n GBの空き容量が利用可能</numerusform></translation>
+        <translation>
+            <numerusform>%n GBの空き容量が利用可能</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>(of %n GB needed)</source>
-        <translation><numerusform>(%n GB必要)</numerusform></translation>
+        <translation>
+            <numerusform>(%n GB必要)</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Choose data directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -886,11 +1025,11 @@
         <translation>フォーム</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the litecoin network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the dogmcoin network, as detailed below.</source>
         <translation>確認できない最近のトランザクションがあるかもしれません。これによりウォレットの残高は不正確なものである可能性があります。この情報はウォレットが一度ビットコインネットワークへの同期が完了すると正確なものとなります。詳細は下記を参照してください。</translation>
     </message>
     <message>
-        <source>Attempting to spend litecoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend dogmcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>まだ表示されていないトランザクションが影響するビットコインを使用しようとすると、ネットワークから認証がなされないでしょう。</translation>
     </message>
     <message>
@@ -1048,16 +1187,16 @@
         <translation>未検証のおつりを使用する (&amp;S)</translation>
     </message>
     <message>
-        <source>Automatically open the Litecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自動的にルーター上の Litecoin クライアントのポートを開きます。あなたのルーターが UPnP に対応していて、それが有効になっている場合に作動します。</translation>
+        <source>Automatically open the Dogmcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>自動的にルーター上の Dogmcoin クライアントのポートを開きます。あなたのルーターが UPnP に対応していて、それが有効になっている場合に作動します。</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>UPnP を使ってポートを割り当てる (&amp;U)</translation>
     </message>
     <message>
-        <source>Connect to the Litecoin network through a SOCKS5 proxy.</source>
-        <translation>SOCKS5 プロキシ経由でLitecoinネットワークに接続する</translation>
+        <source>Connect to the Dogmcoin network through a SOCKS5 proxy.</source>
+        <translation>SOCKS5 プロキシ経由でDogmcoinネットワークに接続する</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1096,8 +1235,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Litecoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Tor秘匿サービスを利用するため、独立なSOCKS5プロキシ経由でLitecoinネットワークに接続する</translation>
+        <source>Connect to the Dogmcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Tor秘匿サービスを利用するため、独立なSOCKS5プロキシ経由でDogmcoinネットワークに接続する</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1195,8 +1334,8 @@
         <translation>フォーム</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Litecoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>表示された情報は古いかもしれません。接続が確立されると、あなたのウォレットは Litecoin ネットワークと自動的に同期しますが、このプロセスはまだ完了していません。</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Dogmcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>表示された情報は古いかもしれません。接続が確立されると、あなたのウォレットは Dogmcoin ネットワークと自動的に同期しますが、このプロセスはまだ完了していません。</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1262,6 +1401,229 @@
         <source>Current total balance in watch-only addresses</source>
         <translation>監視限定アドレス内の現在の全残高</translation>
     </message>
+    <message>
+        <source>Helpful tip of the day:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never share your wallet.dat file/your private key with anyone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For more advanced settings use the console in &apos;Help&apos; -&gt; &apos;Debug Window&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Encrypt your wallet with a strong passphrase for maximum security</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make sure to keep your wallet updated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup your private key to recover your coins, using &apos;File&apos; &gt; &apos;Backup Wallet&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always do your own research before using an external cryptocurrency service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never share your private key to an untrustworthy person.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who own the private keys own the coins.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To see ongoing development and contribute, checkout Dogmcoin repository on GitHub!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Services that claim to double your dogmcoins are always ponzi schemes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PaperWalletDialog</name>
+    <message>
+        <source>Print Your Paper Wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Very New Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>So Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Many Wallets?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public Key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: Network Activity Detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is recommended to disconnect from the internet before printing paper wallets. Even though paper wallets are generated on your local computer, it is still possible to unknowingly have malware that transmits your screen to a remote location. It is also recommended to print to a local printer vs a network printer since that network traffic can be monitored. Some advanced printers also store copies of each printed document. Proceed with caution relative to the amount of value you plan to store on each address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error encoding Address into QR Code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error encoding private key into QR Code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Printing Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>failed to open file, is it writable?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load Paper Wallets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of DOGM you wish to send to each wallet:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper wallet %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%1&lt;/b&gt; to Paper Wallet &lt;span style=&apos;font-family: monospace;&apos;&gt;%2&lt;/span&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send Coins</source>
+        <translation type="unfinished">コインを送る</translation>
+    </message>
+    <message>
+        <source>The recipient address is not valid, please recheck.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The amount to pay must be larger than 0</source>
+        <translation type="unfinished">支払額は0より大きくないといけません。 {0?}</translation>
+    </message>
+    <message>
+        <source>The amount exceeds your balance.</source>
+        <translation type="unfinished">額が残高を超えています。</translation>
+    </message>
+    <message>
+        <source>The total exceeds your balance when the transaction fee is included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate address found, can only send to each address once per send operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transaction creation failed!</source>
+        <translation type="unfinished">トラザクションの作成に失敗しました!</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to send?</source>
+        <translation type="unfinished">送ってよろしいですか？</translation>
+    </message>
+    <message>
+        <source>added as transaction fee</source>
+        <translation type="unfinished">取引手数料として追加された</translation>
+    </message>
+    <message>
+        <source>Total Amount %1 (= %2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>or</source>
+        <translation type="unfinished">または</translation>
+    </message>
+    <message>
+        <source>Confirm send coins</source>
+        <translation type="unfinished">コインを送る確認</translation>
+    </message>
+    <message>
+        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PaymentServer</name>
@@ -1270,8 +1632,8 @@
         <translation>支払いのリクエストのエラーです</translation>
     </message>
     <message>
-        <source>Cannot start litecoin: click-to-pay handler</source>
-        <translation>Litecoin を起動できません: click-to-pay handler</translation>
+        <source>Cannot start dogmcoin: click-to-pay handler</source>
+        <translation>Dogmcoin を起動できません: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1286,8 +1648,8 @@
         <translation>支払いのアドレス「%1」は無効です</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Litecoin address or malformed URI parameters.</source>
-        <translation>URI を解析できません! これは無効な Litecoin アドレスあるいや不正な形式の URI パラメーターによって引き起こされる場合があります。</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Dogmcoin address or malformed URI parameters.</source>
+        <translation>URI を解析できません! これは無効な Dogmcoin アドレスあるいや不正な形式の URI パラメーターによって引き起こされる場合があります。</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1302,7 +1664,7 @@
         <translation>支払い要求は拒否されました</translation>
     </message>
     <message>
-        <source>Payment request network doesn't match client network.</source>
+        <source>Payment request network doesn&apos;t match client network.</source>
         <translation>支払いリクエストのネットワークは現在のクライアントのネットワークに一致しません。</translation>
     </message>
     <message>
@@ -1320,10 +1682,6 @@
     <message>
         <source>Invalid payment request.</source>
         <translation>無効な支払いリクエスト。</translation>
-    </message>
-    <message>
-        <source>Requested payment amount of %1 is too small (considered dust).</source>
-        <translation>要求された支払額 %1 は少なすぎます (ダストとみなされてしまいます)。</translation>
     </message>
     <message>
         <source>Refund from %1</source>
@@ -1353,6 +1711,10 @@
         <source>Payment acknowledged</source>
         <translation>支払いは確認しました</translation>
     </message>
+    <message>
+        <source>Requested payment amount of %1 is too small (below discard threshold).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PeerTableModel</name>
@@ -1372,6 +1734,41 @@
         <source>Ping</source>
         <translation>Ping</translation>
     </message>
+    <message>
+        <source>Bytes Sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bytes Received</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PeerTools</name>
+    <message>
+        <source>Error: Peer-to-peer functionality missing or disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attempted to one try node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: Node already added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node not found in connected nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected the node: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Returned OK.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -1380,8 +1777,8 @@
         <translation>総額</translation>
     </message>
     <message>
-        <source>Enter a Litecoin address (e.g. %1)</source>
-        <translation>Litecoinアドレスを入力してください (例 %1)</translation>
+        <source>Enter a Dogmcoin address (e.g. %1)</source>
+        <translation>Dogmcoinアドレスを入力してください (例 %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1413,23 +1810,33 @@
     </message>
     <message numerus="yes">
         <source>%n second(s)</source>
-        <translation><numerusform>%n 秒</numerusform></translation>
+        <translation>
+            <numerusform>%n 秒</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
-        <translation><numerusform>%n 分</numerusform></translation>
+        <translation>
+            <numerusform>%n 分</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation><numerusform>%n 時間</numerusform></translation>
+        <translation>
+            <numerusform>%n 時間</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation><numerusform>%n 日</numerusform></translation>
+        <translation>
+            <numerusform>%n 日</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n 週間</numerusform></translation>
+        <translation>
+            <numerusform>%n 週間</numerusform>
+        </translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -1437,18 +1844,40 @@
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
-        <translation><numerusform>%n 年</numerusform></translation>
+        <translation>
+            <numerusform>%n 年</numerusform>
+        </translation>
     </message>
     <message>
-        <source>%1 didn't yet exit safely...</source>
+        <source>%1 didn&apos;t yet exit safely...</source>
         <translation>%1 はまだ安全に終了していません...</translation>
+    </message>
+    <message>
+        <source>%1 B</source>
+        <translation type="unfinished">%1 B</translation>
+    </message>
+    <message>
+        <source>%1 TB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 GB</source>
+        <translation type="unfinished">%1 GB</translation>
+    </message>
+    <message>
+        <source>%1 MB</source>
+        <translation type="unfinished">%1 MB</translation>
+    </message>
+    <message>
+        <source>%1 KB</source>
+        <translation type="unfinished">%1 KB</translation>
     </message>
 </context>
 <context>
     <name>QObject::QObject</name>
     <message>
-        <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>エラー: 指定のデータ ディレクトリ "%1" は存在しません。</translation>
+        <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
+        <translation>エラー: 指定のデータ ディレクトリ &quot;%1&quot; は存在しません。</translation>
     </message>
     <message>
         <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
@@ -1780,6 +2209,38 @@
         <source>Unknown</source>
         <translation>未知</translation>
     </message>
+    <message>
+        <source>Connected peers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One try peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">エラー</translation>
+    </message>
+    <message>
+        <source>Remove Peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove the peer: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No peer was selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ReceiveCoinsDialog</name>
@@ -1804,8 +2265,8 @@
         <translation>既存の受取用アドレスを再利用する (非推奨) (&amp;E)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Litecoin network.</source>
-        <translation>支払リクエストが開始された時に表示される、支払リクエストに添える任意のメッセージです。注意：メッセージはLitecoinネットワークを通じて、支払と共に送られるわけではありません。</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Dogmcoin network.</source>
+        <translation>支払リクエストが開始された時に表示される、支払リクエストに添える任意のメッセージです。注意：メッセージはDogmcoinネットワークを通じて、支払と共に送られるわけではありません。</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2025,10 +2486,6 @@
         <translation>1キロバイトあたり手数料</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then "per kilobyte" only pays 250 satoshis in fee, while "total at least" pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>カスタム手数料が1000satoshiに設定されている場合、トランザクションサイズが250バイトとすると、「1キロバイトあたり手数料」では250satoshiの手数料のみを支払いますが、「最小手数料」では1000satoshiを支払います。1キロバイトを超えるトランザクションの場合には、どちらの方法を選択したとしても1キロバイトあたりで支払われます。</translation>
-    </message>
-    <message>
         <source>Hide</source>
         <translation>隠す</translation>
     </message>
@@ -2037,8 +2494,8 @@
         <translation>最小手数料</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for litecoin transactions than the network can process.</source>
-        <translation>ブロックの容量に比べてトランザクション流量が少ないうちは最小手数料のみの支払で十分です。しかしながらネットワークが処理しきれないほどlitecoinトランザクションの需要がひとたび生まれてしまった場合には、永遠に検証がされないトランザクションになってしまう可能性があることに注意してください。</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for dogmcoin transactions than the network can process.</source>
+        <translation>ブロックの容量に比べてトランザクション流量が少ないうちは最小手数料のみの支払で十分です。しかしながらネットワークが処理しきれないほどdogmcoinトランザクションの需要がひとたび生まれてしまった場合には、永遠に検証がされないトランザクションになってしまう可能性があることに注意してください。</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
@@ -2051,18 +2508,6 @@
     <message>
         <source>Custom:</source>
         <translation>カスタム：</translation>
-    </message>
-    <message>
-        <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
-        <translation>（スマート手数料はまだ初期化されていません。これにはおおよそ数ブロックほどかかります……）</translation>
-    </message>
-    <message>
-        <source>normal</source>
-        <translation>普通</translation>
-    </message>
-    <message>
-        <source>fast</source>
-        <translation>高速</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
@@ -2079,10 +2524,6 @@
     <message>
         <source>Dust:</source>
         <translation>ダスト：</translation>
-    </message>
-    <message>
-        <source>Confirmation time target:</source>
-        <translation>検証時間のターゲット:</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -2142,7 +2583,7 @@
     </message>
     <message>
         <source>Total Amount %1</source>
-        <translation>合計：　%1</translation>
+        <translation>合計：&#x3000;%1</translation>
     </message>
     <message>
         <source>or</source>
@@ -2188,21 +2629,13 @@
         <source>Payment request expired.</source>
         <translation>支払いリクエストの期限が切れました。</translation>
     </message>
-    <message numerus="yes">
-        <source>%n block(s)</source>
-        <translation><numerusform>%n ブロック</numerusform></translation>
-    </message>
     <message>
         <source>Pay only the required fee of %1</source>
         <translation>要求手数料 %1 のみを支払う</translation>
     </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>%n ブロック以内に検証が開始されると予想されます。</numerusform></translation>
-    </message>
     <message>
-        <source>Warning: Invalid Litecoin address</source>
-        <translation>警告：無効なLitecoinアドレスです</translation>
+        <source>Warning: Invalid Dogmcoin address</source>
+        <translation>警告：無効なDogmcoinアドレスです</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2219,6 +2652,30 @@
     <message>
         <source>(no label)</source>
         <translation>（ラベル無し）</translation>
+    </message>
+    <message>
+        <source>Using the fallbackfee can result in sending a transaction that will take several hours or days (or never) to confirm. Consider choosing your fee manually or wait until your have validated the complete chain.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: Fee estimation is currently not possible.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 satoshis in fee, while &quot;total at least&quot; pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Priority:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>low</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>high</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2244,8 +2701,8 @@
         <translation>これは通常の支払です。</translation>
     </message>
     <message>
-        <source>The Litecoin address to send the payment to</source>
-        <translation>支払の送金先Litecoinアドレス</translation>
+        <source>The Dogmcoin address to send the payment to</source>
+        <translation>支払の送金先Dogmcoinアドレス</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2264,8 +2721,8 @@
         <translation>この項目を削除する</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less litecoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>送金する金額から手数料が差し引かれます。受取人は数量フィールドで指定した量よりも少ないビットコインを受け取ります。受取人が複数いる場合には、手数料は均等割されます。</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less dogmcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>送金する金額から手数料が差し引かれます。受取人は数量フィールドで指定した量よりも少ないドージコインを受け取ります。受取人が複数いる場合には、手数料は均等割されます。</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2288,8 +2745,8 @@
         <translation>このアドレスに対するラベルを入力することで、使用済みアドレスの一覧に追加することができます</translation>
     </message>
     <message>
-        <source>A message that was attached to the litecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Litecoin network.</source>
-        <translation>litecoin: URIに添付されていたメッセージです。これは参照用としてトランザクションとともに保存されます。注意：このメッセージはLitecoinネットワークを通して送信されるわけではありません。</translation>
+        <source>A message that was attached to the dogmcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogmcoin network.</source>
+        <translation>dogmcoin: URIに添付されていたメッセージです。これは参照用としてトランザクションとともに保存されます。注意：このメッセージはDogmcoinネットワークを通して送信されるわけではありません。</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2333,12 +2790,12 @@
         <translation>メッセージの署名 (&amp;S)</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive litecoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>あなたの所有しているアドレスによりメッセージや合意書に署名をすることで、それらアドレスに対して送られたビットコインを受け取ることができることを証明できます。フィッシング攻撃により不正にあなたの識別情報を署名させられてしまうことを防ぐために、不明確なものやランダムなものに対して署名しないよう注意してください。合意することが可能な、よく詳細の記された文言にのみ署名するようにしてください。</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive dogmcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>あなたの所有しているアドレスによりメッセージや合意書に署名をすることで、それらアドレスに対して送られたドージコインを受け取ることができることを証明できます。フィッシング攻撃により不正にあなたの識別情報を署名させられてしまうことを防ぐために、不明確なものやランダムなものに対して署名しないよう注意してください。合意することが可能な、よく詳細の記された文言にのみ署名するようにしてください。</translation>
     </message>
     <message>
-        <source>The Litecoin address to sign the message with</source>
-        <translation>メッセージを署名するLitecoinアドレス</translation>
+        <source>The Dogmcoin address to sign the message with</source>
+        <translation>メッセージを署名するDogmcoinアドレス</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2369,8 +2826,8 @@
         <translation>現在の署名をシステムのクリップボードにコピーする</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Litecoin address</source>
-        <translation>この Litecoin アドレスを所有していることを証明するためにメッセージに署名</translation>
+        <source>Sign the message to prove you own this Dogmcoin address</source>
+        <translation>この Dogmcoin アドレスを所有していることを証明するためにメッセージに署名</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2389,16 +2846,16 @@
         <translation>メッセージの検証 (&amp;V)</translation>
     </message>
     <message>
-        <source>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
+        <source>Enter the receiver&apos;s address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
         <translation>受取人のアドレスとメッセージ（改行やスペース、タブなども完全に一致するよう注意してください）および署名を以下に入力し、メッセージの署名を検証してください。中間者攻撃により騙されるのを防ぐため、署名対象のメッセージに書かれていること以上の意味を署名から読み取ろうとしないよう注意してください。これは署名作成者がこのアドレスで受け取ったことを証明するだけであり、トランザクションの送信権限を証明するものではないことに注意してください！</translation>
     </message>
     <message>
-        <source>The Litecoin address the message was signed with</source>
-        <translation>メッセージの署名に使われたLitecoinアドレス</translation>
+        <source>The Dogmcoin address the message was signed with</source>
+        <translation>メッセージの署名に使われたDogmcoinアドレス</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Litecoin address</source>
-        <translation>指定された Litecoin アドレスで署名されたことを保証するメッセージを検証</translation>
+        <source>Verify the message to ensure it was signed with the specified Dogmcoin address</source>
+        <translation>指定された Dogmcoin アドレスで署名されたことを保証するメッセージを検証</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2409,8 +2866,8 @@
         <translation>入力項目の内容をすべて消去します</translation>
     </message>
     <message>
-        <source>Click "Sign Message" to generate signature</source>
-        <translation>署名を作成するには"メッセージの署名"をクリック</translation>
+        <source>Click &quot;Sign Message&quot; to generate signature</source>
+        <translation>署名を作成するには&quot;メッセージの署名&quot;をクリック</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2469,6 +2926,45 @@
     </message>
 </context>
 <context>
+    <name>TestPeerDialog</name>
+    <message>
+        <source>Test Peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer details below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Be careful! Do not blindly trust anyone that tells you to add their node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer&apos;s address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the peer&apos;s port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter an address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a valid peer address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try Peer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TrafficGraphWidget</name>
     <message>
         <source>KB/s</source>
@@ -2479,7 +2975,9 @@
     <name>TransactionDesc</name>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>%n 以上のブロックを開く</numerusform></translation>
+        <translation>
+            <numerusform>%n 以上のブロックを開く</numerusform>
+        </translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -2527,7 +3025,9 @@
     </message>
     <message numerus="yes">
         <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>%n ノードにブロードキャスト</numerusform></translation>
+        <translation>
+            <numerusform>%n ノードにブロードキャスト</numerusform>
+        </translation>
     </message>
     <message>
         <source>Date</source>
@@ -2571,7 +3071,9 @@
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>あと %n ブロックで成熟します</numerusform></translation>
+        <translation>
+            <numerusform>あと %n ブロックで成熟します</numerusform>
+        </translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2622,8 +3124,8 @@
         <translation>商人</translation>
     </message>
     <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>生成されたコインは使う前に%1のブロックを完成させる必要があります。あなたが生成した時、このブロックはブロック チェーンに追加されるネットワークにブロードキャストされました。チェーンに追加されるのが失敗した場合、状態が"不承認"に変更されて使えなくなるでしょう。これは、別のノードがあなたの数秒前にブロックを生成する場合に時々起こるかもしれません。</translation>
+        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>生成されたコインは使う前に%1のブロックを完成させる必要があります。あなたが生成した時、このブロックはブロック チェーンに追加されるネットワークにブロードキャストされました。チェーンに追加されるのが失敗した場合、状態が&quot;不承認&quot;に変更されて使えなくなるでしょう。これは、別のノードがあなたの数秒前にブロックを生成する場合に時々起こるかもしれません。</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -2677,7 +3179,9 @@
     </message>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>%n 以上のブロックを開く</numerusform></translation>
+        <translation>
+            <numerusform>%n 以上のブロックを開く</numerusform>
+        </translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -3058,8 +3562,8 @@
         <translation>HTTPサーバを開始できませんでした。詳細はデバッグログをご確認ください。</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin のコア</translation>
+        <source>Dogmcoin Core</source>
+        <translation>Dogmcoin のコア</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -3086,7 +3590,7 @@
         <translation>ウォレットの全トランザクションを削除し、これらを-rescanオプションを用いることで起動時にブロックチェインのデータのみからリカバリします。</translation>
     </message>
     <message>
-        <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
+        <source>Error loading %s: You can&apos;t enable HD on a already existing non-HD wallet</source>
         <translation>%s の読み込みエラー: 非HDウォレットが既に存在するため、HDウォレットを有効化できません</translation>
     </message>
     <message>
@@ -3114,7 +3618,7 @@
         <translation>ひとつのウォレットトランザクションまたは生トランザクションで使用する合計手数料の最大値 (%s 単位)。低すぎる値を指定すると巨大なトランザクションの作成ができなくなります (規定値: %s)</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
+        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong, %s will not work properly.</source>
         <translation>あなたのPCの日付と時刻が正しいことを確認して下さい！ もしあなたの時計が正しくなければ %s が正確に動作しません。</translation>
     </message>
     <message>
@@ -3134,7 +3638,7 @@
         <translation>スクリプト検証スレッドを設定 (%uから%dの間, 0 = 自動, &lt;0 = たくさんのコアを自由にしておく, 初期値: %d)</translation>
     </message>
     <message>
-        <source>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</source>
+        <source>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</source>
         <translation>ブロックのデータベースに未来の時刻のブロックが含まれています。これはおそらくお使いのコンピュータに設定されている日時が間違っていることを示しています。お使いのコンピュータの日時が本当に正しい場合にのみ、ブロックのデータベースの再構築を行ってください。</translation>
     </message>
     <message>
@@ -3194,8 +3698,8 @@
         <translation>ブロック作成オプション:</translation>
     </message>
     <message>
-        <source>Cannot resolve -%s address: '%s'</source>
-        <translation>-%s アドレス '%s' を解決できません</translation>
+        <source>Cannot resolve -%s address: &apos;%s&apos;</source>
+        <translation>-%s アドレス &apos;%s&apos; を解決できません</translation>
     </message>
     <message>
         <source>Chain selection options:</source>
@@ -3271,7 +3775,7 @@
         <translation>%s の読み込みに失敗しました: ウォレットの読み込みにはより新しいバージョンの %s が必要です</translation>
     </message>
     <message>
-        <source>Error loading %s: You can't disable HD on a already existing HD wallet</source>
+        <source>Error loading %s: You can&apos;t disable HD on a already existing HD wallet</source>
         <translation>%s の読み込みエラー: HDウォレットが既に存在するため、HDウォレットを無効化できません</translation>
     </message>
     <message>
@@ -3303,16 +3807,16 @@
         <translation>初期化時の健全性チェックに失敗しました。%s を終了します。</translation>
     </message>
     <message>
-        <source>Invalid -onion address: '%s'</source>
-        <translation>無効な -onion アドレス：'%s'</translation>
+        <source>Invalid -onion address: &apos;%s&apos;</source>
+        <translation>無効な -onion アドレス：&apos;%s&apos;</translation>
     </message>
     <message>
-        <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
-        <translation>-%s=&lt;数量&gt; に対する不正な額: '%s'</translation>
+        <source>Invalid amount for -%s=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>-%s=&lt;数量&gt; に対する不正な額: &apos;%s&apos;</translation>
     </message>
     <message>
-        <source>Invalid amount for -fallbackfee=&lt;amount&gt;: '%s'</source>
-        <translation>不正な額 -fallbackfee=&lt;amount&gt;: '%s'</translation>
+        <source>Invalid amount for -fallbackfee=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>不正な額 -fallbackfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</source>
@@ -3372,7 +3876,7 @@
     </message>
     <message>
         <source>Specify wallet file (within data directory)</source>
-        <translation>ウォレットのファイルを指定　(データ・ディレクトリの中に)</translation>
+        <translation>ウォレットのファイルを指定&#x3000;(データ・ディレクトリの中に)</translation>
     </message>
     <message>
         <source>The source code is available from %s.</source>
@@ -3467,8 +3971,8 @@
         <translation>paytxfee が設定されていなかった場合、平均して n ブロック以内にトランザクションが検証され始めるのに十分な手数料を含める (初期値: %u)</translation>
     </message>
     <message>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
-        <translation>-maxtxfee=&lt;amount&gt; の数量の指定が不正です: '%s' (トランザクションが詰まってしまうのを防ぐため、少なくとも %s の最小中継手数料を指定しなければいけません)</translation>
+        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
+        <translation>-maxtxfee=&lt;amount&gt; の数量の指定が不正です: &apos;%s&apos; (トランザクションが詰まってしまうのを防ぐため、少なくとも %s の最小中継手数料を指定しなければいけません)</translation>
     </message>
     <message>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
@@ -3527,20 +4031,20 @@
         <translation>情報</translation>
     </message>
     <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
-        <translation>-paytxfee=&lt;amount&gt; に対する無効な数量です: '%s' (少なくとも %s でなければいけません)</translation>
+        <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</source>
+        <translation>-paytxfee=&lt;amount&gt; に対する無効な数量です: &apos;%s&apos; (少なくとも %s でなければいけません)</translation>
     </message>
     <message>
-        <source>Invalid netmask specified in -whitelist: '%s'</source>
-        <translation>-whitelist に対する無効なネットマスクです: '%s'</translation>
+        <source>Invalid netmask specified in -whitelist: &apos;%s&apos;</source>
+        <translation>-whitelist に対する無効なネットマスクです: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>最大で &lt;n&gt; 個の孤立したトランザクションをメモリの中に保持する (初期値: %u)</translation>
     </message>
     <message>
-        <source>Need to specify a port with -whitebind: '%s'</source>
-        <translation>-whitebind を用いてポートを指定する必要があります: '%s'</translation>
+        <source>Need to specify a port with -whitebind: &apos;%s&apos;</source>
+        <translation>-whitebind を用いてポートを指定する必要があります: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Node relay options:</source>
@@ -3643,10 +4147,6 @@
         <translation>JSON-RPC 接続のパスワード</translation>
     </message>
     <message>
-        <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
-        <translation>最良のブロックに変更する際にコマンドを実行 (cmd の %s はブロック ハッシュに置換される)</translation>
-    </message>
-    <message>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>-addnode, -seednode と -connect で DNS ルックアップを許可する</translation>
     </message>
@@ -3711,10 +4211,6 @@
         <translation>これは手数料の推定機能が利用できない場合に支払うトランザクション手数料です。</translation>
     </message>
     <message>
-        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit %s and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
-        <translation>この製品はOpenSSLプロジェクトにより開発されたソフトウェアをOpenSSLツールキット %s として利用しています &lt;https://www.openssl.org/&gt;。また、Eric Young氏により開発された暗号ソフトウェア、Thomas Bernard氏により書かれたUPnPソフトウェアを用いています。</translation>
-    </message>
-    <message>
         <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
         <translation>ネットワークバージョン文字 (%i) の長さが最大の長さ (%i) を超えています。UAコメントの数や長さを削減してください。</translation>
     </message>
@@ -3723,7 +4219,7 @@
         <translation>送信転送量を与えられた目標値以下に維持するようにする (24時間あたり何MiBかで指定)。0 の場合は無制限 (初期値: %d)</translation>
     </message>
     <message>
-        <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
+        <source>Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
         <translation>サポートされていない引数 -socks が見つかりました。SOCKSバージョンの設定はできないようになりました。SOCKS5プロキシのみがサポートされています。</translation>
     </message>
     <message>
@@ -3735,7 +4231,7 @@
         <translation>Tor 秘匿サービスを通し、別々の SOCKS5 プロキシを用いることでピアに到達する (初期値: %s)</translation>
     </message>
     <message>
-        <source>Warning: Unknown block versions being mined! It's possible unknown rules are in effect</source>
+        <source>Warning: Unknown block versions being mined! It&apos;s possible unknown rules are in effect</source>
         <translation>警告: 未知のバージョンのブロックが採掘されました。未知のルールが導入された可能性があります</translation>
     </message>
     <message>
@@ -3767,8 +4263,8 @@
         <translation>デバッグ出力にIPアドレスを含める (初期値: %u)</translation>
     </message>
     <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>無効な -proxy アドレス: '%s'</translation>
+        <source>Invalid -proxy address: &apos;%s&apos;</source>
+        <translation>無効な -proxy アドレス: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Keypool ran out, please call keypoolrefill first</source>
@@ -3875,8 +4371,8 @@
         <translation>トランザクションは最低ひとつの受取先が必要です</translation>
     </message>
     <message>
-        <source>Unknown network specified in -onlynet: '%s'</source>
-        <translation>-onlynet で指定された '%s' は未知のネットワークです</translation>
+        <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
+        <translation>-onlynet で指定された &apos;%s&apos; は未知のネットワークです</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3913,6 +4409,74 @@
     <message>
         <source>Error</source>
         <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Bitcoin Core and Dogmcoin Core</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Amount under which a transaction output is considered dust, in %s (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Execute command when the best block changes (%s in cmd is replaced by block hash, %i is replaced by block number)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit %s and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard. Paper wallet art provided by Anacoluthia.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Amaze</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Many generous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Receive and display P2P network alerts (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Such expensive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-discardthreshold is set very high! This is the output amount that the wallet will discard (to fee) if it is smaller than this setting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Amount under which a transaction output is considered non-standard and will not be accepted or relayed, in %s (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid amount for -discardthreshold=&lt;amount&gt;: &apos;%s&apos; (must be at least the dust limit of %s to prevent stuck transactions)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The minimum transaction output size (in %s) used to validate wallet transactions and discard change (to fee) (default: %s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Namecoin-compatible AuxPow API structure, (default: %u)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

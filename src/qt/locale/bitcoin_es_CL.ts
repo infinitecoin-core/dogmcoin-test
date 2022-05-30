@@ -74,7 +74,7 @@
         <translation>Sincronizando con la red...</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
+        <source>&amp;Wow</source>
         <translation>&amp;Vista general</translation>
     </message>
     <message>
@@ -126,11 +126,11 @@
         <translation>&amp;Cambiar la contraseña...</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
+        <source>&amp;Such sending addresses...</source>
         <translation>Mandando direcciones</translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses...</source>
+        <source>&amp;Much receiving addresses...</source>
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
@@ -142,8 +142,8 @@
         <translation>Cargando el index de bloques...</translation>
     </message>
     <message>
-        <source>Send coins to a Litecoin address</source>
-        <translation>Enviar monedas a una dirección litecoin</translation>
+        <source>Send coins to a Dogmcoin address</source>
+        <translation>Enviar monedas a una dirección dogmcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -166,19 +166,19 @@
         <translation>Verificar mensaje....</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Dogmcoin</source>
+        <translation>Dogmcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Cartera</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
+        <source>&amp;Such Send</source>
         <translation>&amp;Envía</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
+        <source>&amp;Much Receive</source>
         <translation>y recibir</translation>
     </message>
     <message>
@@ -186,7 +186,7 @@
         <translation>&amp;Mostrar/Ocultar</translation>
     </message>
     <message>
-        <source>Sign messages with your Litecoin addresses to prove you own them</source>
+        <source>Sign messages with your Dogmcoin addresses to prove you own them</source>
         <translation>Firmar un mensaje para provar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -206,8 +206,8 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Pide pagos (genera codigos QR and litecoin: URls)</translation>
+        <source>Request payments (generates QR codes and dogmcoin: URIs)</source>
+        <translation>Pide pagos (genera codigos QR and dogmcoin: URls)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -363,8 +363,8 @@
         <translation>experto</translation>
     </message>
     <message>
-        <source>Automatically open the Litecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abre automáticamente el puerto del cliente Litecoin en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the Dogmcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abre automáticamente el puerto del cliente Dogmcoin en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -687,7 +687,7 @@
         <translation>Firma</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Litecoin address</source>
+        <source>Sign the message to prove you own this Dogmcoin address</source>
         <translation>Firmar un mensjage para probar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -772,8 +772,8 @@
 </translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>litecoin core</translation>
+        <source>Dogmcoin Core</source>
+        <translation>dogmcoin core</translation>
     </message>
     <message>
         <source>Error loading block database</source>

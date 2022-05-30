@@ -54,11 +54,11 @@
         <translation>Escol&amp;her</translation>
     </message>
     <message>
-        <source>Sending addresses</source>
+        <source>Such sending addresses</source>
         <translation>A enviar endereços</translation>
     </message>
     <message>
-        <source>Receiving addresses</source>
+        <source>Much receiving addresses</source>
         <translation>A receber endereços</translation>
     </message>
     <message>
@@ -160,8 +160,8 @@
         <translation>Confirmar encriptação da carteira</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LITECOINS&lt;/b&gt;!</source>
-        <translation>Aviso: se encriptar a sua carteira e perder a sua frase de segurnça, &lt;b&gt;PERDERÁ TODOS OS SEUS LITECOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DOGECOINS&lt;/b&gt;!</source>
+        <translation>Aviso: se encriptar a sua carteira e perder a sua frase de segurnça, &lt;b&gt;PERDERÁ TODOS OS SEUS DOGECOINS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -218,7 +218,7 @@
         <translation>A sincronizar com a rede...</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
+        <source>&amp;Wow</source>
         <translation>&amp;Resumo</translation>
     </message>
     <message>
@@ -282,11 +282,11 @@
         <translation>Alterar &amp;Frase de Segurança...</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses...</source>
+        <source>&amp;Such sending addresses...</source>
         <translation>A &amp;enviar os endereços...</translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses...</source>
+        <source>&amp;Much receiving addresses...</source>
         <translation>A &amp;receber os endereços...</translation>
     </message>
     <message>
@@ -310,8 +310,8 @@
         <translation>A reindexar os blocos no disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Litecoin address</source>
-        <translation>Enviar moedas para um endereço Litecoin</translation>
+        <source>Send coins to a Dogmcoin address</source>
+        <translation>Enviar moedas para um endereço Dogmcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -334,19 +334,19 @@
         <translation>&amp;Verificar mensagem...</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Dogmcoin</source>
+        <translation>Dogmcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Carteira</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
+        <source>&amp;Such Send</source>
         <translation>&amp;Enviar</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
+        <source>&amp;Much Receive</source>
         <translation>&amp;Receber</translation>
     </message>
     <message>
@@ -362,12 +362,12 @@
         <translation>Encriptar as chaves privadas que pertencem à sua carteira</translation>
     </message>
     <message>
-        <source>Sign messages with your Litecoin addresses to prove you own them</source>
-        <translation>Assine as mensagens com os seus endereços Litecoin para provar que é o proprietário dos mesmos</translation>
+        <source>Sign messages with your Dogmcoin addresses to prove you own them</source>
+        <translation>Assine as mensagens com os seus endereços Dogmcoin para provar que é o proprietário dos mesmos</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Litecoin addresses</source>
-        <translation>Verifique mensagens para assegurar que foram assinadas com o endereço Litecoin especificado</translation>
+        <source>Verify messages to ensure they were signed with specified Dogmcoin addresses</source>
+        <translation>Verifique mensagens para assegurar que foram assinadas com o endereço Dogmcoin especificado</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -386,8 +386,8 @@
         <translation>Barra de ferramentas dos separadores</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Solicitar pagamentos (gera códigos QR e litecoin: URIs)</translation>
+        <source>Request payments (generates QR codes and dogmcoin: URIs)</source>
+        <translation>Solicitar pagamentos (gera códigos QR e dogmcoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -398,16 +398,16 @@
         <translation>Mostrar a lista de rótulos e endereços de receção usados</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>Abrir URI litecoin: ou pedido de pagamento</translation>
+        <source>Open a dogmcoin: URI or payment request</source>
+        <translation>Abrir URI dogmcoin: ou pedido de pagamento</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Opções da linha de &amp;comando</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Litecoin network</source>
-        <translation><numerusform>%n ligação ativa à rede Litecoin</numerusform><numerusform>%n ligações ativas à rede Litecoin</numerusform></translation>
+        <source>%n active connection(s) to Dogmcoin network</source>
+        <translation><numerusform>%n ligação ativa à rede Dogmcoin</numerusform><numerusform>%n ligações ativas à rede Dogmcoin</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -953,16 +953,16 @@
         <translation>&amp;Gastar troco não confirmado</translation>
     </message>
     <message>
-        <source>Automatically open the Litecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir a porta do cliente litecoin automaticamente no seu router. Isto apenas funciona se o seu router suportar UPnP e este se encontrar ligado.</translation>
+        <source>Automatically open the Dogmcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir a porta do cliente dogmcoin automaticamente no seu router. Isto apenas funciona se o seu router suportar UPnP e este se encontrar ligado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapear porta, utilizando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Litecoin network through a SOCKS5 proxy.</source>
-        <translation>Conectar à rede da Litecoin através dum proxy SOCLS5.</translation>
+        <source>Connect to the Dogmcoin network through a SOCKS5 proxy.</source>
+        <translation>Conectar à rede da Dogmcoin através dum proxy SOCLS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1001,8 +1001,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Litecoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Ligar à rede Litecoin através de um proxy SOCKS5 separado para utilizar os serviços ocultos do Tor.</translation>
+        <source>Connect to the Dogmcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Ligar à rede Dogmcoin através de um proxy SOCKS5 separado para utilizar os serviços ocultos do Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -1096,8 +1096,8 @@
         <translation>Formulário</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Litecoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>A informação mostrada poderá estar desatualizada. A sua carteira sincroniza automaticamente com a rede Litecoin depois de estabelecer ligação, mas este processo ainda não está completo.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Dogmcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>A informação mostrada poderá estar desatualizada. A sua carteira sincroniza automaticamente com a rede Dogmcoin depois de estabelecer ligação, mas este processo ainda não está completo.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1213,8 +1213,8 @@
         <translation>Quantia</translation>
     </message>
     <message>
-        <source>Enter a Litecoin address (e.g. %1)</source>
-        <translation>Entre um endereço Litecoin (ex. %1)</translation>
+        <source>Enter a Dogmcoin address (e.g. %1)</source>
+        <translation>Entre um endereço Dogmcoin (ex. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1549,8 +1549,8 @@
         <translation>Reutilizar um endereço de receção existente (não recomendado)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Litecoin network.</source>
-        <translation>Uma mensagem opcional para anexar ao pedido de pagamento, que será exibida quando o pedido for aberto. Nota: A mensagem não será enviada com o pagamento através da rede Litecoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Dogmcoin network.</source>
+        <translation>Uma mensagem opcional para anexar ao pedido de pagamento, que será exibida quando o pedido for aberto. Nota: A mensagem não será enviada com o pagamento através da rede Dogmcoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1718,8 +1718,8 @@
         <translation>por kilobyte</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then "per kilobyte" only pays 250 satoshis in fee, while "total at least" pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Se a taxa personalizada estiver definida para 1.000 satoshis e a transação é de apenas 250 bytes, então paga apenas 250 satoshis "por kilobyte" na taxa, enquanto em "total pelo menos" paga 1.000 satoshis. Para transações superiores a um kilobyte ambos pagam por kilobyte.</translation>
+        <source>If the custom fee is set to 1000 koinu and the transaction is only 250 bytes, then "per kilobyte" only pays 250 koinu in fee, while "total at least" pays 1000 koinu. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Se a taxa personalizada estiver definida para 1.000 koinu e a transação é de apenas 250 bytes, então paga apenas 250 koinu "por kilobyte" na taxa, enquanto em "total pelo menos" paga 1.000 koinu. Para transações superiores a um kilobyte ambos pagam por kilobyte.</translation>
     </message>
     <message>
         <source>Hide</source>
@@ -1730,7 +1730,7 @@
         <translation>total minimo</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for litecoin transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for dogmcoin transactions than the network can process.</source>
         <translation>Pode pagar somente a taxa minima desde que haja um volume de transações inferior ao espaço nos blocos. No entanto tenha em atenção que esta opção poderá acabar em uma transação nunca confirmada assim que os pedidos de transações excedam a capacidade de processamento da rede.</translation>
     </message>
     <message>
@@ -1869,8 +1869,8 @@
         <translation>Este é um pagamento normal.</translation>
     </message>
     <message>
-        <source>The Litecoin address to send the payment to</source>
-        <translation>O endereço Litecoin para enviar o pagamento</translation>
+        <source>The Dogmcoin address to send the payment to</source>
+        <translation>O endereço Dogmcoin para enviar o pagamento</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1889,8 +1889,8 @@
         <translation>Remover esta entrada</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less litecoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>A taxa será deduzida ao montante enviado. O destinatário irá receber menos litecoins do que as que introduziu no campo montante. Caso sejam seleccionados múltiplos destinatários, a taxa será repartida equitativamente.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less dogmcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>A taxa será deduzida ao montante enviado. O destinatário irá receber menos dogmcoins do que as que introduziu no campo montante. Caso sejam seleccionados múltiplos destinatários, a taxa será repartida equitativamente.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -1913,8 +1913,8 @@
         <translation>Introduza um rótulo para este endereço para o adicionar à sua lista de endereços usados</translation>
     </message>
     <message>
-        <source>A message that was attached to the litecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Litecoin network.</source>
-        <translation>Uma mensagem que estava anexada ao URI litecoin: que será armazenada com a transação para sua referência. Nota: Esta mensagem não será enviada através da rede Litecoin.</translation>
+        <source>A message that was attached to the dogmcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dogmcoin network.</source>
+        <translation>Uma mensagem que estava anexada ao URI dogmcoin: que será armazenada com a transação para sua referência. Nota: Esta mensagem não será enviada através da rede Dogmcoin.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1950,12 +1950,12 @@
         <translation>&amp;Assinar Mensagem</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive litecoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive dogmcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Pode assinar mensagens com os seus endereços para provar que são seus. Tenha atenção ao assinar mensagens ambíguas, pois ataques de phishing podem tentar enganá-lo de modo a assinar a sua identidade para os atacantes. Apenas assine declarações detalhadas com as quais concorde.</translation>
     </message>
     <message>
-        <source>The Litecoin address to sign the message with</source>
-        <translation>O endereço Litecoin para designar a mensagem</translation>
+        <source>The Dogmcoin address to sign the message with</source>
+        <translation>O endereço Dogmcoin para designar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1986,8 +1986,8 @@
         <translation>Copiar a assinatura actual para a área de transferência</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Litecoin address</source>
-        <translation>Assine uma mensagem para provar que é dono deste endereço Litecoin</translation>
+        <source>Sign the message to prove you own this Dogmcoin address</source>
+        <translation>Assine uma mensagem para provar que é dono deste endereço Dogmcoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2010,12 +2010,12 @@
         <translation>Introduza o endereço de assinatura, mensagem (assegure-se que copia quebras de linha, espaços, tabulações, etc. exactamente) e assinatura abaixo para verificar a mensagem. Tenha atenção para não ler mais na assinatura do que o que estiver na mensagem assinada, para evitar ser enganado por um atacante que se encontre entre si e quem assinou a mensagem.</translation>
     </message>
     <message>
-        <source>The Litecoin address the message was signed with</source>
-        <translation>O endereço Litecoin com que a mensagem foi designada</translation>
+        <source>The Dogmcoin address the message was signed with</source>
+        <translation>O endereço Dogmcoin com que a mensagem foi designada</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Litecoin address</source>
-        <translation>Verifique a mensagem para assegurar que foi assinada com o endereço Litecoin especificado</translation>
+        <source>Verify the message to ensure it was signed with the specified Dogmcoin address</source>
+        <translation>Verifique a mensagem para assegurar que foi assinada com o endereço Dogmcoin especificado</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2183,8 +2183,8 @@
         <translation>Não é possível iniciar o servidor HTTP. Verifique o debug.log para detalhes.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Dogmcoin Core</source>
+        <translation>Dogmcoin Core</translation>
     </message>
     <message>
         <source>A fee rate (in %s/kB) that will be used when fee estimation has insufficient data (default: %s)</source>

@@ -42,7 +42,7 @@
         <translation>नेटवर्क से समकालिक (मिल) रहा है ...</translation>
     </message>
     <message>
-        <source>&amp;Overview</source>
+        <source>&amp;Wow</source>
         <translation>&amp;विवरण</translation>
     </message>
     <message>
@@ -79,7 +79,7 @@
         <translation>पहचान शब्द/अक्षर जो वॉलेट एनक्रिपशन के लिए इस्तेमाल किया है उसे बदलिए!</translation>
     </message>
     <message>
-        <source>Litecoin</source>
+        <source>Dogmcoin</source>
         <translation>बीटकोइन</translation>
     </message>
     <message>

@@ -106,7 +106,7 @@
         <translation>&amp;Opciones...</translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses...</source>
+        <source>&amp;Much receiving addresses...</source>
         <translation>Recepción de direcciones</translation>
     </message>
     <message>
@@ -114,8 +114,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Litecoin address</source>
-        <translation>Enviar monedas a una dirección Litecoin</translation>
+        <source>Send coins to a Dogmcoin address</source>
+        <translation>Enviar monedas a una dirección Dogmcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -130,19 +130,19 @@
         <translation>Abre la consola de depuración y diágnostico</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Dogmcoin</source>
+        <translation>Dogmcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
         <translation>Billetera</translation>
     </message>
     <message>
-        <source>&amp;Send</source>
+        <source>&amp;Such Send</source>
         <translation>&amp;Enviar</translation>
     </message>
     <message>
-        <source>&amp;Receive</source>
+        <source>&amp;Much Receive</source>
         <translation>&amp;Recibir</translation>
     </message>
     <message>
@@ -158,12 +158,12 @@
         <translation>Encriptar las llaves privadas que pertenecen a tu billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your Litecoin addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones Litecoin para probar que eres dueño de ellas</translation>
+        <source>Sign messages with your Dogmcoin addresses to prove you own them</source>
+        <translation>Firma mensajes con tus direcciones Dogmcoin para probar que eres dueño de ellas</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Litecoin addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Litecoin especificas</translation>
+        <source>Verify messages to ensure they were signed with specified Dogmcoin addresses</source>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Dogmcoin especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -608,8 +608,8 @@
         <translation>Correr en segundo plano como daemon y aceptar comandos</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>Dogmcoin Core</source>
+        <translation>Dogmcoin Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

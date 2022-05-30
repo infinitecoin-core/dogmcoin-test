@@ -42,7 +42,7 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>&amp;Send</source>
+        <source>&amp;Such Send</source>
         <translation>&amp;ناردن</translation>
     </message>
     <message>
