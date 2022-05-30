@@ -10,8 +10,6 @@ from test_framework.blocktools import create_block, create_coinbase, add_witness
 from test_framework.siphash import siphash256
 from test_framework.script import CScript, OP_TRUE
 
-VB_TOP_BITS = 0x20000000
-
 '''
 CompactBlocksTest -- test compact blocks (BIP 152)
 
@@ -134,7 +132,7 @@ class CompactBlocksTest(BitcoinTestFramework):
         tip = node.getbestblockhash()
         mtp = node.getblockheader(tip)['mediantime']
         block = create_block(int(tip, 16), create_coinbase(height + 1), mtp + 1)
-        block.nVersion = VB_TOP_BITS
+        block.nVersion = 4
         if segwit:
             add_witness_commitment(block)
         block.solve()
@@ -460,7 +458,7 @@ class CompactBlocksTest(BitcoinTestFramework):
         for i in range(num_transactions):
             tx = CTransaction()
             tx.vin.append(CTxIn(COutPoint(utxo[0], utxo[1]), b''))
-            tx.vout.append(CTxOut(utxo[2] - 100000, CScript([OP_TRUE])))
+            tx.vout.append(CTxOut(utxo[2] - 1000, CScript([OP_TRUE])))
             tx.rehash()
             utxo = [tx.sha256, 0, tx.vout[0].nValue]
             block.vtx.append(tx)

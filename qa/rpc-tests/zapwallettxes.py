@@ -26,10 +26,10 @@ class ZapWalletTXesTest (BitcoinTestFramework):
         print("Mining blocks...")
         self.nodes[0].generate(1)
         self.sync_all()
-        self.nodes[1].generate(101)
+        self.nodes[1].generate(61)
         self.sync_all()
         
-        assert_equal(self.nodes[0].getbalance(), 50)
+        assert_equal(self.nodes[0].getbalance(), 500000)
         
         txid0 = self.nodes[0].sendtoaddress(self.nodes[2].getnewaddress(), 11)
         txid1 = self.nodes[0].sendtoaddress(self.nodes[2].getnewaddress(), 10)
@@ -67,7 +67,7 @@ class ZapWalletTXesTest (BitcoinTestFramework):
         self.nodes[0] = start_node(0,self.options.tmpdir, ["-zapwallettxes=1"])
         
         assert_raises(JSONRPCException, self.nodes[0].gettransaction, [txid3])
-        #there must be a expection because the unconfirmed wallettx0 must be gone by now
+        #there must be an exception because the unconfirmed wallettx0 must be gone by now
 
         tx0 = self.nodes[0].gettransaction(txid0)
         assert_equal(tx0['txid'], txid0) #tx0 (confirmed) must still be available because it was confirmed

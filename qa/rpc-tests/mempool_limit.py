@@ -26,12 +26,12 @@ class MempoolLimitTest(BitcoinTestFramework):
 
     def run_test(self):
         txids = []
-        utxos = create_confirmed_utxos(self.relayfee, self.nodes[0], 91)
+        utxos = create_confirmed_utxos(self.relayfee, self.nodes[0], 181)
 
         #create a mempool tx that will be evicted
         us0 = utxos.pop()
         inputs = [{ "txid" : us0["txid"], "vout" : us0["vout"]}]
-        outputs = {self.nodes[0].getnewaddress() : 0.01}
+        outputs = {self.nodes[0].getnewaddress() : 1}
         tx = self.nodes[0].createrawtransaction(inputs, outputs)
         self.nodes[0].settxfee(self.relayfee) # specifically fund this tx with low fee
         txF = self.nodes[0].fundrawtransaction(tx)
@@ -40,8 +40,9 @@ class MempoolLimitTest(BitcoinTestFramework):
         txid = self.nodes[0].sendrawtransaction(txFS['hex'])
 
         relayfee = self.nodes[0].getnetworkinfo()['relayfee']
-        base_fee = relayfee*100
-        for i in range (3):
+        # TODO: Remove "* 1000" in 1.14.5 when relayfee and minimum fee are close to each other again.
+        base_fee = relayfee*100 * 1000
+        for i in range (6):
             txids.append([])
             txids[i] = create_lots_of_big_transactions(self.nodes[0], self.txouts, utxos[30*i:30*i+30], 30, (i+1)*base_fee)
 
