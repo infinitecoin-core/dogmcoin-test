@@ -1,79 +1,102 @@
-Litecoin Core integration/staging tree
-=====================================
+<h1 align="center">
+Dogmcoin Core [DOGM]  
+<br/><br/>
+<img src="https://64.media.tumblr.com/279188bca12976f5d7aa2cfac378a2ef/7fbc8b27b8232f02-96/s540x810/84e9b6e0ac8c3bfaefb5e17d6662ec2f7df96ad2.pnj" alt="Dogmcoin" width="300"/>
+</h1>
 
-[![Build Status](https://travis-ci.org/litecoin-project/litecoin.svg?branch=master)](https://travis-ci.org/litecoin-project/litecoin)
+<div align="center">
 
-https://litecoin.org
+</div>
 
-What is Litecoin?
-----------------
+Select language: EN | [CN](./README_zh_CN.md)
 
-Litecoin is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Litecoin uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Litecoin Core is the name of open source
-software which enables the use of this currency.
+Dogmcoin is a split from Dogecoin,This will be a fork of the Dogecoin blockchain.
+Dogmcoin is a community-driven cryptocurrency that was inspired by a Shiba Inu meme. The Dogmcoin Core software allows anyone to operate a node in the Dogmcoin blockchain networks and uses the Scrypt hashing method for Proof of Work. It is adapted from Bitcoin Core and other cryptocurrencies.
 
-For more information, as well as an immediately useable, binary version of
-the Litecoin Core software, see [https://litecoin.org](https://litecoin.org).
+For information about the default fees used on the Dogmcoin network, please
+refer to the [fee recommendation](doc/fee-recommendation.md).
 
-License
--------
+**Website:** [dogmcoin.com](https://dogmcoin.com)
 
-Litecoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/licenses/MIT.
+## Usage 💻
 
-Development Process
--------------------
+To start your journey with Dogmcoin Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/litecoin-project/litecoin/tags) are created
-regularly to indicate new official, stable release versions of Litecoin Core.
+The JSON-RPC API provided by Dogmcoin Core is self-documenting and can be browsed with `dogmcoin-cli help`, while detailed information for each command can be viewed with `dogmcoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
 
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+### Such ports
 
-The developer [mailing list](https://groups.google.com/forum/#!forum/litecoin-dev)
-should be used to discuss complicated or controversial changes before working
-on a patch set.
+Dogmcoin Core by default uses port `22981` for peer-to-peer communication that
+is needed to synchronize the "mainnet" blockchain and stay informed of new
+transactions and blocks. Additionally, a JSONRPC port can be opened, which
+defaults to port `22982` for mainnet nodes. It is strongly recommended to not
+expose RPC ports to the public internet.
 
-Developer IRC can be found on Freenode at #litecoin-dev.
+| Function | mainnet | testnet | regtest |
+| :------- | ------: | ------: | ------: |
+| P2P      |   22981 |   35981 |   46331 |
+| RPC      |   22982 |   35982 |   46332 |
 
-Testing
--------
+## Ongoing development - Moon plan 🌒
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+Dogmcoin Core is an open source and community driven software. The development
+process is open and publicly visible; anyone can see, discuss and work on the
+software.
 
-### Automated Testing
+Main development resources:
 
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+* [Github Projects](https://github.com/dogmcoin/dogmcoin/projects) is used to
+  follow planned and in-progress work for upcoming releases.
+* [Github Discussion](https://github.com/dogmcoin/dogmcoin/discussions) is used
+  to discuss features, planned and unplanned, related to both the development of
+  the Dogmcoin Core software, the underlying protocols and the DOGM asset.  
+* [Dogmcoin Reddit](https://www.reddit.com/r/dogmcoin/)
 
-There are also [regression and integration tests](/qa) of the RPC interface, written
-in Python, that are run automatically on the build server.
-These tests can be run (if the [test dependencies](/qa) are installed) with: `qa/pull-tester/rpc-tests.py`
+### Version strategy
+Version numbers are following ```major.minor.patch``` semantics.
 
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
+### Branches
+There are 3 types of branches in this repository:
 
-### Manual Quality Assurance (QA) Testing
+- **master:** Stable, contains the latest version of the latest *major.minor* release.
+- **maintenance:** Stable, contains the latest version of previous releases, which are still under active maintenance. Format: ```<version>-maint```
+- **development:** Unstable, contains new code for planned releases. Format: ```<version>-dev```
 
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
+*Master and maintenance branches are exclusively mutable by release. Planned*
+*releases will always have a development branch and pull requests should be*
+*submitted against those. Maintenance branches are there for **bug fixes only,***
+*please submit new features against the development branch with the highest version.*
 
-Translations
-------------
+## Contributing 🤝
 
-We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
-Translations are converted to Litecoin periodically.
+If you find a bug or experience issues with this software, please report it
+using the [issue system](https://github.com/dogmcoin/dogmcoin/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5Bbug%5D+).
 
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
+Please see [the contribution guide](CONTRIBUTING.md) to see how you can
+participate in the development of Dogmcoin Core. There are often
+[topics seeking help](https://github.com/dogmcoin/dogmcoin/labels/help%20wanted)
+where your contributions will have high impact and get very appreciation. wow.
 
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
+## Communities 🚀🍾
+
+You can join the communities on different social media.
+To see what's going on, meet people & discuss, find the lastest meme, learn
+about Dogmcoin, give or ask for help, to share your project.
+
+Here are some places to visit:
+
+* [Dogmcoin Reddit](https://www.reddit.com/r/dogmcoin/)
+* [Dogmcoin Discord](https://discord.gg/dogmcoin)
+* [Dogmcoin Twitter](https://twitter.com/dogmcoin)
+
+## Very Much Frequently Asked Questions ❓
+
+Do you have a question regarding Dogmcoin? An answer is perhaps already in the
+[FAQ](doc/FAQ.md) or the
+[Q&A section](https://github.com/dogmcoin/dogmcoin/discussions/categories/q-a)
+of the discussion board!
+
+## License - Much license ⚖️
+Dogmcoin Core is released under the terms of the MIT license. See
+[COPYING](COPYING) for more information or see
+[opensource.org](https://opensource.org/licenses/MIT)
