@@ -26,16 +26,16 @@ The JSON-RPC API provided by Dogmcoin Core is self-documenting and can be browse
 
 ### Such ports
 
-Dogmcoin Core by default uses port `22061` for peer-to-peer communication that
+Dogmcoin Core by default uses port `22171` for peer-to-peer communication that
 is needed to synchronize the "mainnet" blockchain and stay informed of new
 transactions and blocks. Additionally, a JSONRPC port can be opened, which
-defaults to port `22062` for mainnet nodes. It is strongly recommended to not
+defaults to port `22172` for mainnet nodes. It is strongly recommended to not
 expose RPC ports to the public internet.
 
 | Function | mainnet | testnet | regtest |
 | :------- | ------: | ------: | ------: |
-| P2P      |   22061 |   35981 |   46331 |
-| RPC      |   22062 |   35982 |   46332 |
+| P2P      |   22171 |   35981 |   46331 |
+| RPC      |   22172 |   35982 |   46332 |
 
 ## Ongoing development - Moon plan 🌒
 
