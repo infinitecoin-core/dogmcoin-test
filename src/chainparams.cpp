@@ -115,7 +115,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000141a39e783aad4f660f");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x77e3f4a4bcb4a2c15e8015525e3d15b466f6c022f6ca82698f329edef7d9777e"); // 2,510,150
+        consensus.defaultAssumeValid = uint256S("0x9f9fbe1d18968931b954677e3ff878d284bc14979fbdbb973c643a63ac3c3400"); // 4253400
 
         // AuxPoW parameters
         consensus.nAuxpowChainId = 0x0062; // 98 - Josh Wise!
@@ -220,13 +220,14 @@ public:
             ( 3606083, uint256S("0x954c7c66dee51f0a3fb1edb26200b735f5275fe54d9505c76ebd2bcabac36f1e"))
             ( 3854173, uint256S("0xe4b4ecda4c022406c502a247c0525480268ce7abbbef632796e8ca1646425e75"))
             ( 3963597, uint256S("0x2b6927cfaa5e82353d45f02be8aadd3bfd165ece5ce24b9bfa4db20432befb5d"))
+            ( 4253400, uint256S("0x9f9fbe1d18968931b954677e3ff878d284bc14979fbdbb973c643a63ac3c3400"))
         };
 
         chainTxData = ChainTxData{
             // Data as of block e4b4ecda4c022406c502a247c0525480268ce7abbbef632796e8ca1646425e75 (height 3854173).
             // Tx estimate based on average of year 2021 (~40k transactions per day)
-            1635884188, // * UNIX timestamp of last checkpoint block
-            79560907,   // * total number of transactions between genesis and last checkpoint
+            1654408266, // * UNIX timestamp of last checkpoint block
+            85326867,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.46        // * estimated number of transactions per second after checkpoint
         };
