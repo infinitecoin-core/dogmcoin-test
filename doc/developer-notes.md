@@ -172,7 +172,7 @@ Threads
 
 - ThreadMapPort : Universal plug-and-play startup/shutdown
 
-- ThreadSocketHandler : Sends/Receives data from peers on port 22061.
+- ThreadSocketHandler : Sends/Receives data from peers on port 22171.
 
 - ThreadOpenAddedConnections : Opens network connections to added nodes.
 
@@ -184,7 +184,7 @@ Threads
 
 - ThreadFlushWalletDB : Close the wallet.dat file if it hasn't been used in 500ms.
 
-- ThreadRPCServer : Remote procedure call handler, listens on port 22062 for connections and services them.
+- ThreadRPCServer : Remote procedure call handler, listens on port 22172 for connections and services them.
 
 - DogmcoinMiner : Generates dogmcoins (if wallet is enabled).
 

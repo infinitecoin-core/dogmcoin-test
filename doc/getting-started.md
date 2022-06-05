@@ -47,7 +47,7 @@ Your node is now running and starts with a *synchronization process* that downlo
 
 Dogmcoin Core exposes a JSON-RPC interface that allows you to request information about the network, blockchain and individual transactions, send transactions to the networks and manage your wallet.
 
-The Dogmcoin Core installation provides the `dogmcoin-cli` tool to interact with the JSON-RPC from the command line, and the interface is exposed over HTTP on port `22062`, so that other tools and libraries can interact with it.
+The Dogmcoin Core installation provides the `dogmcoin-cli` tool to interact with the JSON-RPC from the command line, and the interface is exposed over HTTP on port `22172`, so that other tools and libraries can interact with it.
 
 To have an overview of the available commands, use the `help` command:
 
@@ -370,8 +370,8 @@ A node can expose 2 different ports: one port for the **Peer to Peer Network** (
 
 | Function | mainnet | testnet | regtest |
 | :------- | ------: | ------: | ------: |
-| P2P      |   22061 |   35981 |   46331 |
-| RPC      |   22062 |   35982 |   46332 |
+| P2P      |   22171 |   35981 |   46331 |
+| RPC      |   22172 |   35982 |   46332 |
 
 To configure them use the `-port` and `-rpcport` parameters.
 
