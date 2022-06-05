@@ -136,14 +136,14 @@ public:
         auxpowConsensus.nHeightEffective = 371337;
         auxpowConsensus.fAllowLegacyBlocks = false;
         
-        // Blocks 4250000 Minimum difficulty blocks allowed
+        // Blocks 4253400 Minimum difficulty blocks allowed
         minDifficultyConsensus = auxpowConsensus;
-        minDifficultyConsensus.nHeightEffective = 4250000;
+        minDifficultyConsensus.nHeightEffective = 4253400;
         minDifficultyConsensus.fPowAllowMinDifficultyBlocks = true;
         
-        // Blocks 4250001+ Minimum difficulty blocks are not allowed
+        // Blocks 4253401+ Minimum difficulty blocks are not allowed
         auxpowauxpowConsensus = minDifficultyConsensus;
-        auxpowauxpowConsensus.nHeightEffective = 4250001;
+        auxpowauxpowConsensus.nHeightEffective = 4253401;
         auxpowauxpowConsensus.fPowAllowMinDifficultyBlocks = false;
 
         // Assemble the binary search tree of consensus parameters
