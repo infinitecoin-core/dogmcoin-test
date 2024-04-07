@@ -71,7 +71,7 @@ private:
     Consensus::Params digishieldConsensus;
     Consensus::Params auxpowConsensus;
     Consensus::Params minDifficultyConsensus;
-    Consensus::Params auxpowauxpowConsensus;
+    Consensus::Params notminDifficultyConsensus;
 public:
     CMainParams() {
         strNetworkID = "main";
@@ -142,16 +142,16 @@ public:
         minDifficultyConsensus.fPowAllowMinDifficultyBlocks = true;
         
         // Blocks 4253401+ Minimum difficulty blocks are not allowed
-        auxpowauxpowConsensus = minDifficultyConsensus;
-        auxpowauxpowConsensus.nHeightEffective = 4253401;
-        auxpowauxpowConsensus.fPowAllowMinDifficultyBlocks = false;
+        notminDifficultyConsensus = minDifficultyConsensus;
+        notminDifficultyConsensus.nHeightEffective = 4253401;
+        notminDifficultyConsensus.fPowAllowMinDifficultyBlocks = false;
 
         // Assemble the binary search tree of consensus parameters
         pConsensusRoot = &digishieldConsensus;
         digishieldConsensus.pLeft = &consensus;
         digishieldConsensus.pRight = &auxpowConsensus;
         auxpowConsensus.pRight = &minDifficultyConsensus;
-        minDifficultyConsensus.pRight = &auxpowauxpowConsensus;
+        minDifficultyConsensus.pRight = &notminDifficultyConsensus;
         
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -172,7 +172,7 @@ public:
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         minDifficultyConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        auxpowauxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
+        notminDifficultyConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         assert(consensus.hashGenesisBlock == uint256S("0x1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691"));
         assert(genesis.hashMerkleRoot == uint256S("0x5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69"));
 
