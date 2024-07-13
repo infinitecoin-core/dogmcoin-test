@@ -24,15 +24,15 @@ CFeeRate GetDogmcoinFeeRate(int priority)
     switch(priority)
     {
     case SUCH_EXPENSIVE:
-        return CFeeRate(COIN / 100 * 521); // 5.21 DOGM, but very carefully avoiding floating point maths
+        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 1);
     case MANY_GENEROUS:
-        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 100);
+        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 1);
     case AMAZE:
-        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 10);
+        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 1);
     case WOW:
-        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 5);
+        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 1);
     case MORE:
-        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 2);
+        return CFeeRate(CWallet::minTxFee.GetFeePerK() * 1);
     case MINIMUM:
     default:
         break;
