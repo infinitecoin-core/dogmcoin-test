@@ -19,7 +19,7 @@ class CCoinsViewCache;
   * All fee defaults used throughout the client derive their
   * value from this base default.
   */
-static const CAmount RECOMMENDED_MIN_TX_FEE = COIN / 100;
+static const CAmount RECOMMENDED_MIN_TX_FEE = COIN;
 
 /** Default for -blockmaxsize, which controls the maximum size of block the mining code will create **/
 static const unsigned int DEFAULT_BLOCK_MAX_SIZE = 750000;
@@ -40,9 +40,9 @@ static const unsigned int DEFAULT_MAX_MEMPOOL_SIZE = 300;
 /** Default for -incrementalrelayfee, which sets the minimum feerate increase
  *  for mempool limiting or BIP 125 replacement
  *
- *  Dogmcoin:    Increment mempool limits and accept RBF in steps of 0.0001 DOGM
- *  Calculation: DEFAULT_MIN_RELAY_TX_FEE = RECOMMENDED_MIN_TX_FEE / 10
- *               DEFAULT_INCREMENTAL_RELAY_FEE = DEFAULT_MIN_RELAY_TX_FEE / 10
+ *  Dogmcoin:    Increment mempool limits and accept RBF in steps of 1 DOGM
+ *  Calculation: DEFAULT_MIN_RELAY_TX_FEE = RECOMMENDED_MIN_TX_FEE
+ *               DEFAULT_INCREMENTAL_RELAY_FEE = DEFAULT_MIN_RELAY_TX_FEE
  *
  *  Rationale:   This implements a smaller granularity than the wallet
  *               implementation for fee increments by default, leaving room for
@@ -52,7 +52,7 @@ static const unsigned int DEFAULT_MAX_MEMPOOL_SIZE = 300;
  *               RBF leaves no on-chain waste, whereas CPFP adds another
  *               transaction to the chain.
  */
-static const CAmount DEFAULT_INCREMENTAL_RELAY_FEE = RECOMMENDED_MIN_TX_FEE / 100;
+static const CAmount DEFAULT_INCREMENTAL_RELAY_FEE = RECOMMENDED_MIN_TX_FEE;
 /** Default for -bytespersigop */
 static const unsigned int DEFAULT_BYTES_PER_SIGOP = 20;
 /** The maximum number of witness stack items in a standard P2WSH script */
@@ -77,7 +77,7 @@ static const CAmount DEFAULT_DUST_LIMIT = RECOMMENDED_MIN_TX_FEE;
  * this limit after prior releases were already not creating outputs below the
  * new threshold
  */
-static const CAmount DEFAULT_HARD_DUST_LIMIT = DEFAULT_DUST_LIMIT / 10;
+static const CAmount DEFAULT_HARD_DUST_LIMIT = DEFAULT_DUST_LIMIT;
 
 /**
  * Standard script verification flags that standard transactions will comply
