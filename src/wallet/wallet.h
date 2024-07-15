@@ -47,6 +47,8 @@ extern bool bSpendZeroConfChange;
 extern bool fSendFreeTransactions;
 extern bool fWalletRbf;
 
+extern CAmount nMinimumInputThreshold;
+
 //! -change addresses default
 static const unsigned int DEFAULT_KEYPOOL_SIZE = 200;
 //! -paytxfee default
