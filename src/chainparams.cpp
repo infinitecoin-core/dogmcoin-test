@@ -166,7 +166,7 @@ public:
         notminDifficultyConsensus.nHeightEffective = 4253401;
         notminDifficultyConsensus.fPowAllowMinDifficultyBlocks = false;
 
-	    // Dogmcoin uses dynamic Auxpow chain ID
+	// Dogmcoin uses dynamic Auxpow chain ID
         D1AuxpowChainIdConsensus = notminDifficultyConsensus;   
         D1AuxpowChainIdConsensus.nAuxpowChainId = 0x006C; // 108 - msy2008!
         D1AuxpowChainIdConsensus.nHeightEffective = 5096800;
@@ -186,7 +186,7 @@ public:
         D4AuxpowChainIdConsensus.nAuxpowChainId = 0x0062; // 98 - Josh Wise!
         D4AuxpowChainIdConsensus.nHeightEffective = 6673600;
 
-	    // Dogmcoin Auxpow chain ID change every 525600 blocks.
+	// Dogmcoin Auxpow chain ID change every 525600 blocks.
         D5AuxpowChainIdConsensus = D4AuxpowChainIdConsensus;   
         D5AuxpowChainIdConsensus.nAuxpowChainId = 0x006C; // 108 - msy2008!
         D5AuxpowChainIdConsensus.nHeightEffective = 7199200;
@@ -206,7 +206,7 @@ public:
         D8AuxpowChainIdConsensus.nAuxpowChainId = 0x0062; // 98 - Josh Wise!
         D8AuxpowChainIdConsensus.nHeightEffective = 8776000;
 
-	    // Dogmcoin Auxpow chain ID change every 525600 blocks.
+	// Dogmcoin Auxpow chain ID change every 525600 blocks.
         D9AuxpowChainIdConsensus = D8AuxpowChainIdConsensus;   
         D9AuxpowChainIdConsensus.nAuxpowChainId = 0x006C; // 108 - msy2008!
         D9AuxpowChainIdConsensus.nHeightEffective = 9301600;
@@ -272,16 +272,16 @@ public:
         digishieldConsensus.pRight = &auxpowConsensus;
         auxpowConsensus.pRight = &minDifficultyConsensus;
         minDifficultyConsensus.pRight = &notminDifficultyConsensus;
-	    notminDifficultyConsensus.pRight = &D1AuxpowChainIdConsensus;
-	    D1AuxpowChainIdConsensus.pRight = &D2AuxpowChainIdConsensus;
-	    D2AuxpowChainIdConsensus.pRight = &D3AuxpowChainIdConsensus;
-	    D3AuxpowChainIdConsensus.pRight = &D4AuxpowChainIdConsensus;
-	    D4AuxpowChainIdConsensus.pRight = &D5AuxpowChainIdConsensus;
-	    D5AuxpowChainIdConsensus.pRight = &D6AuxpowChainIdConsensus;
-	    D6AuxpowChainIdConsensus.pRight = &D7AuxpowChainIdConsensus;
-	    D7AuxpowChainIdConsensus.pRight = &D8AuxpowChainIdConsensus;
-	    D8AuxpowChainIdConsensus.pRight = &D9AuxpowChainIdConsensus;
-	    D9AuxpowChainIdConsensus.pRight = &D10AuxpowChainIdConsensus;
+	notminDifficultyConsensus.pRight = &D1AuxpowChainIdConsensus;
+	D1AuxpowChainIdConsensus.pRight = &D2AuxpowChainIdConsensus;
+	D2AuxpowChainIdConsensus.pRight = &D3AuxpowChainIdConsensus;
+	D3AuxpowChainIdConsensus.pRight = &D4AuxpowChainIdConsensus;
+	D4AuxpowChainIdConsensus.pRight = &D5AuxpowChainIdConsensus;
+	D5AuxpowChainIdConsensus.pRight = &D6AuxpowChainIdConsensus;
+	D6AuxpowChainIdConsensus.pRight = &D7AuxpowChainIdConsensus;
+	D7AuxpowChainIdConsensus.pRight = &D8AuxpowChainIdConsensus;
+	D8AuxpowChainIdConsensus.pRight = &D9AuxpowChainIdConsensus;
+	D9AuxpowChainIdConsensus.pRight = &D10AuxpowChainIdConsensus;
         D10AuxpowChainIdConsensus.pRight = &D11AuxpowChainIdConsensus;
         D11AuxpowChainIdConsensus.pRight = &D12AuxpowChainIdConsensus;
         D12AuxpowChainIdConsensus.pRight = &D13AuxpowChainIdConsensus;
