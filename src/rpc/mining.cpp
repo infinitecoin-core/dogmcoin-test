@@ -1131,7 +1131,7 @@ static bool AuxMiningSubmitBlock(const std::string& hashHex, const std::string& 
 UniValue getauxblockbip22(const JSONRPCRequest& request)
 {
     if (request.fHelp
-          || (request.params.size() != 0 && request.params.size() != 5))
+          || (request.params.size() != 0 && request.params.size() != 2))
         throw std::runtime_error(
             "getauxblock (hash auxpow)\n"
             "\nCreate or submit a merge-mined block.\n"
